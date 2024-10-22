@@ -55,11 +55,63 @@
             <li>
               Reference
               <ul>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aae965f2b7cd5a9578c024493c4b1f0c9">
+              <span class="m-doc-wrap-bumper">auto <a href="#aae965f2b7cd5a9578c024493c4b1f0c9" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="acc8fcdb12e67bb7489b4dc8e2dea57fa">
+              <span class="m-doc-wrap-bumper">auto <a href="#acc8fcdb12e67bb7489b4dc8e2dea57fa" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a229340ea0327a19df238d3978328227b" class="m-doc">SetMethodCallback</a>(</span><span class="m-doc-wrap"><a href="namespace_app.html#addad4105280a274626612693fc8f6623" class="m-doc">cJobCallback</a> callback,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* object) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Sets the method that is called to execute this job.</dd>
+            <dt id="abf284a30c18e172231eebec3106ffd5d">
+              <span class="m-doc-wrap-bumper">auto <a href="#abf284a30c18e172231eebec3106ffd5d" class="m-doc-self">AddDependency</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_job.html" class="m-doc">cJob</a>* other) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adcfd87300787adafbfb95be27e7b263a">
+              <span class="m-doc-wrap-bumper">auto <a href="#adcfd87300787adafbfb95be27e7b263a" class="m-doc-self">AddWeakDependency</a>(</span><span class="m-doc-wrap"><a href="class_app_1_1c_job.html" class="m-doc">cJob</a>* other) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aaa9c606430d075dc3a1bd947217bb100">
+              <span class="m-doc-wrap-bumper">auto <a href="#aaa9c606430d075dc3a1bd947217bb100" class="m-doc-self">Wait</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Blocks the current thread until this job finishes executing.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2d3f8ad8a1531596a99c9fa31310ea58" class="m-doc">Cancel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> wait) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Cancels the execution of the job.</dd>
+            <dt id="a3aa35cf6fb4b4c2cd6039b0a3f4509dc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3aa35cf6fb4b4c2cd6039b0a3f4509dc" class="m-doc-self">Resume</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ade74a812572913f09bb9fbed876f823c" class="m-doc">Continuation</a>(</span><span class="m-doc-wrap"><a href="namespace_app.html#a6e217869829f924b68bacc4ff90b8565" class="m-doc">cJobVoidCallback</a> callback,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* data) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Sets a function that must be executed when the job finishes.</dd>
+            <dt id="a62ad0268586f376a7d722bfd513894b7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a62ad0268586f376a7d722bfd513894b7" class="m-doc-self">GetStatus</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b079f96bf6a029cb17716a30e9a38ad">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8b079f96bf6a029cb17716a30e9a38ad" class="m-doc-self">SetThreadAffinity</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> affinity = 0x80000000) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
@@ -71,8 +123,12 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <a href="#a0b75042b04a9199509968a3471e26d75" class="m-doc-self">mpCallbackObject</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a48d02aba4cfaf6412ca90d27417f5620">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a48d02aba4cfaf6412ca90d27417f5620" class="m-doc-self">padding</a>
+            <dt id="a3fc38ef83f61a040b90c4c6fc87c22e5">
+              <a href="_object_8h.html#a364c2967a9338c07ddc9a3d507389b5d" class="m-doc">ObjectPtr</a> <a href="#a3fc38ef83f61a040b90c4c6fc87c22e5" class="m-doc-self">mReleasebleObject</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1010927bda13c600331a5fe37cd96ea7">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">char</a> <a href="#a1010927bda13c600331a5fe37cd96ea7" class="m-doc-self">padding</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab830bba7aee78544bac6045545f52734">
@@ -80,6 +136,70 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a229340ea0327a19df238d3978328227b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cJob::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a229340ea0327a19df238d3978328227b" class="m-doc-self">SetMethodCallback</a>(</span><span class="m-doc-wrap"><a href="namespace_app.html#addad4105280a274626612693fc8f6623" class="m-doc">cJobCallback</a> callback,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* object)</span></span>
+            </h3>
+            <p>Sets the method that is called to execute this job.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">callback</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>object</td>
+                  <td>Additional parameter that is passed to the callback method.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2d3f8ad8a1531596a99c9fa31310ea58"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cJob::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d3f8ad8a1531596a99c9fa31310ea58" class="m-doc-self">Cancel</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> wait)</span></span>
+            </h3>
+            <p>Cancels the execution of the job.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">wait</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ade74a812572913f09bb9fbed876f823c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cJob::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade74a812572913f09bb9fbed876f823c" class="m-doc-self">Continuation</a>(</span><span class="m-doc-wrap"><a href="namespace_app.html#a6e217869829f924b68bacc4ff90b8565" class="m-doc">cJobVoidCallback</a> callback,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* data)</span></span>
+            </h3>
+            <p>Sets a function that must be executed when the job finishes.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">callback</td>
+                  <td>Function that will be executed</td>
+                </tr>
+                <tr>
+                  <td>data</td>
+                  <td>Additional data that is passed to the function.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

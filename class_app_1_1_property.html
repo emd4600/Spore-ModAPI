@@ -78,9 +78,12 @@
               struct <a href="struct_app_1_1_property_1_1_text_property.html" class="m-doc">TextProperty</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a3cbe8474b8de7f796d07be7d0edbe351">
-              <span class="m-doc-wrap-bumper">enum <a href="#a3cbe8474b8de7f796d07be7d0edbe351" class="m-doc-self">PropertyFlags</a> { </span><span class="m-doc-wrap"><a href="#a3cbe8474b8de7f796d07be7d0edbe351ab307421295681040ccc0a0c50f339709" class="m-doc">kPropertyFlagNotDirect</a> = 0x10,
-              <a href="#a3cbe8474b8de7f796d07be7d0edbe351ad058c7049a383cda75b105f70c437bb1" class="m-doc">kPropertyFlagArray</a> = 0x30 }</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a3cbe8474b8de7f796d07be7d0edbe351" class="m-doc">PropertyFlags</a> { </span><span class="m-doc-wrap"><a href="#a3cbe8474b8de7f796d07be7d0edbe351a40d9f665fffd52217543831daea1baee" class="m-doc">kPropertyFlagCleanup</a> = 4,
+              <a href="#a3cbe8474b8de7f796d07be7d0edbe351abde5dfc8a4732ea11bc7e9b5d7fca440" class="m-doc">kPropertyFlagPointer</a> = 0x10,
+              <a href="#a3cbe8474b8de7f796d07be7d0edbe351a8f88b6df596cdbd02a5e4620dd598bba" class="m-doc">kPropertyFlagSkipDealloc</a> = 0x20,
+              <a href="#a3cbe8474b8de7f796d07be7d0edbe351a58c047da42074712e8e68475f0790e34" class="m-doc">kPropertyFlagArrayByCopy</a> = kPropertyFlagPointer | kPropertyFlagCleanup,
+              <a href="#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a> = kPropertyFlagPointer | kPropertyFlagSkipDealloc }</span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -301,78 +304,93 @@
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the given <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> value.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a852113053dd04d060607be81fd38206a" class="m-doc">SetArrayBool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae9f38ddfeac790beb3be0706aea651f1" class="m-doc">SetArrayBool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of bool values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a94a7964c62b77085487be12cf493df7e" class="m-doc">SetArrayInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int32_<wbr />t</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3d0c606788768f3a9f3317681407ef3a" class="m-doc">SetArrayInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int32_<wbr />t</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of int32_t values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a258c27a3f776529e367388a685600616" class="m-doc">SetArrayUInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab89fee8d2d4d2686fe7bc0a67031210c" class="m-doc">SetArrayUInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of uint32_t values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a89c2e12f78e8cb62693ea08b9eb5f2be" class="m-doc">SetArrayFloat</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae3e533b4a46389d33995ce297e1cdced" class="m-doc">SetArrayFloat</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of float values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a8ae68aad20625011df307edecd4d7eed" class="m-doc">SetArrayKey</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7c1b1fc05b8f56251045e664588d5974" class="m-doc">SetArrayKey</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ade642c1a959679963dad60613f83e080" class="m-doc">SetArrayString8</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string8* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4643f84e22852874f749d060885c6963" class="m-doc">SetArrayString8</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string8* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the an array of eastl::string8 values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aff9addf352030222baaabdf187613b8b" class="m-doc">SetArrayString16</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a29c270ce258197bdf39d80eee4794866" class="m-doc">SetArrayString16</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of eastl::string16 values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa6f7ff43d7fbcedb03b9a80b1a55eb87" class="m-doc">SetArrayBBox</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa901b8a02324c29a9ebd589f75fed7f6" class="m-doc">SetArrayBBox</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of BoundingBox values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa8711088cb1239e5583ab96ccb10fcae" class="m-doc">SetArrayTransform</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac79f986dfaec398efef0962324503ec3" class="m-doc">SetArrayTransform</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_transform.html" class="m-doc">Transform</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6ebb572cb01efaee15c7387caae58ecc" class="m-doc">SetArrayText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_localized_string.html" class="m-doc">LocalizedString</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aea91dd197d62d827baa9cff796627746" class="m-doc">SetArrayText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_localized_string.html" class="m-doc">LocalizedString</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_localized_string.html" class="m-doc">LocalizedString</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4d9c75e8215db4374d2cfc5c1708fdfa" class="m-doc">SetArrayVector2</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a41584d795269685ef4ad6e711fac7dd3" class="m-doc">SetArrayVector2</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac0c203e96b99fb11590fa0d8bb9c3fa3" class="m-doc">SetArrayVector3</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d0c9756ac8d83b0af19652b6db20dd6" class="m-doc">SetArrayVector3</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab4ea40c3e6b65920e0cbb87a1cd90b85" class="m-doc">SetArrayVector4</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab403f6746a33c8cbdcfb9f87f5521c3d" class="m-doc">SetArrayVector4</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6b7e52c51dd972c97e0a24e2f0d05438" class="m-doc">SetArrayColorRGB</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a44dc04d17f1dab1fe9831a54b0acec27" class="m-doc">SetArrayColorRGB</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> values.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a9381f2de7d1df059e8636d6088d9f386" class="m-doc">SetArrayColorRGBA</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a968721d44025f9d2d2a9091dc2339baa" class="m-doc">SetArrayColorRGBA</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>) -&gt; <a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp;</span>
             </dt>
             <dd>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> values.</dd>
           </dl>
@@ -645,6 +663,50 @@
             </dt>
             <dd>Gets an array of EntityTransform values from a property with the propertyID specified in the given list.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Enum documentation</h2>
+          <section class="m-doc-details" id="a3cbe8474b8de7f796d07be7d0edbe351"><div>
+            <h3>
+              enum App::<wbr />Property::<wbr /><a href="#a3cbe8474b8de7f796d07be7d0edbe351" class="m-doc-self">PropertyFlags</a>
+            </h3>
+            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat m-doc">
+              <thead><tr><th style="width: 1%">Enumerators</th><th></th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><a href="#a3cbe8474b8de7f796d07be7d0edbe351a40d9f665fffd52217543831daea1baee" class="m-doc-self" id="a3cbe8474b8de7f796d07be7d0edbe351a40d9f665fffd52217543831daea1baee">kPropertyFlagCleanup</a></td>
+                  <td>
+                  <p>If set, when the property object is destroyed, it will try to cleanup memory.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3cbe8474b8de7f796d07be7d0edbe351abde5dfc8a4732ea11bc7e9b5d7fca440" class="m-doc-self" id="a3cbe8474b8de7f796d07be7d0edbe351abde5dfc8a4732ea11bc7e9b5d7fca440">kPropertyFlagPointer</a></td>
+                  <td>
+                  <p>If set, the data is stored in a separate buffer, pointed at by the fields in PropertyArray.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3cbe8474b8de7f796d07be7d0edbe351a8f88b6df596cdbd02a5e4620dd598bba" class="m-doc-self" id="a3cbe8474b8de7f796d07be7d0edbe351a8f88b6df596cdbd02a5e4620dd598bba">kPropertyFlagSkipDealloc</a></td>
+                  <td>
+                  <p>If set, the property will not deallocate memory pointed by it; if not set, the pointer memory will be deleted when the property is destroyed.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3cbe8474b8de7f796d07be7d0edbe351a58c047da42074712e8e68475f0790e34" class="m-doc-self" id="a3cbe8474b8de7f796d07be7d0edbe351a58c047da42074712e8e68475f0790e34">kPropertyFlagArrayByCopy</a></td>
+                  <td>
+                  <p>Combination of flags for array properties that must copy their origin data, and must clean it up on delete.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc-self" id="a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af">kPropertyFlagArrayByReference</a></td>
+                  <td>
+                  <p>Combination of flags for array properties whose data is a reference to memory managed by other code, and must not copy nor delete that memory.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
         <section>
           <h2>Function documentation</h2>
@@ -1102,10 +1164,11 @@
             </table>
 <p>This will be a single-valued colorRGBA property.</p>
           </div></section>
-          <section class="m-doc-details" id="a852113053dd04d060607be81fd38206a"><div>
+          <section class="m-doc-details" id="ae9f38ddfeac790beb3be0706aea651f1"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a852113053dd04d060607be81fd38206a" class="m-doc-self">SetArrayBool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae9f38ddfeac790beb3be0706aea651f1" class="m-doc-self">SetArrayBool</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of bool values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1121,14 +1184,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array bool property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a94a7964c62b77085487be12cf493df7e"><div>
+          <section class="m-doc-details" id="a3d0c606788768f3a9f3317681407ef3a"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a94a7964c62b77085487be12cf493df7e" class="m-doc-self">SetArrayInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int32_<wbr />t</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3d0c606788768f3a9f3317681407ef3a" class="m-doc-self">SetArrayInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int32_<wbr />t</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of int32_t values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1144,14 +1212,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array int32 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a258c27a3f776529e367388a685600616"><div>
+          <section class="m-doc-details" id="ab89fee8d2d4d2686fe7bc0a67031210c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a258c27a3f776529e367388a685600616" class="m-doc-self">SetArrayUInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab89fee8d2d4d2686fe7bc0a67031210c" class="m-doc-self">SetArrayUInt32</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of uint32_t values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1167,14 +1240,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array uint32 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a89c2e12f78e8cb62693ea08b9eb5f2be"><div>
+          <section class="m-doc-details" id="ae3e533b4a46389d33995ce297e1cdced"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a89c2e12f78e8cb62693ea08b9eb5f2be" class="m-doc-self">SetArrayFloat</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae3e533b4a46389d33995ce297e1cdced" class="m-doc-self">SetArrayFloat</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of float values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1190,14 +1268,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array float property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a8ae68aad20625011df307edecd4d7eed"><div>
+          <section class="m-doc-details" id="a7c1b1fc05b8f56251045e664588d5974"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ae68aad20625011df307edecd4d7eed" class="m-doc-self">SetArrayKey</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7c1b1fc05b8f56251045e664588d5974" class="m-doc-self">SetArrayKey</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1213,14 +1296,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array key property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="ade642c1a959679963dad60613f83e080"><div>
+          <section class="m-doc-details" id="a4643f84e22852874f749d060885c6963"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade642c1a959679963dad60613f83e080" class="m-doc-self">SetArrayString8</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string8* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4643f84e22852874f749d060885c6963" class="m-doc-self">SetArrayString8</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string8* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to the an array of eastl::string8 values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1236,14 +1324,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array eastl::string8 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="aff9addf352030222baaabdf187613b8b"><div>
+          <section class="m-doc-details" id="a29c270ce258197bdf39d80eee4794866"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aff9addf352030222baaabdf187613b8b" class="m-doc-self">SetArrayString16</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a29c270ce258197bdf39d80eee4794866" class="m-doc-self">SetArrayString16</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> eastl::string16* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of eastl::string16 values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1259,14 +1352,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array eastl::string16 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="aa6f7ff43d7fbcedb03b9a80b1a55eb87"><div>
+          <section class="m-doc-details" id="aa901b8a02324c29a9ebd589f75fed7f6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa6f7ff43d7fbcedb03b9a80b1a55eb87" class="m-doc-self">SetArrayBBox</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa901b8a02324c29a9ebd589f75fed7f6" class="m-doc-self">SetArrayBBox</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_bounding_box.html" class="m-doc">BoundingBox</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of BoundingBox values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1282,14 +1380,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array bbox property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="aa8711088cb1239e5583ab96ccb10fcae"><div>
+          <section class="m-doc-details" id="ac79f986dfaec398efef0962324503ec3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa8711088cb1239e5583ab96ccb10fcae" class="m-doc-self">SetArrayTransform</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac79f986dfaec398efef0962324503ec3" class="m-doc-self">SetArrayTransform</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_transform.html" class="m-doc">Transform</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_transform.html" class="m-doc">Transform</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1305,14 +1408,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array transform property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a6ebb572cb01efaee15c7387caae58ecc"><div>
+          <section class="m-doc-details" id="aea91dd197d62d827baa9cff796627746"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ebb572cb01efaee15c7387caae58ecc" class="m-doc-self">SetArrayText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_localized_string.html" class="m-doc">LocalizedString</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aea91dd197d62d827baa9cff796627746" class="m-doc-self">SetArrayText</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="class_localized_string.html" class="m-doc">LocalizedString</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="class_localized_string.html" class="m-doc">LocalizedString</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1328,14 +1436,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array text property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a4d9c75e8215db4374d2cfc5c1708fdfa"><div>
+          <section class="m-doc-details" id="a41584d795269685ef4ad6e711fac7dd3"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d9c75e8215db4374d2cfc5c1708fdfa" class="m-doc-self">SetArrayVector2</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a41584d795269685ef4ad6e711fac7dd3" class="m-doc-self">SetArrayVector2</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector2.html" class="m-doc">Vector2</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector2.html" class="m-doc">Math::<wbr />Vector2</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1351,14 +1464,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array vector2 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="ac0c203e96b99fb11590fa0d8bb9c3fa3"><div>
+          <section class="m-doc-details" id="a4d0c9756ac8d83b0af19652b6db20dd6"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac0c203e96b99fb11590fa0d8bb9c3fa3" class="m-doc-self">SetArrayVector3</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d0c9756ac8d83b0af19652b6db20dd6" class="m-doc-self">SetArrayVector3</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector3.html" class="m-doc">Vector3</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1374,14 +1492,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array vector3 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="ab4ea40c3e6b65920e0cbb87a1cd90b85"><div>
+          <section class="m-doc-details" id="ab403f6746a33c8cbdcfb9f87f5521c3d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab4ea40c3e6b65920e0cbb87a1cd90b85" class="m-doc-self">SetArrayVector4</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab403f6746a33c8cbdcfb9f87f5521c3d" class="m-doc-self">SetArrayVector4</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_vector4.html" class="m-doc">Vector4</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_vector4.html" class="m-doc">Math::<wbr />Vector4</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1397,14 +1520,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array vector4 property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a6b7e52c51dd972c97e0a24e2f0d05438"><div>
+          <section class="m-doc-details" id="a44dc04d17f1dab1fe9831a54b0acec27"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6b7e52c51dd972c97e0a24e2f0d05438" class="m-doc-self">SetArrayColorRGB</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a44dc04d17f1dab1fe9831a54b0acec27" class="m-doc-self">SetArrayColorRGB</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">ColorRGB</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b.html" class="m-doc">Math::<wbr />ColorRGB</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1420,14 +1548,19 @@
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
                 </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
+                </tr>
               </tbody>
             </table>
 <p>This will be an array colorRGB property of &#x27;nValueCount&#x27; values.</p>
           </div></section>
-          <section class="m-doc-details" id="a9381f2de7d1df059e8636d6088d9f386"><div>
+          <section class="m-doc-details" id="a968721d44025f9d2d2a9091dc2339baa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9381f2de7d1df059e8636d6088d9f386" class="m-doc-self">SetArrayColorRGBA</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* pValues,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="class_app_1_1_property.html" class="m-doc">Property</a>&amp; App::<wbr />Property::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a968721d44025f9d2d2a9091dc2339baa" class="m-doc-self">SetArrayColorRGBA</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">ColorRGBA</a>* pValues,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">size_<wbr />t</a> nValueCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags = <a href="class_app_1_1_property.html#a3cbe8474b8de7f796d07be7d0edbe351a3a2c9f4ef33040ef5c37a8dc97c1b9af" class="m-doc">kPropertyFlagArrayByReference</a>)</span></span>
             </h3>
             <p>Sets the value of this <a href="class_app_1_1_property.html" class="m-doc">Property</a> to an array of <a href="struct_math_1_1_color_r_g_b_a.html" class="m-doc">Math::<wbr />ColorRGBA</a> values.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -1442,6 +1575,10 @@
                 <tr>
                   <td>nValueCount</td>
                   <td>How many values the array has.</td>
+                </tr>
+                <tr>
+                  <td>flags</td>
+                  <td>Set of flags for the property; by default, it makes the array a reference to the given memory</td>
                 </tr>
               </tbody>
             </table>
