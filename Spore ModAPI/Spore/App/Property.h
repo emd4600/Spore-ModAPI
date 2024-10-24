@@ -105,8 +105,17 @@ namespace App
 	public:
 		enum PropertyFlags
 		{
-			kPropertyFlagNotDirect = 0x10,
-			kPropertyFlagArray = 0x30
+			/// If set, when the property object is destroyed, it will try to cleanup memory
+			kPropertyFlagCleanup = 4,
+			/// If set, the data is stored in a separate buffer, pointed at by the fields in PropertyArray
+			kPropertyFlagPointer = 0x10,
+			/// If set, the property will not deallocate memory pointed by it; if not set, the pointer memory will be deleted when the property is destroyed
+			kPropertyFlagSkipDealloc = 0x20,
+
+			/// Combination of flags for array properties that must copy their origin data, and must clean it up on delete
+			kPropertyFlagArrayByCopy = kPropertyFlagPointer | kPropertyFlagCleanup,
+			/// Combination of flags for array properties whose data is a reference to memory managed by other code, and must not copy nor delete that memory
+			kPropertyFlagArrayByReference = kPropertyFlagPointer | kPropertyFlagSkipDealloc,
 		};
 
 	public:
@@ -392,120 +401,135 @@ namespace App
 		/// This will be an array bool property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayBool(const bool* pValues, size_t nValueCount);
+		Property& SetArrayBool(const bool* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of int32_t values.
 		/// This will be an array int32 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayInt32(const int32_t* pValues, size_t nValueCount);
+		Property& SetArrayInt32(const int32_t* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of uint32_t values.
 		/// This will be an array uint32 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayUInt32(const uint32_t* pValues, size_t nValueCount);
+		Property& SetArrayUInt32(const uint32_t* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of float values.
 		/// This will be an array float property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayFloat(const float* pValues, size_t nValueCount);
+		Property& SetArrayFloat(const float* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of ResourceKey values.
 		/// This will be an array key property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayKey(const ResourceKey* pValues, size_t nValueCount);
+		Property& SetArrayKey(const ResourceKey* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to the an array of eastl::string8 values.
 		/// This will be an array eastl::string8 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayString8(const eastl::string8* pValues, size_t nValueCount);
+		Property& SetArrayString8(const eastl::string8* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of eastl::string16 values.
 		/// This will be an array eastl::string16 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayString16(const eastl::string16* pValues, size_t nValueCount);
+		Property& SetArrayString16(const eastl::string16* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of BoundingBox values.
 		/// This will be an array bbox property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayBBox(const BoundingBox* pValues, size_t nValueCount);
+		Property& SetArrayBBox(const BoundingBox* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of Transform values.
 		/// This will be an array transform property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayTransform(const Transform* pValues, size_t nValueCount);
+		Property& SetArrayTransform(const Transform* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of LocalizedString values.
 		/// This will be an array text property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayText(const LocalizedString* pValues, size_t nValueCount);
+		Property& SetArrayText(const LocalizedString* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of Math::Vector2 values.
 		/// This will be an array vector2 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayVector2(const Vector2* pValues, size_t nValueCount);
+		Property& SetArrayVector2(const Vector2* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of Math::Vector3 values.
 		/// This will be an array vector3 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayVector3(const Vector3* pValues, size_t nValueCount);
+		Property& SetArrayVector3(const Vector3* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of Math::Vector4 values.
 		/// This will be an array vector4 property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayVector4(const Vector4* pValues, size_t nValueCount);
+		Property& SetArrayVector4(const Vector4* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of Math::ColorRGB values.
 		/// This will be an array colorRGB property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayColorRGB(const ColorRGB* pValues, size_t nValueCount);
+		Property& SetArrayColorRGB(const ColorRGB* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///
 		/// Sets the value of this Property to an array of Math::ColorRGBA values.
 		/// This will be an array colorRGBA property of 'nValueCount' values.
 		/// @param pValues The array with the values.
 		/// @param nValueCount How many values the array has.
+		/// @param flags Set of flags for the property; by default, it makes the array a reference to the given memory
 		///
-		Property& SetArrayColorRGBA(const ColorRGBA* pValues, size_t nValueCount);
+		Property& SetArrayColorRGBA(const ColorRGBA* pValues, size_t nValueCount, int flags = kPropertyFlagArrayByReference);
 
 		///@}
 
@@ -1179,64 +1203,64 @@ namespace App
 	//TODO Bounding boxes?
 
 
-	inline Property& Property::SetArrayBool(const bool* pValues, size_t nValueCount) {
-		Set(PropertyType::Bool, kPropertyFlagArray, (void*) pValues, sizeof(bool), nValueCount);
+	inline Property& Property::SetArrayBool(const bool* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Bool, flags, (void*) pValues, sizeof(bool), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayInt32(const int32_t* pValues, size_t nValueCount) {
-		Set(PropertyType::Int32, kPropertyFlagArray, (void*)pValues, sizeof(int32_t), nValueCount);
+	inline Property& Property::SetArrayInt32(const int32_t* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Int32, flags, (void*)pValues, sizeof(int32_t), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayUInt32(const uint32_t* pValues, size_t nValueCount) {
-		Set(PropertyType::UInt32, kPropertyFlagArray, (void*)pValues, sizeof(uint32_t), nValueCount);
+	inline Property& Property::SetArrayUInt32(const uint32_t* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::UInt32, flags, (void*)pValues, sizeof(uint32_t), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayFloat(const float* pValues, size_t nValueCount) {
-		Set(PropertyType::Float, kPropertyFlagArray, (void*)pValues, sizeof(float), nValueCount);
+	inline Property& Property::SetArrayFloat(const float* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Float, flags, (void*)pValues, sizeof(float), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayKey(const ResourceKey* pValues, size_t nValueCount) {
-		Set(PropertyType::Key, kPropertyFlagArray, (void*)pValues, sizeof(ResourceKey), nValueCount);
+	inline Property& Property::SetArrayKey(const ResourceKey* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Key, flags, (void*)pValues, sizeof(ResourceKey), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayString8(const eastl::string8* pValues, size_t nValueCount) {
-		Set(PropertyType::String8, kPropertyFlagArray, (void*)pValues, sizeof(eastl::string8), nValueCount);
+	inline Property& Property::SetArrayString8(const eastl::string8* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::String8, flags, (void*)pValues, sizeof(eastl::string8), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayString16(const eastl::string16* pValues, size_t nValueCount) {
-		Set(PropertyType::String16, kPropertyFlagArray, (void*)pValues, sizeof(eastl::string16), nValueCount);
+	inline Property& Property::SetArrayString16(const eastl::string16* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::String16, flags, (void*)pValues, sizeof(eastl::string16), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayBBox(const BoundingBox* pValues, size_t nValueCount) {
-		Set(PropertyType::BBox, kPropertyFlagArray, (void*)pValues, sizeof(BoundingBox), nValueCount);
+	inline Property& Property::SetArrayBBox(const BoundingBox* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::BBox, flags, (void*)pValues, sizeof(BoundingBox), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayTransform(const Transform* pValues, size_t nValueCount) {
-		Set(PropertyType::Transform, kPropertyFlagArray, (void*)pValues, sizeof(Transform), nValueCount);
+	inline Property& Property::SetArrayTransform(const Transform* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Transform, flags, (void*)pValues, sizeof(Transform), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayText(const LocalizedString* pValues, size_t nValueCount) {
-		Set(PropertyType::Text, kPropertyFlagArray, (void*)pValues, sizeof(LocalizedString), nValueCount);
+	inline Property& Property::SetArrayText(const LocalizedString* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Text, flags, (void*)pValues, sizeof(LocalizedString), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayVector2(const Vector2* pValues, size_t nValueCount) {
-		Set(PropertyType::Vector2, kPropertyFlagArray, (void*)pValues, sizeof(Vector2), nValueCount);
+	inline Property& Property::SetArrayVector2(const Vector2* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Vector2, flags, (void*)pValues, sizeof(Vector2), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayVector3(const Vector3* pValues, size_t nValueCount) {
-		Set(PropertyType::Vector3, kPropertyFlagArray, (void*)pValues, sizeof(Vector3), nValueCount);
+	inline Property& Property::SetArrayVector3(const Vector3* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Vector3, flags, (void*)pValues, sizeof(Vector3), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayVector4(const Vector4* pValues, size_t nValueCount) {
-		Set(PropertyType::Vector4, kPropertyFlagArray, (void*)pValues, sizeof(Vector4), nValueCount);
+	inline Property& Property::SetArrayVector4(const Vector4* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::Vector4, flags, (void*)pValues, sizeof(Vector4), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayColorRGB(const ColorRGB* pValues, size_t nValueCount) {
-		Set(PropertyType::ColorRGB, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGB), nValueCount);
+	inline Property& Property::SetArrayColorRGB(const ColorRGB* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::ColorRGB, flags, (void*)pValues, sizeof(ColorRGB), nValueCount);
 		return *this;
 	}
-	inline Property& Property::SetArrayColorRGBA(const ColorRGBA* pValues, size_t nValueCount) {
-		Set(PropertyType::ColorRGBA, kPropertyFlagArray, (void*)pValues, sizeof(ColorRGBA), nValueCount);
+	inline Property& Property::SetArrayColorRGBA(const ColorRGBA* pValues, size_t nValueCount, int flags) {
+		Set(PropertyType::ColorRGBA, flags, (void*)pValues, sizeof(ColorRGBA), nValueCount);
 		return *this;
 	}
 

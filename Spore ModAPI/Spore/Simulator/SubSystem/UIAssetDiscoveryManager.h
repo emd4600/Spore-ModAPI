@@ -5,7 +5,7 @@
 #include <Spore\UI\AssetDiscoveryCard.h>
 #include <EASTL\deque.h>
 
-//#define UIAssetDiscoveryManager (*Simulator::cUIAssetDiscoveryManager::Get())
+#define UIAssetDiscoveryManager (*Simulator::cUIAssetDiscoveryManager::Get())
 
 namespace Simulator
 {
@@ -14,7 +14,7 @@ namespace Simulator
 		, public App::IMessageListener
 	{
 	public:
-		//static cUIAssetDiscoveryManager* Get();
+		static cUIAssetDiscoveryManager* Get();
 
 	public:
 		/* 20h */	int field_20;
@@ -23,7 +23,7 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cUIAssetDiscoveryManager, 0xA8);
 
-	//namespace Addresses(cUIAssetDiscoveryManager) {
-	//	DeclareAddress(Get);  // 0xB3D450 TODO
-	//}
+	namespace Addresses(cUIAssetDiscoveryManager) {
+		DeclareAddress(Get);  // 0xB3D450 0xB3D5F0
+	}
 }

@@ -47,6 +47,7 @@
 #include <Spore\App\cArithmeticaResource.h>
 #include <Spore\App\ConfigManager.h>
 #include <Spore\App\IStateManager.h>
+#include <Spore\App\JobManager.h>
 
 #include <Spore\Audio\AudioSystem.h>
 

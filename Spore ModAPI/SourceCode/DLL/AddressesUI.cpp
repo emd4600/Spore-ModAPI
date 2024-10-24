@@ -3,6 +3,7 @@
 #include <Spore\UI\LayerManager.h>
 #include <Spore\UI\SpaceGameUI.h>
 #include <Spore\UI\HintManager.h>
+#include <Spore\UI\cSPAssetView.h>
 #include <Spore\UI\ScrollFrameVertical.h>
 #include <Spore\UI\cSPUITextZoom.h>
 #include <Spore\UI\GameSettings.h>
@@ -14,6 +15,11 @@ namespace UI
 	namespace Addresses(cLayerManager) 
 	{
 		DefineAddress(Get, SelectAddress(0x67CC20, 0x67CA90));
+	}
+
+	namespace Addresses(cSPAssetView) {
+		DefineAddress(_ctor, SelectAddress(0x657DA0, 0x657F30));
+		DefineAddress(sub_6590A0, SelectAddress(0x6590A0, 0x659230));
 	}
 
 	namespace Addresses(SpaceGameUI)

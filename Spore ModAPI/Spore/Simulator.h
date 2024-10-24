@@ -41,6 +41,7 @@
 #include <Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h>
 #include <Spore\Simulator\SubSystem\BundleManager.h>
 #include <Spore\Simulator\SubSystem\GamePlantManager.h>
+#include <Spore\Simulator\SubSystem\ObstacleManager.h>
 
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cGonzagoSimulator.h>

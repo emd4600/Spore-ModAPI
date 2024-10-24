@@ -55,6 +55,26 @@ namespace Resource
 
 		virtual bool IsValid(const ResourceKey& name) override;
 
+		inline StandardFileFilter& SetInstanceId(uint32_t value) {
+			instanceID = value;
+			return *this;
+		}
+
+		inline StandardFileFilter& SetGroupId(uint32_t value) {
+			groupID = value;
+			return *this;
+		}
+
+		inline StandardFileFilter& SetTypeId(uint32_t value) {
+			typeID = value;
+			return *this;
+		}
+
+		inline StandardFileFilter& SetGroupMask(uint32_t value) {
+			groupMask = value;
+			return *this;
+		}
+
 	public:
 		/* 04h */	uint32_t instanceID;
 		/* 08h */	uint32_t groupID;

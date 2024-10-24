@@ -27,12 +27,15 @@ namespace UI
 		/* 24h */	virtual void func24h(int, int);
 		/* 28h */	virtual void SetVisible(bool visible);
 
+		bool sub_6590A0();
+
 	public:
 		/* 0Ch */	char padding_C[0x108 - 0xC];
 	};
 	ASSERT_SIZE(cSPAssetView, 0x108);
 
 	namespace Addresses(cSPAssetView) {
-		DeclareAddress(_ctor);  // 0x657DA0 TODO
+		DeclareAddress(_ctor);  // 0x657DA0 0x657F30
+		DeclareAddress(sub_6590A0);  // 0x6590A0 0x659230
 	}
 }

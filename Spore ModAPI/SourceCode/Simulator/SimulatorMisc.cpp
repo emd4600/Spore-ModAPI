@@ -8,8 +8,10 @@
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
 #include <Spore\Simulator\SubSystem\BundleManager.h>
+#include <Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h>
 #include <Spore\Simulator\SubSystem\CinematicManager.h>
 #include <Spore\Simulator\SubSystem\GamePlantManager.h>
+#include <Spore\Simulator\SubSystem\ObstacleManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
 #include <Spore\Simulator\cCulturalProjectile.h>
@@ -224,6 +226,14 @@ namespace Simulator
 	/// GamePlantManager ///
 
 	auto_STATIC_METHOD_(cGamePlantManager, cGamePlantManager*, Get);
+
+	/// UIAssetDiscoveryManager ///
+
+	auto_STATIC_METHOD_(cUIAssetDiscoveryManager, cUIAssetDiscoveryManager*, Get);
+
+	/// ObstacleManager ///
+
+	auto_STATIC_METHOD_(cObstacleManager, cObstacleManager*, Get);
 }
 
 #endif
