@@ -69,6 +69,7 @@ namespace Sporepedia
 			{
 				type = 0x2DD90AF,
 				subtype = 0x2DC9D1E,
+				archetype = 0x52DEF3F,
 				cost = 0x5B06E36,
 				baseGear = 0x2F05C60,
 				height = 0x7358629A,
