@@ -64,7 +64,6 @@ namespace ModAPI
 	eastl::fixed_vector<InitFunction, MAX_MODS> disposeFunctions;
 	eastl::fixed_map<uint32_t, ISimulatorStrategyPtr, MAX_MODS> simulatorStrategies;
 	FileStreamPtr logFile{};
-	std::mutex logFileMutex;
 	__time64_t logFileStartTime;
 
 	uint32_t CRC_TABLE[256];
@@ -198,19 +197,15 @@ void CreateLogFile() {
 	log_file_name += u".txt";
 	log_path.append(log_file_name);
 
-	ModAPI::logFileMutex.lock();
 	ModAPI::logFile = new IO::FileStream(log_path.c_str());
 	ModAPI::logFile->Open(IO::AccessFlags::Write, IO::CD::CreateAlways);
-	ModAPI::logFileMutex.unlock();
 }
 
 void CloseLogFile() {
-	ModAPI::logFileMutex.lock();
 	if (ModAPI::logFile) {
 		ModAPI::logFile->Close();
 		ModAPI::logFile.reset();
 	}
-	ModAPI::logFileMutex.unlock();
 }
 
 int ModAPI::PreInit_detour::DETOUR(int arg_0, int arg_1)

@@ -14,7 +14,6 @@
 #include <Spore\Cheats.h>
 #include <Spore\IO.h>
 #include <ctime>
-#include <mutex>
 
 virtual_detour(ShaderFragments_detour, Graphics::cMaterialManager, Graphics::IMaterialManager, bool(Resource::Database*)) {};
 
@@ -29,7 +28,6 @@ namespace ModAPI
 
 	extern FileStreamPtr logFile;
 	extern __time64_t logFileStartTime;
-	extern std::mutex logFileMutex;
 
 	long AttachDetour();
 	void DetachDetour();
