@@ -33,6 +33,8 @@
 #include <Spore\Cell.h>
 
 #include <Spore\Pollinator\AchievementsManager.h>
+#include <Spore\Sporepedia\ObjectTemplateDB.h>
+#include <Spore\Sporepedia\AssetBrowserQuery.h>
 
 #include <Spore\Editors\Editor.h>
 #include <Spore\Editors\EditorRequest.h>

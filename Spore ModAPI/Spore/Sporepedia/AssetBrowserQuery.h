@@ -15,6 +15,7 @@ namespace Sporepedia
 		/// Asset keys obtained after filtering by parameters
 		/* 20h */	eastl::vector<ResourceKey> parameterKeys;
 	};
+	ASSERT_SIZE(AssetBrowserQuery, 0x34);
 
 	/// Finds all the assets that match the given filter. This method will use a filter with the given ID
 	/// in the `AssetBrowserFilter` folder. The `dst` vector will be filled with one instance for every 
