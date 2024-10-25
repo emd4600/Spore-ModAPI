@@ -87,6 +87,7 @@
 #include <Spore\Simulator\cTribeTool.h>
 #include <Spore\Simulator\cTribeToolData.h>
 #include <Spore\Simulator\cTribeInputStrategy.h>
+#include <Spore\Simulator\cNpcTribeController.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -1180,6 +1181,10 @@ namespace Simulator
 
 	namespace Addresses(cObstacleManager) {
 		DefineAddress(Get, SelectAddress(0xB3D320, 0xB3D4C0));
+	}
+
+	namespace Addresses(cNpcTribeController) {
+		DefineAddress(Get, SelectAddress(0xCC8330, 0xCC8C90));
 	}
 }
 
