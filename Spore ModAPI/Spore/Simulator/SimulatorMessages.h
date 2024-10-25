@@ -128,7 +128,7 @@ namespace Simulator
 		// Civ Stage
 		/////////////
 
-		/// Sent when the cutscene for a new city appearing plays in civ stage
+		/// Sent when the cutscene for a new city appearing plays in civ stage. Not sent when a city is founded outside of a cutscene.
 		kMsgCinematicNewCityAppears = 0x05668f43,
 
 		/// Sent when the captured city's buildings restart their runtime effects in civ stage
@@ -153,7 +153,7 @@ namespace Simulator
 		// Space Stage
 		///////////////
 
-		/// Sent when launching a space stage game form the main menu
+		/// Sent when launching a space stage game from the main menu
 		kMsgSpaceGameFromLaunchScreen = 0x02364016,
 
 		/// Sent when the player gets new tools in a space stage cutscene (TODO: Does this also get called outside of cutscenes?)
