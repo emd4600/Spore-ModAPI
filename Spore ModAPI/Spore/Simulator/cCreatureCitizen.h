@@ -44,5 +44,6 @@ namespace Simulator
 
 	namespace Addresses(cCreatureCitizen) {
 		DeclareAddress(Update);  // 0xC24210 0xC24A30
+		DeclareAddress(TakeDamage);
 	}
 }

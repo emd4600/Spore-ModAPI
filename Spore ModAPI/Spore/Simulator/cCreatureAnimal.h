@@ -92,5 +92,6 @@ namespace Simulator
 		DeclareAddress(OnJumpLand);  // 0xC044D0 0xC04CB0
 		DeclareAddress(OnStartSwimming);  // 0xC04610 0xC04DF0
 		DeclareAddress(Update);  // 0xC0A590 0xC0AE30
+		DeclareAddress(TakeDamage);
 	}
 }
