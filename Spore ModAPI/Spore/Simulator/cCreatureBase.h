@@ -261,7 +261,7 @@ namespace Simulator
 		/* B14h */	float mDamageBoostAmount;  // not initialized
 		/* B18h */	bool mHasArmorBoost;
 		/* B1Ch */	float mArmorBoostAmount;  // not initialized
-		/* B20h */	cSpeciesProfile* mpSpeciesProfile;  // species profile?
+		/* B20h */	cSpeciesProfile* mpSpeciesProfile;
 		/* B24h */	uint32_t mProfileSeq;
 		/* B28h */	ResourceKey mSpeciesKey;
 		/* B34h */	int mAge;  // 1
