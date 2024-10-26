@@ -131,16 +131,25 @@ namespace Simulator
 		/// Sent when the cutscene for a new city appearing plays in civ stage. Not sent when a city is founded outside of a cutscene.
 		kMsgCinematicNewCityAppears = 0x05668f43,
 
-		/// Sent when the captured city's buildings restart their runtime effects in civ stage
+		/// Sent when a vehicle is sent to spice (Cutscene only)
+		kMsgCinematicSendVehicleToCommodityPart2 = 0x056cfe69,
+
+		/// Sent when a city is captured and plays an effect (TODO: What effect?) (Cutscene only)
+		kCinematicMessageCityChangeShowCaptureEffect = 0x05f4d02a,
+			
+		/// TODO (Cutscene only)
+		kCinematicMessageCityChangeTriggerVignette = 0x05f4d02a,
+
+		/// Sent when the captured city's buildings restart their runtime effects in civ stage (Cutscene only)
 		kMsgCinematicCityChangeStartBuildingsEffects = 0x05f4d02a,
 
-		/// Sent when the captured city's buildings swap their models in civ stage
+		/// Sent when the captured city's buildings swap their models in civ stage (Cutscene only)
 		kMsgCinematicCityChangeSwapBuildings = 0x05dfb77f,
 
-		/// Sent when the captured city's wall color changes in civ stage
+		/// Sent when the captured city's wall color changes in civ stage (Cutscene only)
 		kMsgCinematicCityChangeChangeWallColor = 0x05dfb782,
 
-		/// Sent when the captured city's civilization ownership changes in civ stage
+		/// Sent when the captured city's civilization ownership changes in civ stage (Cutscene only)
 		kMsgCinematicCityChangeChangeCivilization = 0x05dbc31e,
 
 		/// Sent when a tier 3 superweapon cutscene begins in civ stage (?)
