@@ -20,6 +20,7 @@
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
+#include <Spore\Simulator\cNpcTribeController.h>
 
 namespace Simulator
 {
@@ -234,6 +235,10 @@ namespace Simulator
 	/// ObstacleManager ///
 
 	auto_STATIC_METHOD_(cObstacleManager, cObstacleManager*, Get);
+
+	/// cNpcTribeController ///
+
+	auto_STATIC_METHOD_(cNpcTribeController, cNpcTribeController*, Get);
 }
 
 #endif
