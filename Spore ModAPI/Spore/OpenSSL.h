@@ -29,6 +29,7 @@ namespace Addresses(OpenSSL)
 	DeclareAddress(SSL_ctrl);
 	DeclareAddress(SSL_CTX_ctrl);
 	DeclareAddress(SSL_CTX_free);
+	DeclareAddress(SSL_CTX_load_verify_locations);
 	DeclareAddress(SSL_CTX_new);
 	DeclareAddress(SSL_CTX_set_cipher_list);
 	DeclareAddress(SSL_CTX_set_tmp_dh_callback);
@@ -61,6 +62,13 @@ namespace Addresses(OpenSSL)
 	DeclareAddress(ssl_load_ciphers);
 	DeclareAddress(ssl_sess_cert_free);
 	DeclareAddress(ssleay_rand_add);
+
+	DeclareAddress(ERR_clear_error);
+	DeclareAddress(ERR_error_string_n);
+	DeclareAddress(ERR_get_state);
+	DeclareAddress(ERR_print_errors_cb);
+	DeclareAddress(ERR_put_error);
+	DeclareAddress(ERR_set_error_data);
 
 	DeclareAddress(OPENSSL_add_all_algorithms_noconf);
 	DeclareAddress(OpenSSL_add_all_ciphers);
