@@ -21,6 +21,49 @@
 
 #include <Spore\Internal.h>
 
+namespace OpenSSL
+{
+	typedef void SSL;
+	typedef void SSL_CTX;
+	typedef void SSL_METHOD;
+	typedef void DH;
+	typedef void X509_STORE_CTX;
+	typedef void SSL_SESSION;
+	typedef void X509;
+	typedef void BIO;
+
+	int  SSL_accept(SSL* ssl);
+	int  SSL_clear(SSL* ssl);
+	int  SSL_connect(SSL* ssl);
+	long SSL_ctrl(SSL* ssl,int cmd, long larg, void* parg);
+	long SSL_CTX_ctrl(SSL_CTX* ctx, int cmd, long larg, void* parg);
+	void SSL_CTX_free(SSL_CTX* ctx);
+	int  SSL_CTX_load_verify_locations(SSL_CTX* ctx, const char* CAfile, const char* CApath);
+	SSL_CTX* SSL_CTX_new(SSL_METHOD* meth);
+	int	 SSL_CTX_set_cipher_list(SSL_CTX* ctx, const char* str);
+	void SSL_CTX_set_tmp_dh_callback(SSL_CTX* ctx, DH *(*dh)(SSL* ssl, int is_export, int keylength));
+	void SSL_CTX_set_verify(SSL_CTX* ctx, int mode, int (*callback)(int, X509_STORE_CTX*));
+	void SSL_CTX_set_verify_depth(SSL_CTX* ctx, int depth);
+	void SSL_free(SSL* ssl);
+	SSL_SESSION* SSL_get1_session(SSL* ssl);
+	int	  SSL_get_error(const SSL* s, int ret_code);
+	X509* SSL_get_peer_certificate(const SSL* s);
+	int   SSL_get_shutdown(const SSL* ssl);
+	int   SSL_library_init(void);
+	SSL*  SSL_new(SSL_CTX* ctx);
+	int   SSL_read(SSL* ssl,void* buf,int num);
+	void  SSL_SESSION_free(SSL_SESSION* ses);
+	SSL_SESSION* SSL_SESSION_new(void);
+	void  SSL_set_bio(SSL* s, BIO* rbio, BIO* wbio);
+	int	  SSL_set_session(SSL* to, SSL_SESSION* session);
+	int   SSL_shutdown(SSL* s);
+	int   SSL_write(SSL* ssl,const void* buf,int num);
+	SSL_METHOD* SSLv23_client_method(void);
+	SSL_METHOD* SSLv23_method(void);
+	SSL_METHOD* SSLv23_server_method(void);
+
+}
+
 namespace Addresses(OpenSSL)
 {
 	DeclareAddress(SSL_accept);
