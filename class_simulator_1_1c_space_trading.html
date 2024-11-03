@@ -143,6 +143,13 @@
               <a href="class_localized_string.html" class="m-doc">LocalizedString</a>&amp; dstSpiceText) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd>Generates what the NPC sells and buys from the player; called when the player enters the store communication screen.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5c5d21d2bf36489cf7c890260465a863" class="m-doc">CreateTradingObject</a>(</span><span class="m-doc-wrap"><a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&amp; dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> itemCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> itemCost) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Creates a trading object, which is an inventory item from <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a99cb37fda5c7de547eff55e2cf35d95f" class="m-doc">GroupIDs::<wbr />SpaceTrading_</a>.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -319,6 +326,38 @@
                 <tr>
                   <td>dstSpiceText&nbsp;<span class="m-label m-flat m-warning">out</span></td>
                   <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a5c5d21d2bf36489cf7c890260465a863"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Simulator::<wbr />cSpaceTrading::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c5d21d2bf36489cf7c890260465a863" class="m-doc-self">CreateTradingObject</a>(</span><span class="m-doc-wrap"><a href="c_space_inventory_item_8h.html#aa81d947a8a712f43f0eef7d0ee0f8ce5" class="m-doc">cSpaceInventoryItemPtr</a>&amp; dst,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_resource_key.html" class="m-doc">ResourceKey</a>&amp; itemID,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> itemCount,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> itemCost)</span></span>
+            </h3>
+            <p>Creates a trading object, which is an inventory item from <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a99cb37fda5c7de547eff55e2cf35d95f" class="m-doc">GroupIDs::<wbr />SpaceTrading_</a>.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">dst&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Pointer where the new object will be written.</td>
+                </tr>
+                <tr>
+                  <td>itemID</td>
+                  <td>Key to the item configuration in <a href="namespace_group_i_ds.html#a7336869349c1fdce783daaa13128fc87a99cb37fda5c7de547eff55e2cf35d95f" class="m-doc">GroupIDs::<wbr />SpaceTrading_</a></td>
+                </tr>
+                <tr>
+                  <td>itemCount</td>
+                  <td>Number of items to create</td>
+                </tr>
+                <tr>
+                  <td>itemCost</td>
+                  <td>Cost of the object</td>
                 </tr>
               </tbody>
             </table>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>RefCountTemplate class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Graphics::LayerSequence class | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          RefCountTemplate <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_object_8h.html">&lt;Spore ModAPI/Spore/Object.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_graphics.html">Graphics</a>::<wbr/></span>LayerSequence <span class="m-thin">class</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_layer_sequence_8h.html">&lt;Spore ModAPI/Spore/Graphics/LayerSequence.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -55,83 +55,33 @@
             <li>
               Reference
               <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
+                <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pro-attribs">Protected variables</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="derived-classes">
-          <h2><a href="#derived-classes">Derived classes</a></h2>
+        <section id="base-classes">
+          <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1c_app_system.html" class="m-doc">App::cAppSystem</a>
+              class <a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a>
+            </dt>
+            <dd>This interfaces defines a layer that is rendered every game loop, by callings its <a href="class_graphics_1_1_i_layer.html#ae4812c7ed39d6dcaf98088c7ae5211b0" class="m-doc">ILayer::<wbr />DrawLayer()</a> method.</dd>
+            <dt>
+              class <a href="class_ref_count_template.html" class="m-doc">RefCountTemplate</a>
             </dt>
             <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
             <dt>
-              class <a href="class_app_1_1c_config_manager.html" class="m-doc">App::cConfigManager</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_editors_1_1c_editor_anim_world.html" class="m-doc">Editors::cEditorAnimWorld</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1_layer_sequence.html" class="m-doc">Graphics::LayerSequence</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_graphics_1_1c_model_instance.html" class="m-doc">Graphics::cModelInstance</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_pollinator_1_1c_s_p_achievement_serializer.html" class="m-doc">Pollinator::cSPAchievementSerializer</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_cinematic_action.html" class="m-doc">Simulator::CinematicAction</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1_i_simulator_serializable_ref_counted.html" class="m-doc">Simulator::ISimulatorSerializableRefCounted</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_creature_ability.html" class="m-doc">Simulator::cCreatureAbility</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_simulator_1_1c_n_p_c_store.html" class="m-doc">Simulator::cNPCStore</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_skinner_1_1c_paint_system.html" class="m-doc">Skinner::cPaintSystem</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_skinner_1_1c_skin_painter.html" class="m-doc">Skinner::cSkinPainter</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_skinner_1_1c_skin_painter_pipeline.html" class="m-doc">Skinner::cSkinPainterPipeline</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_component_base.html" class="m-doc">Swarm::cComponentBase</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_description.html" class="m-doc">Swarm::cDescription</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_swarm_1_1c_effect_map_base.html" class="m-doc">Swarm::cEffectMapBase</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="class_u_i_1_1c_u_i_new_progress_bar.html" class="m-doc">UI::cUINewProgressBar</a>
+              struct <a href="struct_graphics_1_1_layer_sequence_1_1_sequence_layer.html" class="m-doc">SequenceLayer</a>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -139,8 +89,8 @@
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="a54109bcbe790fd6de898d069ad0c7458">
-              <span class="m-doc-wrap-bumper"><a href="#a54109bcbe790fd6de898d069ad0c7458" class="m-doc-self">~RefCountTemplate</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a01624a04be526e6a0254afec88e9eb1c">
+              <span class="m-doc-wrap-bumper"><a href="#a01624a04be526e6a0254afec88e9eb1c" class="m-doc-self">~LayerSequence</a>(</span><span class="m-doc-wrap">) <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -148,24 +98,72 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a556bf41081631e02765c2ac1de1c11c6">
-              <span class="m-doc-wrap-bumper">auto <a href="#a556bf41081631e02765c2ac1de1c11c6" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            <dt id="a463869742b4e8cc4c51031efbe8cb315">
+              <span class="m-doc-wrap-bumper">auto <a href="#a463869742b4e8cc4c51031efbe8cb315" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af349becdac09a19fd82adc55fdd28cca">
-              <span class="m-doc-wrap-bumper">auto <a href="#af349becdac09a19fd82adc55fdd28cca" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a></span>
+            <dt id="a2a062d5c026b2c1aa2de8c8141ab6861">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2a062d5c026b2c1aa2de8c8141ab6861" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae2e021a4539df2138d7d1d2f283b5ea4" class="m-doc">DrawLayer</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> layerIndex,
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>** viewers,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; statistics) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            </dt>
+            <dd>Renders this layer.</dd>
+            <dt id="a2b211bf9055238b5446d7b76804125c3">
+              <span class="m-doc-wrap-bumper">auto <a href="#a2b211bf9055238b5446d7b76804125c3" class="m-doc-self">AddLayer</a>(</span><span class="m-doc-wrap"><a href="class_graphics_1_1_i_layer.html" class="m-doc">ILayer</a>* layer,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> index,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="pro-attribs">
-          <h2><a href="#pro-attribs">Protected variables</a></h2>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a3804860933a4fcae687d2909765ad731">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a3804860933a4fcae687d2909765ad731" class="m-doc-self">mnRefCount</a>
+            <dt id="a0cff31f0351634503c19fc1d4790ce45">
+              eastl::vector&lt;<a href="struct_graphics_1_1_layer_sequence_1_1_sequence_layer.html" class="m-doc">SequenceLayer</a>&gt; <a href="#a0cff31f0351634503c19fc1d4790ce45" class="m-doc-self">mLayers</a>
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae2e021a4539df2138d7d1d2f283b5ea4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> Graphics::<wbr />LayerSequence::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae2e021a4539df2138d7d1d2f283b5ea4" class="m-doc-self">DrawLayer</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> flags,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> layerIndex,
+              <a href="class_app_1_1c_viewer.html" class="m-doc">App::<wbr />cViewer</a>** viewers,
+              <a href="struct_graphics_1_1_render_statistics.html" class="m-doc">RenderStatistics</a>&amp; statistics) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Renders this layer.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">flags</td>
+                  <td>The flags this layer was registered with, combined with the global render flags.</td>
+                </tr>
+                <tr>
+                  <td>layerIndex</td>
+                  <td>The layer index this layer was registered with.</td>
+                </tr>
+                <tr>
+                  <td>viewers</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>statistics</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
