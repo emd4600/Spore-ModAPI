@@ -21,9 +21,13 @@
 #include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\cNpcTribeController.h>
+#include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
 
 namespace Simulator
 {
+	auto_METHOD_(cScenarioEditModeDisplayStrategy, bool, Load);
+
+
 	void cHerd::SetEnabled(bool enabled)
 	{
 		mbEnabled = enabled;

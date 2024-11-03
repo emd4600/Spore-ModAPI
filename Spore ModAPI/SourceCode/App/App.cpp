@@ -43,6 +43,10 @@ namespace App
 		Args(const eastl::string16& path, eastl::hash_set<eastl::string16>& dstSkippedPaths, int& dstCount),
 		Args(path, dstSkippedPaths, dstCount));
 
+	auto_METHOD(PngEncoder, bool, EncodePNG,
+		Args(IO::IStream* stream, int mode),
+		Args(stream, mode));
+
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
 

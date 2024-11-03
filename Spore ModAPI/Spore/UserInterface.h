@@ -38,6 +38,8 @@
 #include <Spore\UTFWin\WindowIterators.h>
 #include <Spore\UTFWin\CursorManager.h>
 #include <Spore\UTFWin\SporeTooltipWinProc.h>
+#include <Spore\UTFWin\cSPUIMessageBox.h>
+#include <Spore\UTFWin\SporeStdDrawable.h>
 #include <Spore\UI\cSPAssetView.h>
 #include <Spore\UI\SpaceGameUI.h>
 #include <Spore\UI\GlobalUI.h>

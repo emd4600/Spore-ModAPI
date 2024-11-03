@@ -89,5 +89,6 @@ namespace Simulator
 		DeclareAddress(GetGravity);
 		DeclareAddress(GetHeightAt);
 		DeclareAddress(GetOrientation);
+		DeclareAddress(GetRadius);  // 0xB7DD80 TODO
 	}
 }

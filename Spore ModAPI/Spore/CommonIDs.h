@@ -312,6 +312,8 @@ namespace GroupIDs
 		ShaderFragments = 0x40212002,
 		Shaders = 0x40212004,
 
-		Scripts1 = 0x24A4F5A
+		Scripts1 = 0x24A4F5A,
+
+		SharedDialogs = 0x490F6945
 	};
 }
