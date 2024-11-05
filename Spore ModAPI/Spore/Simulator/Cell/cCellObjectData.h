@@ -34,6 +34,8 @@ namespace Simulator
 			/// Target position, changing this moves the cell towards the target
 			/* 08h */	Math::Vector3 mTargetPosition;
 			/* 14h */	Math::Quaternion mTargetOrientation;
+
+			// Multiplying these 2 values by a scalar results in no significant change to movement
 			/* 24h */	Math::Vector3 field_24;
 			/* 30h */	Math::Vector3 field_30;
 			/* 3Ch */	int field_3C;
@@ -42,8 +44,8 @@ namespace Simulator
 			/* 48h */	Transform mTransform;
 			/// Elevation of the cell relative to the current level
 			/* 80h */	float mRelativeElevation;
-			/* 84h */	Math::Vector3 field_84;
-			/* 90h */	Math::Vector3 field_90;
+			/* 84h */	Math::Vector3 field_84; // Previous position?
+			/* 90h */	Math::Vector3 field_90; // has something to do with speed of bouncing backwards off of something. can be set negative for a speed boost in the traveled direction.
 			/* 9Ch */	int field_9C;
 			/* A0h */	float mOpacity;
 			/* A4h */	float mTargetOpacity;  // changed by sub_E7C510
@@ -51,8 +53,8 @@ namespace Simulator
 			/* ACh */	float field_AC;
 			/* B0h */	int field_B0;
 			/* B4h */	float mTargetSize;
-			/* B8h */	float field_B8;
-			/* BCh */	float field_BC;
+			/* B8h */	float field_B8; // Something to do with speed? Player cell hovers around 10-15 at speed lvl 1
+			/* BCh */	float mAcceleration; // Movement acceleration? By default a very low number, causes chopping issues when too high
 			/* C0h */	Transform field_C0;
 			/* F8h */	int field_F8;
 			/// Key of the main model used, this is 0 for all cells that are not actual creatures.
@@ -64,35 +66,37 @@ namespace Simulator
 			/* 112h */	bool field_112;
 			/* 113h */	bool field_113;
 			/* 114h */	int field_114;
+			/// field_118 value seems to vary between 0 to double digits, but is always above 0 when hatched and -1 when in egg.
+			/// seems to be 0 when cell is at rest and 18 or 48 when cell is moving, depending on speed ability level.
 			/* 118h */	int field_118;
 			/* 11Ch */	int field_11C;
-			/* 120h */	int field_120;
-			/* 124h */	int field_124;
-			/* 128h */	int field_128;
+			/* 120h */	int field_120; // 9 in starter cell
+			/* 124h */	int field_124; // 1 in starter cell
+			/* 128h */	int field_128; // seems to change per level or upgrade?
 			/* 12Ch */	Math::Vector3 field_12C;
 			/* 138h */	Math::Vector3 field_138;
 			/* 144h */	int field_144;
 			/* 148h */	int field_148;
 			/* 14Ch */	int field_14C;
 			/* 150h */	float field_150;
-			/* 154h */	int field_154;  // probably float
+			/* 154h */	float field_154;  // probably float
 			/* 158h */	int field_158;
-			/* 15Ch */	float field_15C;
+			/* 15Ch */	float field_15C; // -1
 			/* 160h */	int field_160;
 			/* 164h */	int field_164;
-			/* 168h */	int field_168;
+			/* 168h */	uint32_t field_168;
 			/* 16Ch */	int field_16C;
 			/* 170h */	int field_170;
 			/* 174h */	int field_174;
 			/* 178h */	int field_178;
-			/* 17Ch */	int field_17C;
+			/* 17Ch */	uint32_t field_17C;
 			/* 180h */	int field_180;
 			/* 184h */	int field_184;
 			/* 188h */	int field_188;
 			//TODO requested animation? E6D9D6
 			/* 18Ch */	CellAnimations field_18C;
 			/* 190h */	int field_190;
-			/* 194h */	int field_194;
+			/* 194h */	uint32_t field_194;
 			/* 198h */	int field_198;
 			/* 19Ch */	int field_19C;
 			/* 1A0h */	int field_1A0;
@@ -107,7 +111,7 @@ namespace Simulator
 			/* 1C4h */	int field_1C4;
 			/* 1C8h */	int field_1C8;
 			/* 1CCh */	int field_1CC;
-			/* 1D0h */	float field_1D0;
+			/* 1D0h */	float field_1D0; // approx 0.55 in starter cell, seems to go up into the hundreds
 			/* 1D4h */	int field_1D4;
 			/* 1D8h */	int field_1D8;
 			/* 1DCh */	int field_1DC;
@@ -143,11 +147,13 @@ namespace Simulator
 			/// Index to the object in cCellGFX::mCellGFXObjects that visually represents this cell (its model, animated creature, etc.)
 			/* 248h */	cObjectPoolIndex mGFXObjectIndex;
 			/* 24Ch */	int field_24C;
-			/* 250h */	int field_250;
-			/* 254h */	int field_254;
-			/* 258h */	int field_258;
-			/* 25Ch */	int field_25C;
-			/* 260h */	int field_260;
+			/* 250h */	int field_250; // 4
+			/// From f254 to f260, the values seem to increase when adding speed parts. appears to be movement related? Can crash the game if set improperly
+			/* 254h */	int field_254; // 1
+			/* 258h */	int field_258; // 2
+			/* 25Ch */	int field_25C; // 3
+			/* 260h */	int field_260; // 4
+			///
 			/* 264h */	int field_264;
 			/* 268h */	int field_268;
 			/* 26Ch */	int field_26C;
