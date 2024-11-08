@@ -218,6 +218,7 @@ namespace GroupIDs
 		SpaceTrading_ = 0x034D97FA,
 
 		TribalTools = 0xF37C24E6,
+		TribeToolData = 0x04292F52,
 		TribePlans = 0x72D02C25,
 
 		Abilities = 0x01B68DB4,
