@@ -55,7 +55,7 @@ namespace Editors
 
 	struct EditorRigblockPaint
 	{
-		/* 00h */	uint32_t mPaintID;
+		/* 00h */	uint32_t mPaintID; // ID of the skinPaint_script~ entry
 		/* 04h */	ColorRGB mPaintColor1;
 		/* 10h */	ColorRGB mPaintColor2;
 	};
