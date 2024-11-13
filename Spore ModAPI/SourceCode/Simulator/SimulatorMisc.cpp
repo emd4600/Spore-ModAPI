@@ -20,9 +20,14 @@
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
+#include <Spore\Simulator\cNpcTribeController.h>
+#include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
 
 namespace Simulator
 {
+	auto_METHOD_(cScenarioEditModeDisplayStrategy, bool, Load);
+
+
 	void cHerd::SetEnabled(bool enabled)
 	{
 		mbEnabled = enabled;
@@ -234,6 +239,10 @@ namespace Simulator
 	/// ObstacleManager ///
 
 	auto_STATIC_METHOD_(cObstacleManager, cObstacleManager*, Get);
+
+	/// cNpcTribeController ///
+
+	auto_STATIC_METHOD_(cNpcTribeController, cNpcTribeController*, Get);
 }
 
 #endif

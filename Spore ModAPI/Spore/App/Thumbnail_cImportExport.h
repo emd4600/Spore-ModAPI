@@ -13,6 +13,35 @@
 
 namespace App
 {
+	struct PngEncoder {
+
+		bool EncodePNG(IO::IStream* outputStream, int mode);
+
+		/* 00h */	eastl::vector<int> field_0;
+		/* 14h */	int field_14;
+		/* 18h */	int field_18;
+		/* 1Ch */	int field_1C;  // not initialized
+		/* 20h */	bool field_20;
+		/* 24h */	int field_24;
+		/* 28h */	int field_28;  // -1
+		/* 2Ch */	int field_2C;  // -1
+		/* 30h */	int field_30;
+		/* 34h */	int field_34;
+		/* 38h */	int field_38;
+		/* 3Ch */	int field_3C;
+		/* 40h */	int field_40;
+		/* 44h */	int field_44;
+		/* 48h */	int field_48;
+		/* 4Ch */	int field_4C;  // 8
+		/* 50h */	int field_50;
+		/* 54h */	bool field_54;  // not initialized
+		/* 55h */	bool field_55;
+		/* 56h */	bool field_56;
+		/* 58h */	eastl::vector<int8_t> mData;
+		/* 6Ch */	int field_6C;
+	};
+	ASSERT_SIZE(PngEncoder, 0x70);
+
 	struct ThumbnailDecodedMetadata
 	{
 		ThumbnailDecodedMetadata() = default;
@@ -112,7 +141,7 @@ namespace App
 		/* 44h */	uint32_t mMachineId;  // not initialized
 		/* 48h */	eastl::hash_map<int, int> field_48;
 		/* 68h */	eastl::hash_map<int, int> field_68;
-		/* 88h */	char padding_88[0xF8 - 0x88];
+		/* 88h */	PngEncoder mPngEncoder;
 		/* F8h */	int field_F8;
 		/* FCh */	int field_FC;
 		/* 100h */	int field_100;
@@ -138,5 +167,10 @@ namespace App
 		DeclareAddress(DecodePNG);  // 0x5FBA10 0x5FBB90
 		DeclareAddress(SaveFilePaths);  // 0x5F89C0 0x5F8B60
 		DeclareAddress(ImportDirectoryPNGs);  // 0x5FC900 0x5FCA80
+	}
+
+	namespace Addresses(PngEncoder)
+	{
+		DeclareAddress(EncodePNG);  // 0x68E660 0x68e190
 	}
 }

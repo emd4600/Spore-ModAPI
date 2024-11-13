@@ -90,6 +90,13 @@ namespace Simulator
 		/// @param[out] dstSpiceText
 		void GenerateNPCStore(cPlanetRecord* planetRecord, LocalizedString& dstSpiceText);
 
+		/// Creates a trading object, which is an inventory item from GroupIDs::SpaceTrading_.
+		/// @param[out] dst Pointer where the new object will be written.
+		/// @param itemID Key to the item configuration in GroupIDs::SpaceTrading_
+		/// @param itemCount Number of items to create
+		/// @param itemCost Cost of the object
+		void CreateTradingObject(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, int itemCount, float itemCost);
+
 	public:
 		struct RareGroup {
 			/* 00h */	uint32_t mGroupID;
@@ -126,5 +133,6 @@ namespace Simulator
 		DeclareAddress(GetRareHasBeenFound);  // 0x103BC30 0x103AC50
 		DeclareAddress(SetRareAsFound);  // 0x1040820 0x103FBB0
 		DeclareAddress(GenerateNPCStore);  // 0x103F560 0x103E8F0
+		DeclareAddress(CreateTradingObject);  // 0x103B470 0x103A490
 	}
 }

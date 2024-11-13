@@ -25,6 +25,7 @@
 #include <Spore\Graphics\GlobalState.h>
 #include <Spore\Graphics\ActiveState.h>
 #include <Spore\Graphics\cFrustumCull.h>
+#include <Spore\Graphics\LayerSequence.h>
 
 namespace Graphics
 {
@@ -194,6 +195,20 @@ namespace Graphics
 
 		D3DPRESENT_PARAMETERS& GetPresentParams() {
 			return *(D3DPRESENT_PARAMETERS*)(GetAddress(ActiveState, sPresentParams));
+		}
+	}
+
+
+	int LayerSequence::AddRef() {
+		return RefCountTemplate::AddRef();
+	}
+	int LayerSequence::Release() {
+		return RefCountTemplate::Release();
+	}
+	LayerSequence::~LayerSequence() {}
+	void LayerSequence::DrawLayer(int flags, int layerIndex, App::cViewer** viewers, RenderStatistics& statistics) {
+		for (auto& layer : mLayers) {
+			layer.layer->DrawLayer(layer.flags, layer.layerIndex, viewers, statistics);
 		}
 	}
 }
