@@ -11,6 +11,7 @@
 #include <Spore\Simulator\cCreatureCitizen.h>
 #include <Spore\Simulator\cCreatureBase.h>
 #include <Spore\Simulator\cCropCirclesToolStrategy.h>
+#include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
 #include <Spore\Simulator\cDeepSpaceProjectileToolStrategy.h>
 #include <Spore\Simulator\cDefaultAoETool.h>
 #include <Spore\Simulator\cDefaultBeamTool.h>
@@ -87,6 +88,7 @@
 #include <Spore\Simulator\cTribeTool.h>
 #include <Spore\Simulator\cTribeToolData.h>
 #include <Spore\Simulator\cTribeInputStrategy.h>
+#include <Spore\Simulator\cNpcTribeController.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -1054,6 +1056,11 @@ namespace Simulator
 		DefineAddress(GetRareHasBeenFound, SelectAddress(0x103BC30, 0x103AC50));
 		DefineAddress(SetRareAsFound, SelectAddress(0x1040820, 0x103FBB0));
 		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
+		DefineAddress(CreateTradingObject, SelectAddress(0x103B470, 0x103A490));
+	}
+
+	namespace Addresses(cScenarioEditModeDisplayStrategy) {
+		DefineAddress(Load, SelectAddress(0xED6000, 0xED5C70));
 	}
 
 	namespace Addresses(cGamePersistenceManager) 
@@ -1180,6 +1187,10 @@ namespace Simulator
 
 	namespace Addresses(cObstacleManager) {
 		DefineAddress(Get, SelectAddress(0xB3D320, 0xB3D4C0));
+	}
+
+	namespace Addresses(cNpcTribeController) {
+		DefineAddress(Get, SelectAddress(0xCC8330, 0xCC8C90));
 	}
 }
 

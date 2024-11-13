@@ -411,6 +411,11 @@ namespace App
 		DefineAddress(ImportDirectoryPNGs, SelectAddress(0x5FC900, 0x5FCA80));
 	}
 
+	namespace Addresses(PngEncoder)
+	{
+		DefineAddress(EncodePNG, SelectAddress(0x68E660, 0x68e190));
+	}
+
 	namespace Addresses(cLocaleManager)
 	{
 		DefineAddress(Get, SelectAddress(0x67DF60, 0x67DE00));
