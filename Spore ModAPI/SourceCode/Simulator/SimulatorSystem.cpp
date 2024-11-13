@@ -53,7 +53,9 @@ namespace Simulator
 	UI::Minimap* GetMinimapWindow() {
 		if (WindowManager.GetMainWindow()) {
 			UTFWin::IWindow* minimapHolder = WindowManager.GetMainWindow()->FindWindowByID(0x0190722E);
-			return object_cast<UI::Minimap>(minimapHolder->FindWindowByID(0x0));
+			if (minimapHolder) {
+				return object_cast<UI::Minimap>(minimapHolder->FindWindowByID(0x0));
+			}
 		}
 		return nullptr;
 	}
