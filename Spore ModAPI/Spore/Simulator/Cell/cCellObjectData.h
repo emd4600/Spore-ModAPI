@@ -54,7 +54,7 @@ namespace Simulator
 			/* B0h */	int field_B0;
 			/* B4h */	float mTargetSize;
 			/* B8h */	float field_B8; // Something to do with speed? Player cell hovers around 10-15 at speed lvl 1
-			/* BCh */	float mAcceleration; // Movement acceleration? By default a very low number, causes chopping issues when too high
+			/* BCh */	float field_BC; // mAcceleration Movement acceleration? By default a very low number, causes chopping issues when too high
 			/* C0h */	Transform field_C0;
 			/* F8h */	int field_F8;
 			/// Key of the main model used, this is 0 for all cells that are not actual creatures.
