@@ -24,7 +24,6 @@
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\UTFWin\IWindowManager.h>
-#include <Spore\UTFWin\IWindow.h>
 #include <Spore\ModAPI.h>
 
 namespace Simulator
