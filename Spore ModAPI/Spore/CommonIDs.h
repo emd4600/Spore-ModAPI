@@ -53,7 +53,7 @@ enum ModelTypes
 
 };
 
-enum EditorManipulators
+enum EditorManipulators : uint32_t
 {
 	kEditorManipulationStackingSimple = 0x889CDBFF,
 	kEditorManipulationStacking = 0x67B68E4D,
