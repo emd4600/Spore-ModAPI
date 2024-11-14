@@ -110,7 +110,7 @@ namespace Editors
 		kEditorRigblockModelIsNullBlock = 0x14,
 		kEditorRigblockModelUseHullForBBox = 0x15,
 		kEditorRigblockModelHasStayAbove = 0x16,
-		kEditorRigblockModelHasSnapDawnTo = 0x17,
+		kEditorRigblockModelHasSnapDownTo = 0x17,
 		kEditorRigblockModelHideDeformHandles = 0x18,
 		kEditorRigblockModelHideRotationHandles = 0x19,
 		kEditorRigblockModelHasAlignLateralWith = 0x1A,
