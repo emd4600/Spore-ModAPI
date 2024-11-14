@@ -122,7 +122,7 @@ namespace Editors
 		kEditorRigblockModelHasSocketConnector = 0x20,
 		kEditorRigblockModelCellAllowOnTopOfBody = 0x21,
 		kEditorRigblockModelPreferToBeOnPlaneOfSymmetry = 0x22,
-		kEditorRigblockModelCanBeParentless = 0x23,
+		kEditorRigblockModelCannotBeParentless = 0x23, // formerly kEditorRigblockModelCanBeParentless; functionality appeared to be inverted
 		kEditorRigblockModelBoundsCheckOnlyForDelete = 0x24,
 
 		kEditorRigblockModelHasRotationBallHandle = 0x26,
