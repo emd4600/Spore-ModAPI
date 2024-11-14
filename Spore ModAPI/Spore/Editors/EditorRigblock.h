@@ -226,7 +226,7 @@ namespace Editors
 		/* CCh */	Matrix3 field_CC;
 		/* F0h */	Matrix3 mUserOrientation;
 		/* 114h */	Matrix3 field_114;
-		/* 138h */	Vector3 field_138;
+		/* 138h */	Vector3 field_138; // position relative to parent?
 		/* 144h */	Vector3 field_144;
 		/* 150h */	int field_150;  // -2
 		/* 154h */	EditorBaseHandlePtr mAxisHandles[3];  //TODO  sub_483CE0
