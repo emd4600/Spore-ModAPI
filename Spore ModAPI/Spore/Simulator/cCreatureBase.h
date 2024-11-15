@@ -279,9 +279,10 @@ namespace Simulator
 		/* B60h */	bool mbUpdateInteractionEffect;
 		/* B61h */	bool mbUpdateMotiveEffect;
 		/* B62h */	bool mbIsDiseased;
-		/* B63h */	bool field_B63;
+		/// Setting this to true deletes the creature
+		/* B63h */	bool mbMarkedForDeletion;
 		/* B64h */	bool field_B64;  // true
-		/* B65h */	bool mbColorIsIdentity;
+		/* B65h */	bool mbColorIsIdentity; // requires age-up or other model reload to take effect
 		/* B66h */	bool field_B66;
 		/* B67h */	bool mbCasted;
 		/* B68h */	bool field_B68;  // true
@@ -338,7 +339,8 @@ namespace Simulator
 		/* E62h */	bool field_E62;
 		/* E63h */	bool field_E63;
 		/* E64h */	int field_E64;
-		/* E68h */	bool field_E68;
+		/// If true, green sparkles and smiles will emanate from the creature
+		/* E68h */	bool mbMindMelded;
 		/* E6Ch */	int field_E6C;
 		/// Index to default attack ability, which is generally bite or its improvements (energy or poison blade)
 		/* E70h */	int mDefaultAttackAbilityIndex;  // -1
