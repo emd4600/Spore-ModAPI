@@ -282,7 +282,7 @@ namespace Simulator
 		/// Setting this to true deletes the creature
 		/* B63h */	bool mbMarkedForDeletion;
 		/* B64h */	bool field_B64;  // true
-		/* B65h */	bool mbColorIsIdentity; // requires age-up or other model reload to take effect
+		/* B65h */	bool mbColorIsIdentity; // if applied at runtime, requires age-up or other model reload to take effect
 		/* B66h */	bool field_B66;
 		/* B67h */	bool mbCasted;
 		/* B68h */	bool field_B68;  // true
