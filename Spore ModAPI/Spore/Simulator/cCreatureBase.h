@@ -227,7 +227,8 @@ namespace Simulator
 		/* 6Ch */	virtual void func6Ch(int deltaTime);  // called by Update
 		/* 70h */	virtual void func70h(float deltaTimeSeconds);  // called by Update
 		/* 74h */	virtual void func74h(void*);  // related to babies growing up
-		/* 78h */	virtual void func78h();
+		/// Make the creature grow up and play the baby grow up effect. Will run even if the creature is already an adult.
+		/* 78h */	virtual void GrowUp();
 		/* 7Ch */	virtual float GetBaseMaxHitPoints() = 0;
 		/* 80h */	virtual float CalculateScale(bool isBaby);
 		/* 84h */	virtual void SetCreatureTarget(cCombatant* pTarget, bool, int intentionTowardsTarget);  //TODO check loc_D3242E
