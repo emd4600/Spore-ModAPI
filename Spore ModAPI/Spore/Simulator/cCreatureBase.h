@@ -208,7 +208,7 @@ namespace Simulator
 		/// @returns
 		int PlayVoice(const char* pName, int param2, int param3);
 
-		bool IsHervibore();
+		bool IsHervibore(); // also returns true for omnivores
 
 
 		/* 54h */	virtual void CreateLocomotionStrategy();
