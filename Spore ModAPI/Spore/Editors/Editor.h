@@ -203,7 +203,8 @@ namespace Editors
 		/// its current animation and return to the neutral, motionless pose.
 		void SetCreatureToNeutralPose();
 
-		bool AddCreature(int, const ResourceKey* key = nullptr);
+		/// Adds a creature to the test drive, crashes in other modes.
+		bool AddCreature(int age, const ResourceKey* key = nullptr);
 
 		void PostEventToActors(uint32_t eventID, int = -1, float = 1.0f, float = 0.0f);
 
