@@ -75,6 +75,10 @@ bool AnimEditorMode::Initialize(App::IGameModeManager* pManager)
 					request.shopperID = id("CreatureShopper");
 					Sporepedia::ShopperRequest::Show(request);
 				}
+				else if (line.HasFlag("exit"))
+				{
+					GameModeManager.SetActiveMode(kGGEMode);
+				}
 				size_t numArgs;
 				if (auto args = line.GetOptionRange("play", &numArgs, 1, 2))
 				{
@@ -93,7 +97,7 @@ bool AnimEditorMode::Initialize(App::IGameModeManager* pManager)
 
 		const char* GetDescription(ArgScript::DescriptionMode mode) const override
 		{
-			return "Enters into anim editor";
+			return "Enters into anim editor. Use the flags -add and -remove to add or change creatures, and -exit to leave the mode.";
 		}
 	};
 
