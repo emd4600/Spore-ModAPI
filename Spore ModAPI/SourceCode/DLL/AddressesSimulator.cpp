@@ -256,7 +256,7 @@ namespace Simulator
 		DefineAddress(OnJumpLand, SelectAddress(0xC14670, 0xC14E10));
 		DefineAddress(OnStartSwimming, SelectAddress(0xC147D0, 0xC14F70));
 		DefineAddress(Update, SelectAddress(0xC20C50, 0xC21530));
-		DefineAddress(IsHervibore, SelectAddress(0xC0B040, 0xC0B8E0));
+		DefineAddress(IsHerbivore, SelectAddress(0xC0B040, 0xC0B8E0));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)
