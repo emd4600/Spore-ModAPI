@@ -208,7 +208,8 @@ namespace Simulator
 		/// @returns
 		int PlayVoice(const char* pName, int param2, int param3);
 
-		bool IsHerbivore(); // also returns true for omnivores
+		/// also returns true for omnivores
+		bool IsHervibore(); // TODO: fix typo without causing crash.
 
 
 		/* 54h */	virtual void CreateLocomotionStrategy();
@@ -420,6 +421,6 @@ namespace Simulator
 		DeclareAddress(OnJumpLand);  // 0xC14670 0xC14E10
 		DeclareAddress(OnStartSwimming);  // 0xC147D0 0xC14F70
 		DeclareAddress(Update);  // 0xC20C50 0xC21530
-		DeclareAddress(IsHerbivore);  // 0xC0B040 0xC0B8E0
+		DeclareAddress(IsHervibore);  // 0xC0B040 0xC0B8E0
 	}
 }
