@@ -204,7 +204,7 @@ namespace Editors
 		void SetCreatureToNeutralPose();
 
 		/// Adds a creature to the test drive, crashes in other modes.
-		bool AddCreature(int age, const ResourceKey* key = nullptr);
+		bool AddCreature(int, const ResourceKey* key = nullptr);
 
 		void PostEventToActors(uint32_t eventID, int = -1, float = 1.0f, float = 0.0f);
 
@@ -380,7 +380,8 @@ namespace Editors
 		/* 280h */	uint32_t mSkyBoxEffectID;
 		/* 284h */	int field_284;
 		/* 288h */	float field_288;  // 1.2
-		/* 28Ch */	TexturePtr mpThumbnailTexture;
+		/// Briefly set when saving a creature, then immediately unset.
+		/* 28Ch */	TexturePtr mpThumbnailTexture; 
 		/* 290h */	int field_290;
 		/* 294h */	IShadowWorldPtr mpShadowWorld;
 		/* 298h */	Graphics::ShadowMapInfo* mpShadowMapInfo;
