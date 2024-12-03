@@ -23,6 +23,7 @@
 #include <Spore\Simulator\SubSystem\SpacePlayerData.h>
 #include <Spore\Simulator\SubSystem\GameViewManager.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
+#include <Spore\UTFWin\IWindowManager.h>
 #include <Spore\ModAPI.h>
 
 namespace Simulator
@@ -47,6 +48,16 @@ namespace Simulator
 		SpacePlayerData::Get()->mpActivePlanet = planet.get();
 
 		GameViewManager.PrepareSimulator();
+	}
+
+	UI::Minimap* GetMinimapWindow() {
+		if (WindowManager.GetMainWindow()) {
+			UTFWin::IWindow* minimapHolder = WindowManager.GetMainWindow()->FindWindowByID(0x0190722E);
+			if (minimapHolder) {
+				return object_cast<UI::Minimap>(minimapHolder->FindWindowByID(0x0));
+			}
+		}
+		return nullptr;
 	}
 
 	/// cStrategy ///
