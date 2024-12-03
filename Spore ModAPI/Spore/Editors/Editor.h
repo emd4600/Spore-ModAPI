@@ -204,7 +204,7 @@ namespace Editors
 		void SetCreatureToNeutralPose();
 
 		/// Adds a creature to the test drive, crashes in other modes.
-		bool AddCreature(int, const ResourceKey* key = nullptr);
+		bool AddCreature(int = 1, const ResourceKey* key = nullptr);
 
 		void PostEventToActors(uint32_t eventID, int = -1, float = 1.0f, float = 0.0f);
 
