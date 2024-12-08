@@ -300,7 +300,7 @@ namespace Editors
 		/* 143h */	bool field_143;  // not initialized
 		/* 144h */	bool field_144;  // true
 		/* 148h */	ObjectPtr field_148;
-		/* 14Ch */	int field_14C; // vertebra? only present in creature-like editor
+		/* 14Ch */	uint32_t field_14C; // vertebra? only present in creature-like editor
 		/* 150h */	cEditorSkinPtr mpEditorSkin;  // something related with painting?  uses sub_4C3E70 to return something that parts also use
 		/* 154h */	cEditorSkinPtr field_154;
 
