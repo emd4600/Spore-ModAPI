@@ -385,6 +385,61 @@ namespace Simulator
 			}
 		};
 
+		template <>
+		struct SerializationTypes::SerializedType<ColorRGB>
+		{
+			static bool Read(ISerializerReadStream* stream, ColorRGB* dst) {
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->r);
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->g);
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->b);
+				return true;
+			}
+
+			static bool Write(ISerializerWriteStream* stream, ColorRGB* src) {
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->r);
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->g);
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->b);
+				return true;
+			}
+
+			static void ReadText(const eastl::string& str, ColorRGB* dst) {
+				auto data = eastl::string16(eastl::string16::CtorConvert(), str).c_str();
+				*dst = ColorRGB(atol(str.c_str()));
+			}
+
+			static void WriteText(char* buf, ColorRGB* src) {
+				sprintf_s(buf, 1024, "0x%x", src->ToIntColor().value);
+			}
+		};
+
+		template <>
+		struct SerializationTypes::SerializedType<ColorRGBA>
+		{
+			static bool Read(ISerializerReadStream* stream, ColorRGBA* dst) {
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->r);
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->g);
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->b);
+				IO::ReadFloat(stream->GetRecord()->GetStream(), &dst->a);
+				return true;
+			}
+
+			static bool Write(ISerializerWriteStream* stream, ColorRGBA* src) {
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->r);
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->g);
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->b);
+				IO::WriteFloat(stream->GetRecord()->GetStream(), &src->a);
+				return true;
+			}
+
+			static void ReadText(const eastl::string& str, ColorRGBA* dst) {
+				auto data = eastl::string16(eastl::string16::CtorConvert(), str).c_str();
+				*dst = ColorRGBA(atol(str.c_str()));
+			}
+
+			static void WriteText(char* buf, ColorRGBA* src) {
+				sprintf_s(buf, 1024, "0x%x", src->ToIntColor().value);
+			}
+		};
 
 		template<typename T>
 		bool Read(ISerializerReadStream* stream, T* dst)

@@ -208,7 +208,8 @@ namespace Simulator
 		/// @returns
 		int PlayVoice(const char* pName, int param2, int param3);
 
-		bool IsHervibore();
+		/// also returns true for omnivores
+		bool IsHervibore(); // TODO: fix typo without causing crash.
 
 
 		/* 54h */	virtual void CreateLocomotionStrategy();
@@ -227,7 +228,8 @@ namespace Simulator
 		/* 6Ch */	virtual void func6Ch(int deltaTime);  // called by Update
 		/* 70h */	virtual void func70h(float deltaTimeSeconds);  // called by Update
 		/* 74h */	virtual void func74h(void*);  // related to babies growing up
-		/* 78h */	virtual void func78h();
+		/// Make the creature grow up and play the baby grow up effect. Will run even if the creature is already an adult.
+		/* 78h */	virtual void GrowUp();
 		/* 7Ch */	virtual float GetBaseMaxHitPoints() = 0;
 		/* 80h */	virtual float CalculateScale(bool isBaby);
 		/* 84h */	virtual void SetCreatureTarget(cCombatant* pTarget, bool, int intentionTowardsTarget);  //TODO check loc_D3242E
@@ -261,7 +263,7 @@ namespace Simulator
 		/* B14h */	float mDamageBoostAmount;  // not initialized
 		/* B18h */	bool mHasArmorBoost;
 		/* B1Ch */	float mArmorBoostAmount;  // not initialized
-		/* B20h */	cSpeciesProfile* mpSpeciesProfile;  // species profile?
+		/* B20h */	cSpeciesProfile* mpSpeciesProfile;
 		/* B24h */	uint32_t mProfileSeq;
 		/* B28h */	ResourceKey mSpeciesKey;
 		/* B34h */	int mAge;  // 1
@@ -279,9 +281,10 @@ namespace Simulator
 		/* B60h */	bool mbUpdateInteractionEffect;
 		/* B61h */	bool mbUpdateMotiveEffect;
 		/* B62h */	bool mbIsDiseased;
-		/* B63h */	bool field_B63;
+		/// Setting this to true deletes the creature
+		/* B63h */	bool mbMarkedForDeletion;
 		/* B64h */	bool field_B64;  // true
-		/* B65h */	bool mbColorIsIdentity;
+		/* B65h */	bool mbColorIsIdentity; // if applied at runtime, requires age-up or other model reload to take effect
 		/* B66h */	bool field_B66;
 		/* B67h */	bool mbCasted;
 		/* B68h */	bool field_B68;  // true
@@ -338,7 +341,8 @@ namespace Simulator
 		/* E62h */	bool field_E62;
 		/* E63h */	bool field_E63;
 		/* E64h */	int field_E64;
-		/* E68h */	bool field_E68;
+		/// If true, green sparkles and smiles will emanate from the creature
+		/* E68h */	bool mbMindMelded;
 		/* E6Ch */	int field_E6C;
 		/// Index to default attack ability, which is generally bite or its improvements (energy or poison blade)
 		/* E70h */	int mDefaultAttackAbilityIndex;  // -1

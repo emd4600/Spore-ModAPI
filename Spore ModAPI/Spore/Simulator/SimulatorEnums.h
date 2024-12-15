@@ -743,7 +743,9 @@ namespace Simulator
 		kCitizenActionEat = 0,
 		kCitizenActionFish = 1,
 		kCitizenActionGather = 2,
-		kCitizenActionGrabTool = 3,
+		kCitizenActionGrabTool = 3, // actionObject = cTribeTool
+
+		kCitizenActionWalkTo = 4, // actionObject = nullptr, cannot be manually called via DoAction
 
 		kCitizenActionHeal = 5,
 
@@ -761,10 +763,12 @@ namespace Simulator
 		kCitizenActionFeedWild = 20,
 		kCitizenActionGift2 = 21,
 
-		kCitizenActionRepair = 24,
+		kCitizenActionRepair = 24, // actionObject = cTribeHut or cTribeTool
 		kCitizenActionTame = 25,
 		kCitizenActionRecruit = 26,
 		kCitizenActionGatherMeat = 27,
+
+		kCitizenActionUnk1 = 28, // common ID, actionObject = nullptr
 	};
 
 	enum HandheldItem
