@@ -6,6 +6,7 @@
 #include <Spore\Simulator\cGameBundleContainer.h>
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\cCity.h>
+#include <Spore\Simulator\cHerd.h>
 #include <Spore\Simulator\cTribeHut.h>
 #include <Spore\Simulator\cTribePlanner.h>
 #include <Spore\Simulator\cTribeTool.h>
@@ -72,7 +73,7 @@ namespace Simulator
 		/* 90h */	virtual eastl::vector<cCreatureCitizenPtr>& GetTribeMembers();
 		/// Returns a vector of all selectable members of the tribe
 		/* 94h */	virtual eastl::vector<cSpatialObjectPtr>& GetSelectableMembers();
-		/* 98h */	virtual cCreatureCitizen* SpawnMember(int);
+		/* 98h */	virtual cCreatureCitizen* SpawnMember(int age);
 		/// Removes a member of the tribe. index seems to cause issues if not 0.
 		/* 9Ch */	virtual void func9Ch(int index, bool);
 		/// Calls func9Ch() with second parameter true
@@ -187,7 +188,7 @@ namespace Simulator
 		/* 1904h */	eastl::fixed_vector<ResourceKey, 14> mSpeciesKeys;
 		/* 19C4h */	cOrnamentPtr mpDomesticatedAnimalsPen;
 		/* 19C8h */ cOrnamentPtr mpEggPen;
-		/* 19CCh */	cGameDataPtr mpDomesticatedAnimalsHerd;  //TODO
+		/* 19CCh */	cHerdPtr mpDomesticatedAnimalsHerd;  //TODO
 		/* 19D0h */	cTotemPolePtr mpTotemPole;
 		/* 19D4h */	uint32_t mhFootprint;
 		/* 19D8h */	int mPurchasedTools;

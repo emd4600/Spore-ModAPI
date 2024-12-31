@@ -243,7 +243,7 @@ namespace Simulator
 			float baseValue, float maxOutput, float extraFactor, bool isHomeWorld, 
 			bool useSuperpowerMultiplier, bool useStorageMultiplier, float finalFactor, int numCities, bool limitOutput);
 
-		/// Return true if the planet ahs any city controlled by the specified empire.
+		/// Return true if the planet has any city controlled by the specified empire.
 		/// If 'requireMoreThanOneTurret' is true, then it will only return true if the controlled city
 		/// has more than one turret.
 		/// @param planetRecord

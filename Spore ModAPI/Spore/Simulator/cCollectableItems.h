@@ -112,6 +112,7 @@ namespace Simulator
 		/* 0Ch */	bool field_C;  // true
 		/// Stores a progression of unlockable items (for instance, all the mouths in the same row)
 		/* 10h */	eastl::sp_fixed_map<cCollectableItemsRowID, cCollectableItemsRowVector, 64> mUnlockableRows;
+		/// Maps the group/instance of a rigblock to its UnlockableItem data
 		/* 148Ch */	eastl::sp_fixed_hash_map<cCollectableItemID, UnlockableItem, 256> mUnlockableItems;
 		/// Some flags
 		/* 4D00h */	eastl::sp_fixed_hash_map<cCollectableItemID, uint8_t, 256> mItemStatusInfos;
@@ -159,6 +160,7 @@ namespace Simulator
 		// return a valid new part ID to unlock, or call this func again until it returns a valid part.
 		// 
 		// firstCall is always true ONLY on the first call of this function
+		// unk1 has something to do with how many times the function is called unsuccessfully; if it reaches 2 twice, unlockLevel is set to -1.
 		// unlockLevel will be either a .prop unlockLevel value or -1
 		// 
 		// the cCollectableItemID return value is formatted as such:

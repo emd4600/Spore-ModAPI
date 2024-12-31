@@ -43,6 +43,7 @@ namespace Simulator
 		/* 92h */	bool mTargetMinerals;
 		/* 93h */	bool mFirstMinerals;
 		/* 94h */	bool mFirstBudget;
+		/// Amount of money held by the civilization
 		/* 98h */	float mWealth;
 		/* 9Ch */	eastl::vector<cCityPtr> mCities;
 		/* B0h */	eastl::vector<cVehiclePtr> mVehicles;
