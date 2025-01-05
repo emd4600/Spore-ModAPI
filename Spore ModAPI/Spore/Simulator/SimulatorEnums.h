@@ -686,10 +686,10 @@ namespace Simulator
 		Unk5 = 5,
 		Defender = 6,
 		Unk7 = 7,
-		Unk8 = 8,
+		AmbushPirate = 8,
 		Unk9 = 9,
 		Unk10 = 10,
-		Unk11 = 10,
+		SecurityDrone = 11,
 	};
 
 	enum TribeToolType
