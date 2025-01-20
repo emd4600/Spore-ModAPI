@@ -46,7 +46,7 @@ ThumbnailCaptureScript::~ThumbnailCaptureScript()
 //---------------------------------------------------
 // Detours
 
-PaletteUIPtr pLastPalette;
+Palettes::PaletteUI* pLastPalette;
 
 // Editor parts palette loading func, PaletteUI::Load. Used to pull the ingame palettes
 member_detour(PaletteUILoad_detour, Palettes::PaletteUI, void(Palettes::PaletteMain*, UTFWin::IWindow*, bool, Palettes::PaletteInfo*)) {
