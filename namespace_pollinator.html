@@ -153,10 +153,10 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_asset_metadata_8h.html">&lt;Spore ModAPI/Spore/Pollinator/cAssetMetadata.h&gt;</a></div>
             </h3>
             <p>Used to get the metadata of a creation, if it exists.</p>
-<p>Example usage:</p><pre class="m-code"><span class="n">cAssetMetadataPtr</span><span class="w"> </span><span class="n">metadata</span><span class="p">;</span><span class="w"></span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Pollinator</span><span class="o">::</span><span class="n">GetMetadata</span><span class="p">(</span><span class="mh">0x07ed7d9f</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">BuildingModels</span><span class="p">,</span><span class="w"> </span><span class="n">metadata</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;%ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">metadata</span><span class="o">-&gt;</span><span class="n">GetName</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span></pre>
+<p>Example usage:</p><pre class="m-code"><span class="n">cAssetMetadataPtr</span><span class="w"> </span><span class="n">metadata</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Pollinator</span><span class="o">::</span><span class="n">GetMetadata</span><span class="p">(</span><span class="mh">0x07ed7d9f</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">BuildingModels</span><span class="p">,</span><span class="w"> </span><span class="n">metadata</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">App</span><span class="o">::</span><span class="n">ConsolePrintF</span><span class="p">(</span><span class="s">&quot;%ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">metadata</span><span class="o">-&gt;</span><span class="n">GetName</span><span class="p">().</span><span class="n">c_str</span><span class="p">());</span>
+<span class="p">}</span></pre>
           </div></section>
           <section class="m-doc-details" id="a8343101adbbe2d34a4692378afd173e3"><div>
             <h3>

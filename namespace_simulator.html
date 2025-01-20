@@ -1871,10 +1871,10 @@
               <a href="#a275b9181c60a664d8e1d56328862cb6eac0d4a5a0eb2b05fa7073761d345aa09f" class="m-doc">Unk5</a> = 5,
               <a href="#a275b9181c60a664d8e1d56328862cb6eaee90445284a3f5eb04b08417e16ecb95" class="m-doc">Defender</a> = 6,
               <a href="#a275b9181c60a664d8e1d56328862cb6eab59502bb9741c9cbcf22ba9cddd65cf1" class="m-doc">Unk7</a> = 7,
-              <a href="#a275b9181c60a664d8e1d56328862cb6eaa17cdfb3cf7ec46f2f87af51c01ec263" class="m-doc">Unk8</a> = 8,
+              <a href="#a275b9181c60a664d8e1d56328862cb6eafc68a9fdd2aa63259667c3287ea694a5" class="m-doc">AmbushPirate</a> = 8,
               <a href="#a275b9181c60a664d8e1d56328862cb6ea8f759fc5bc573bbfe086d3ab3ff60d8d" class="m-doc">Unk9</a> = 9,
               <a href="#a275b9181c60a664d8e1d56328862cb6ea1ae72a4903b201d96ded206632ce7d54" class="m-doc">Unk10</a> = 10,
-              <a href="#a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc">Unk11</a> = 10 }</span>
+              <a href="#a275b9181c60a664d8e1d56328862cb6eabe27f9a006f2ee791d9ee7620ff2c71e" class="m-doc">SecurityDrone</a> = 11 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -4871,7 +4871,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eaa17cdfb3cf7ec46f2f87af51c01ec263" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eaa17cdfb3cf7ec46f2f87af51c01ec263">Unk8</a></td>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eafc68a9fdd2aa63259667c3287ea694a5" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eafc68a9fdd2aa63259667c3287ea694a5">AmbushPirate</a></td>
                   <td>
                   <p><span></span></p>
                   </td>
@@ -4889,7 +4889,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><a href="#a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6ea5c36a398f22555e1ba0ca4693fb0b3ef">Unk11</a></td>
+                  <td><a href="#a275b9181c60a664d8e1d56328862cb6eabe27f9a006f2ee791d9ee7620ff2c71e" class="m-doc-self" id="a275b9181c60a664d8e1d56328862cb6eabe27f9a006f2ee791d9ee7620ff2c71e">SecurityDrone</a></td>
                   <td>
                   <p><span></span></p>
                   </td>
@@ -6577,14 +6577,14 @@
                 </tr>
               </tbody>
             </table>
-<p>Example code to shoot 50 meters in front of your UFO:</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">playerPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SimulatorPlayerUFO</span><span class="p">.</span><span class="n">GetUFO</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">();</span><span class="w"></span>
-<span class="k">auto</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playerPosition</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SimulatorPlayerUFO</span><span class="p">.</span><span class="n">GetUFO</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetDirection</span><span class="p">();</span><span class="w"></span>
-<span class="n">cSpaceToolDataPtr</span><span class="w"> </span><span class="n">tool</span><span class="p">;</span><span class="w"></span>
+<p>Example code to shoot 50 meters in front of your UFO:</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">playerPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SimulatorPlayerUFO</span><span class="p">.</span><span class="n">GetUFO</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">();</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">playerPosition</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SimulatorPlayerUFO</span><span class="p">.</span><span class="n">GetUFO</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetDirection</span><span class="p">();</span>
+<span class="n">cSpaceToolDataPtr</span><span class="w"> </span><span class="n">tool</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ToolManager</span><span class="p">.</span><span class="n">LoadTool</span><span class="p">({</span><span class="w"> </span><span class="n">id</span><span class="p">(</span><span class="s">&quot;AllyMissile1&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">TypeIDs</span><span class="o">::</span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="n">GroupIDs</span><span class="o">::</span><span class="n">SpaceTools</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">tool</span><span class="p">))</span><span class="w"> </span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">projectile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulator_new</span><span class="o">&lt;</span><span class="n">Simulator</span><span class="o">::</span><span class="n">cDefaultToolProjectile</span><span class="o">&gt;</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">Simulator</span><span class="o">::</span><span class="n">LaunchDefaultToolProjectile</span><span class="p">(</span><span class="n">tool</span><span class="p">.</span><span class="n">get</span><span class="p">,</span><span class="w"> </span><span class="n">projectile</span><span class="p">,</span><span class="w"> </span><span class="n">playerPosition</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span></pre>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">projectile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">simulator_new</span><span class="o">&lt;</span><span class="n">Simulator</span><span class="o">::</span><span class="n">cDefaultToolProjectile</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Simulator</span><span class="o">::</span><span class="n">LaunchDefaultToolProjectile</span><span class="p">(</span><span class="n">tool</span><span class="p">.</span><span class="n">get</span><span class="p">,</span><span class="w"> </span><span class="n">projectile</span><span class="p">,</span><span class="w"> </span><span class="n">playerPosition</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
+<span class="p">}</span></pre>
           </div></section>
           <section class="m-doc-details" id="a39ba6a3225506a75c5c3f2a76a5f7d8d"><div>
             <h3>
