@@ -9,6 +9,8 @@
 #include <Spore\App\ConfigManager.h>
 #include <Spore\App\IStateManager.h>
 #include <Spore\App\cAppSystem.h>
+#include <Spore\App\cJob.h>
+#include <Spore\App\JobManager.h>
 #endif
 #include <Spore\App\CommandLine.h>
 
@@ -30,6 +32,20 @@ namespace App
 
 	auto_METHOD(Thumbnail_cImportExport, bool, ImportPNG,
 		Args(const char16_t* path, ResourceKey& key), Args(path, key));
+
+	auto_METHOD(Thumbnail_cImportExport, bool, DecodePNG,
+		Args(IO::IStream* stream, ThumbnailDecodedMetadata& dstMetadata, IStreamPtr& dstDataStream),
+		Args(stream, dstMetadata, dstDataStream));
+
+	auto_METHOD_(Thumbnail_cImportExport, bool, SaveFilePaths);
+
+	auto_METHOD(Thumbnail_cImportExport, bool, ImportDirectoryPNGs,
+		Args(const eastl::string16& path, eastl::hash_set<eastl::string16>& dstSkippedPaths, int& dstCount),
+		Args(path, dstSkippedPaths, dstCount));
+
+	auto_METHOD(PngEncoder, bool, EncodePNG,
+		Args(IO::IStream* stream, int mode),
+		Args(stream, mode));
 
 
 	auto_STATIC_METHOD_(cIDGenerator, cIDGenerator*, Get);
@@ -94,6 +110,33 @@ namespace App
 	auto_STATIC_METHOD_(cCreatureModeStrategy, cCreatureModeStrategy*, Get);
 
 	auto_METHOD_VOID(cCreatureModeStrategy, ExecuteAction, Args(uint32_t actionID, void* actionData), Args(actionID, actionData));
+
+	/// cJob ///
+
+	auto_STATIC_METHOD_(IJobManager, IJobManager*, Get);
+
+	auto_METHOD_(cJob, int, AddRef);
+	auto_METHOD_(cJob, int, Release);
+
+	void cJob::SetMethodCallback(cJobCallback callback, void* object) {
+		this->mCallback = callback;
+		this->mpCallbackObject = object;
+	}
+
+	auto_METHOD_VOID(cJob, AddDependency, Args(cJob* other), Args(other));
+	auto_METHOD_VOID(cJob, AddWeakDependency, Args(cJob* other), Args(other));
+
+	auto_METHOD_VOID_(cJob, Wait);
+	auto_METHOD_VOID(cJob, Cancel, Args(bool wait), Args(wait));
+	auto_METHOD_VOID_(cJob, Resume);
+
+	auto_METHOD_VOID(cJob, Continuation, Args(cJobVoidCallback callback, void* object), Args(callback, object));
+
+	auto_METHOD_(cJob, int, GetStatus);
+
+	void cJob::SetThreadAffinity(uint32_t affinity) {
+		this->mThreadAffinity = affinity;
+	}
 
 #endif
 

@@ -22,6 +22,7 @@
 #include <Spore\Simulator\cScenarioData.h>
 #include <Spore\Simulator\cScenarioPlayMode.h>
 #include <Spore\Simulator\cScenarioTerraformMode.h>
+#include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
 #include <Spore\App\IGameMode.h>
 #include <Spore\App\IMessageListener.h>
 #include <Spore\App\MessageListenerData.h>
@@ -65,12 +66,12 @@ namespace App
 
 	public:
 		/* 10h */	int mpEditModeInputStrategy;  // cScenarioEditModeInputStrategy
-		/* 14h */	int mpEditModeDisplayStrategy;  // cScenarioEditModeDisplayStrategy
+		/* 14h */	cScenarioEditModeDisplayStrategyPtr mpEditModeDisplayStrategy;
 		/* 18h */	cScenarioTerraformModePtr mpTerraformMode;
 		/* 1Ch */	int mpScenarioUI;  // Simulator::ScenarioModeUI ?
 		/* 20h */	GameInput mInput;
 		/* 68h */	int field_68;
-		/* 6Ch */	int field_6C;  // another UI?
+		/* 6Ch */	int mpScenarioDisplayStrategy;  // another UI?
 		/* 70h */	int field_70;
 		/* 74h */	cScenarioDataPtr mpData;
 		/* 78h */	cScenarioPlayModePtr mpPlayMode;

@@ -686,9 +686,135 @@ namespace Simulator
 		Unk5 = 5,
 		Defender = 6,
 		Unk7 = 7,
-		Unk8 = 8,
+		AmbushPirate = 8,
 		Unk9 = 9,
 		Unk10 = 10,
-		Unk11 = 10,
+		SecurityDrone = 11,
+	};
+
+	enum TribeToolType
+	{
+		kTribeToolTypeNone = 0,
+		kTribeToolTypeAttack1 = 1,
+		kTribeToolTypeAttack2 = 2,
+		kTribeToolTypeAttack3 = 3,
+		kTribeToolTypeSocial1 = 4,
+		kTribeToolTypeSocial2 = 5,
+		kTribeToolTypeSocial3 = 6,
+		kTribeToolTypeGather = 7,
+		kTribeToolTypeFish = 8,
+		kTribeToolTypeHeal = 9,
+		kTribeToolTypeFirepit = 10,
+		kTribeToolTypeChieftain = 11,
+	};
+
+	enum TribeToolClass
+	{
+		kTribeToolClassNone = 0,
+		kTribeToolClassAttack = 1,
+		kTribeToolClassSocial = 2,
+		kTribeToolClassOther = 3,
+	};
+
+	enum TribeBundleType
+	{
+		kTribeBundleTypeFruit = 1,
+		kTribeBundleTypeMeat = 2,
+		kTribeBundleTypeFish = 3,
+	};
+
+	enum TribeInputAction
+	{
+		//TODO there are more
+
+		kTribeInputActionToolAttack1 = 19,
+		kTribeInputActionToolAttack2 = 20,
+		kTribeInputActionToolAttack3 = 21,
+		kTribeInputActionToolSocial1 = 22,
+		kTribeInputActionToolSocial2 = 23,
+		kTribeInputActionToolSocial3 = 24,
+		kTribeInputActionToolHeal = 25,
+		kTribeInputActionToolFirepit = 26,
+	};
+
+	enum CitizenAction
+	{
+		//TODO there are more
+		kCitizenActionEat = 0,
+		kCitizenActionFish = 1,
+		kCitizenActionGather = 2,
+		kCitizenActionGrabTool = 3,
+
+		kCitizenActionHeal = 5,
+
+		kCitizenActionAttack = 7,
+		kCitizenActionRaid1 = 8,
+		kCitizenActionGift1 = 9,
+		kCitizenActionHunt = 10,
+		kCitizenActionMate = 11,
+		kCitizenActionParty = 12,
+		kCitizenActionCollectEgg = 13,
+		kCitizenActionBundle = 14,
+
+		kCitizenActionRaid2 = 15,
+
+		kCitizenActionFeedWild = 20,
+		kCitizenActionGift2 = 21,
+
+		kCitizenActionRepair = 24,
+		kCitizenActionTame = 25,
+		kCitizenActionRecruit = 26,
+		kCitizenActionGatherMeat = 27,
+	};
+
+	enum HandheldItem
+	{
+		kHandheldItemNone = 0,
+		/// trg_hunting_tool1
+		kHandheldItemTrgHuntingTool1 = 1,
+		/// trg_hunting_tool2
+		kHandheldItemTrgHuntingTool2 = 2,
+		/// trg_hunting_tool3
+		kHandheldItemTrgHuntingTool3 = 3,
+		/// trg_fishing_tool and related
+		kHandheldItemTrgFishingTool = 4,
+		/// Either trg_eating_fish or trg_fishing_tool1_fish, etc
+		kHandheldItemTrgFish = 5,
+		/// Either trg_eating_seaweed or trg_fishing_tool1_seaweed, etc
+		kHandheldItemTrgSeaweed = 6,
+		/// trg_eating_fruit
+		kHandheldItemTrgEatingFruit = 7,
+		/// trg_eating_seaweed or trg_eating_fish
+		kHandheldItemTrgEatingSeaweedOrFish = 8,
+		/// trg_eating_meat
+		kHandheldItemTrgEatingMeat = 9,
+		/// trg_eating_seaweed
+		kHandheldItemTrgEatingSeaweed = 10,
+		/// city_protest_sign_hunger
+		kHandheldItemCityProtestSignHunger = 11,
+		/// trg_recruit_staff
+		kHandheldItemTrgRecruitStaff = 12,
+		/// trg_social_maraca
+		kHandheldItemTrgSocialMaraca = 13,
+		/// trg_social_horn
+		kHandheldItemTrgSocialHorn = 14,
+		/// trg_social_didgeridoo
+		kHandheldItemTrgSocialDidgeridoo = 15,
+		/// trg_gathering_treesmacker
+		kHandheldItemTrgGatheringTreeSmacker = 16,
+		/// trg_chieftain_staff
+		kHandheldItemTrgChieftainStaff = 17,
+		/// trg_healing_staff
+		kHandheldItemTrgHealingStaff = 18,
+		/// trg_repair_mallet
+		kHandheldItemTrgRepairMallet = 19,
+		/// trg_water_bucket
+		kHandheldItemTrgWaterBucket = 20,
+		/// 0xA8F747AE, some tribal horn
+		kHandheldItemUnk21 = 21,
+		/// trg_firebomb
+		kHandheldItemTrgFireBomb = 22,
+		/// trg_eating_egg
+		kHandheldItemTrgEatingEgg = 23,
 	};
 }

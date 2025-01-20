@@ -58,5 +58,9 @@ namespace Simulator
 	auto_METHOD_VOID(cSpaceTrading, GenerateNPCStore,
 		Args(cPlanetRecord* planetRecord, LocalizedString& dstSpiceText),
 		Args(planetRecord, dstSpiceText));
+
+	auto_METHOD_VOID(cSpaceTrading, CreateTradingObject,
+		Args(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, int itemCount, float itemCost),
+		Args(dst, itemID, itemCount, itemCost));
 }
 #endif

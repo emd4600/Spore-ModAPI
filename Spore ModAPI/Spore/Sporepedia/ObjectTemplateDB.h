@@ -28,7 +28,7 @@ namespace Sporepedia
 			/* 18h */	virtual bool Write(bool, bool writeSummarizers);
 			/* 1Ch */	virtual bool func1Ch();
 			/* 20h */	virtual void func20h();
-			/* 24h */	virtual bool func24h(int, int, int);
+			/* 24h */	virtual bool func24h(eastl::vector<ResourceKey>& dstKeys, int, const eastl::vector<QueryParameter>& parameters);
 			/* 28h */	virtual bool func28h(int, int, int);
 			/* 2Ch */	virtual void FindObjects(eastl::vector<ResourceKey>& dst, const eastl::vector<QueryParameter>& parameters);
 			//TODO thse functions are placeholders

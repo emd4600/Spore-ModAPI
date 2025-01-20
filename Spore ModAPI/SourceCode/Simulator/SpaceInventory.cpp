@@ -24,10 +24,6 @@ namespace Simulator
 	auto_STATIC_METHOD_VOID(cSpaceInventoryItem, CreateMultiDeliveryObject,
 		Args(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, uint32_t instanceID),
 		Args(dst, itemID, instanceID));
-
-	auto_STATIC_METHOD_VOID(cSpaceInventoryItem, CreateTradingObject,
-		Args(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, int itemCount, float itemCost),
-		Args(dst, itemID, itemCount, itemCost));
 }
 
 #endif

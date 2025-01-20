@@ -46,6 +46,18 @@ struct ResourceKey {
 	GroupIDs::Names groupID;
 #endif
 
+	/// Returns a copy of this key with a different instance ID.
+	/// @param instanceId
+	ResourceKey WithInstance(uint32_t instanceId);
+
+	/// Returns a copy of this key with a different type ID.
+	/// @param typeId
+	ResourceKey WithType(uint32_t typeId);
+
+	/// Returns a copy of this key with a different group ID.
+	/// @param groupId
+	ResourceKey WithGroup(uint32_t groupId);
+
 	///
 	/// Creates a ResourceKey from the given text, which is in the format "groupID!instanceID.typeID". 
 	/// The groupID and typeID can be ommited, however; if that happens, they will be replaced with the optional parameters
@@ -80,6 +92,8 @@ ASSERT_SIZE(ResourceKey, 0xC);
 #define instance_id(id) ResourceKey(id, 0, 0)
 #define type_id(id) ResourceKey(0, id, 0)
 #define group_id(id) ResourceKey(0, 0, id)
+
+#define WILDCARD_KEY ResourceKey(ResourceKey::kWildcardID, ResourceKey::kWildcardID, ResourceKey::kWildcardID)
 
 inline ResourceKey::ResourceKey()
 #ifndef SDK_TO_GHIDRA
@@ -120,12 +134,32 @@ inline bool ResourceKey::operator !=(const ResourceKey &b) const
 
 inline bool ResourceKey::operator >(const ResourceKey &b) const
 {
-	return groupID > b.groupID;
+	return b < *this;
 }
 
 inline bool ResourceKey::operator <(const ResourceKey &b) const
 {
-	return groupID > b.groupID;
+	if (instanceID == b.instanceID) {
+		if (typeID == b.typeID) {
+			return groupID < b.groupID;
+		}
+		else {
+			return typeID < b.typeID;
+		}
+	}
+	else {
+		return instanceID < b.instanceID;
+	}
+}
+
+inline ResourceKey ResourceKey::WithInstance(uint32_t instanceId) {
+	return { instanceId, typeID, groupID };
+}
+inline ResourceKey ResourceKey::WithType(uint32_t typeId) {
+	return { instanceID, typeId, groupID };
+}
+inline ResourceKey ResourceKey::WithGroup(uint32_t groupId) {
+	return { instanceID, typeID, groupId };
 }
 
 namespace eastl
@@ -133,7 +167,7 @@ namespace eastl
 	/// A necessary structure to be able to use ResourceKey on containers such as hash_map.
 	template <> struct hash<ResourceKey>
 	{
-		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.instanceID ^ val.typeID); }
+		size_t operator()(const ResourceKey& val) const { return static_cast<size_t>(val.instanceID ^ val.groupID); }
 	};
 }
 #endif

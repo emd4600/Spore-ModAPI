@@ -21,6 +21,7 @@
 #include <Spore\Simulator\cGameData.h>
 #include <Spore\Simulator\cSpatialObject.h>
 #include <Spore\Simulator\cBehaviorList.h>
+#include <Spore\Simulator\ISimulatorSerializable.h>
 #include <EASTL\vector.h>
 
 #define cGameBundleContainerPtr eastl::intrusive_ptr<Simulator::cGameBundleContainer>
@@ -28,15 +29,6 @@
 
 namespace Simulator
 {
-#ifdef SDK_TO_GHIDRA
-	class cGameBundle
-	{
-		int todo;
-	};
-#else
-	class cGameBundle;  //TODO
-#endif
-
 	class cGameBundleContainer;
 
 	class cGameBundle
@@ -47,6 +39,10 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x4FFCDEDA;
 		static const uint32_t NOUN_ID = 0x18C431C;
+
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
 
 	public:
 		/* 120h */	int field_120;

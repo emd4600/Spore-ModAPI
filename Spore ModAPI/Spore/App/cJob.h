@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Spore\Internal.h>
+#include <Spore\Object.h>
 
 #define cJobPtr eastl::intrusive_ptr<App::cJob>
 
@@ -13,6 +14,8 @@ namespace App
 
 	class cJob
 	{
+	public:
+
 		// We only care about the methods, not the fields
 
 		int AddRef();
@@ -47,7 +50,8 @@ namespace App
 	public:
 		/* 00h */	cJobCallback mCallback;
 		/* 04h */	void* mpCallbackObject;
-		/* 08h */	char padding[0x18 - 0x8];
+		/* 08h */	ObjectPtr mReleasebleObject;
+		/* 0Ch */	char padding[0x18 - 0xC];
 		/* 18h */	uint32_t mThreadAffinity;
 	};
 

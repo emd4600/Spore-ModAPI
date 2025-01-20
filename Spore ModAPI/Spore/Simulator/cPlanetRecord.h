@@ -251,6 +251,21 @@ namespace Simulator
 		/// @param requireMoreThanOneTurret
 		static bool HasControlledCity(cPlanetRecord* planetRecord, cEmpire* empire, bool requireMoreThanOneTurret = false);
 
+		/// Generates a terrain file for this planet, assigning it a random source terrain file for T0 planets.
+		/// The method will generate a random ID, call SetGeneratedTerrainKey(), and call ITerrainResourceManager::LoadPlanetInfo()
+		/// (which returns a random planet, based on the generated terrain key), until it finds a source terrain with temperature score
+		/// lower than 0.33 or higher than 0.66.
+		/// The planet record temperature and atmosphere scores will be set to the final terrain ones.
+		/// @param planetRecord
+		static void AssignTerrainT0(cPlanetRecord* planetRecord);
+
+		/// Generates a terrain file for this planet, assigning it a random source terrain file for non-T0 planets.
+		/// The method will generate a random ID, call SetGeneratedTerrainKey(), and call ITerrainResourceManager::LoadPlanetInfo()
+		/// (which returns a random planet, based on the generated terrain key).
+		/// The planet record temperature and atmosphere scores will be set to the final terrain ones.
+		/// @param planetRecord
+		static void AssignTerrainNonT0(cPlanetRecord* planetRecord);
+
 	public:
 		/* 18h */	eastl::string16 mName;
 		/// The type of the planet, which determines whether it is a gas giant, asteroid belt, or regular rocky planet.
@@ -316,6 +331,8 @@ namespace Simulator
 		DeclareAddress(HasControlledCity);  // 0xC6F4B0 0xC702F0
 		DeclareAddress(GetTypeIconKey);  // 0xE2EBE0 0xE2EB70
 		DeclareAddress(GetCitizenSpeciesKey);  // 0xB8D9C0 0xB8E1E0
+		DeclareAddress(AssignTerrainT0);  // 0xBA5740 0xBA6120
+		DeclareAddress(AssignTerrainNonT0);  // 0xBA5890 0xBA6270
 	}
 
 	inline ResourceKey cPlanetRecord::GenerateTerrainKey()

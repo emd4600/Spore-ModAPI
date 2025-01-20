@@ -71,5 +71,12 @@ namespace Simulator
 		if (mScenarioClassIndex == -1) return nullptr;
 		else return ScenarioMode.GetData()->GetClass(mScenarioClassIndex);
 	}
+
+	eastl::fixed_string<char16_t, 32> GetSpecializedName(cGameData* object) {
+		eastl::fixed_string<char16_t, 32> str;
+		CALL(GetAddress(Simulator, GetSpecializedName), void,
+			Args(eastl::fixed_string<char16_t, 32>&, cGameData*), Args(str, object));
+		return str;
+	}
 }
 #endif

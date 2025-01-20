@@ -77,27 +77,27 @@
   
 
   <Type Name="App::Property">
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Bool">bools [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int8">int8s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt8">uint8s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int16">int16s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt16">uint16s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int32">int32s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt32">uint32s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Int64">int64s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::UInt64">uint64s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Float">floats [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Double">doubles [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String8">eastl::string8s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::String16">eastl::string16s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Key">keys [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector2">vector2s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector3">vector3s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Vector4">vector4s [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::ColorRGB">colorRGBs [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::ColorRGBA">colorRGBAs [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Text">texts [{mnItemCount} items]</DisplayString>
-    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagArray &amp;&amp; mnType == App::PropertyType::Transform">transforms [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Bool">bools [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Int8">int8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::UInt8">uint8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Int16">int16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::UInt16">uint16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Int32">int32s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::UInt32">uint32s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Int64">int64s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::UInt64">uint64s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Float">floats [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Double">doubles [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::String8">eastl::string8s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::String16">eastl::string16s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Key">keys [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Vector2">vector2s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Vector3">vector3s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Vector4">vector4s [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::ColorRGB">colorRGBs [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::ColorRGBA">colorRGBAs [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Text">texts [{mnItemCount} items]</DisplayString>
+    <DisplayString Condition="mnFlags &amp; App::Property::kPropertyFlagPointer &amp;&amp; mnType == App::PropertyType::Transform">transforms [{mnItemCount} items]</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Bool">bool {mValueBool}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::Int8">int8 {mValueInt8}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::UInt8">uint8 {mValueUInt8}</DisplayString>
@@ -118,11 +118,11 @@
     <DisplayString Condition="mnType == App::PropertyType::ColorRGB">colorRGB {mValueColorRGB}</DisplayString>
     <DisplayString Condition="mnType == App::PropertyType::ColorRGBA">colorRGBA {mValueColorRGBA}</DisplayString>
     
-    <StringView Condition="!(mnFlags &amp; App::Property::kPropertyFlagArray) &amp;&amp; mnType == App::PropertyType::String8">mValueString8.mpBegin,s</StringView>
-    <StringView Condition="!(mnFlags &amp; App::Property::kPropertyFlagArray) &amp;&amp; mnType == App::PropertyType::String16">mValueString16.mpBegin,su</StringView>
+    <StringView Condition="!(mnFlags &amp; App::Property::kPropertyFlagPointer) &amp;&amp; mnType == App::PropertyType::String8">mValueString8.mpBegin,s</StringView>
+    <StringView Condition="!(mnFlags &amp; App::Property::kPropertyFlagPointer) &amp;&amp; mnType == App::PropertyType::String16">mValueString16.mpBegin,su</StringView>
         
     <Expand>
-      <CustomListItems Condition="mnFlags &amp; App::Property::kPropertyFlagArray">
+      <CustomListItems Condition="mnFlags &amp; App::Property::kPropertyFlagPointer">
         <Variable Name="i" InitialValue="0"/>
         <Loop Condition="i != mnItemCount">
           <Item Name="[{i}]" Condition="mnType == App::PropertyType::Bool">*(bool*)((char*)mpData + mnItemSize*i)</Item>

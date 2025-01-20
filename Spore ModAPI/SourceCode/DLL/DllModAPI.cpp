@@ -107,7 +107,7 @@ namespace ModAPI
 			cachedGameType = GameType::Disk;
 			hasFoundGameType = true;
 		}
-		else if (size.QuadPart == 24885248)
+		else if (size.QuadPart == 24885248 || size.QuadPart == 24895536 || size.QuadPart == 25066744)
 		{ // steam patched version
 			cachedGameType = GameType::March2017;
 			hasFoundGameType = true;

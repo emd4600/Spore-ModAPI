@@ -30,6 +30,7 @@ namespace UTFWin
 	{
 	public:
 		static const uint32_t TYPE = 0x53EB526;
+		static const int NUM_STATES = 8;
 
 		SporeStdDrawable();
 		virtual ~SporeStdDrawable();

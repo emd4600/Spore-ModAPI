@@ -25,23 +25,23 @@ constexpr int const_tolower(int c) {
 	return (c >= 'A' && c <= 'Z') ? c + ('a' - 'A') : c;
 }
 
-constexpr uint32_t id(const char* pStr)
+constexpr uint32_t id(const char* pStr, uint32_t starter)
 {
-	uint32_t rez = 0x811C9DC5u;
 	int i = 0;
 	while (pStr[i])
 	{
 		char c = pStr[i];
-		//c = (c >= 'A' && c <= 'Z') ? c + ('a' - 'A') : c;
-		//rez *= static_cast<uint32_t>(0x1000193);
-		//rez ^= static_cast<uint32_t>(const_tolower(c));
-
 		// To avoid compiler warnings
-		rez = static_cast<uint32_t>(rez * static_cast<unsigned long long>(0x1000193));
-		rez ^= static_cast<uint32_t>(const_tolower(c));
+		starter = static_cast<uint32_t>(starter * static_cast<unsigned long long>(0x1000193));
+		starter ^= static_cast<uint32_t>(const_tolower(c));
 		++i;
 	}
-	return rez;
+	return starter;
+}
+
+constexpr uint32_t id(const char* pStr)
+{
+	return id(pStr, 0x811C9DC5u);
 }
 
 constexpr uint32_t id(const char16_t* pStr)
@@ -51,10 +51,6 @@ constexpr uint32_t id(const char16_t* pStr)
 	while (pStr[i])
 	{
 		char16_t c = pStr[i];
-		//c = (c >= 'A' && c <= 'Z') ? c + ('a' - 'A') : c;
-		/*rez *= static_cast<uint32_t>(0x1000193);
-		rez ^= static_cast<uint32_t>(const_tolower(c));*/
-
 		// To avoid compiler warnings
 		rez = static_cast<uint32_t>(rez * static_cast<unsigned long long>(0x1000193));
 		rez ^= static_cast<uint32_t>(const_tolower(c));

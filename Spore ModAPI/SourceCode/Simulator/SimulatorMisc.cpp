@@ -7,6 +7,11 @@
 #include <Spore\Simulator\cSpeciesProfile.h>
 #include <Spore\Simulator\cIdentityColorable.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
+#include <Spore\Simulator\SubSystem\BundleManager.h>
+#include <Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h>
+#include <Spore\Simulator\SubSystem\CinematicManager.h>
+#include <Spore\Simulator\SubSystem\GamePlantManager.h>
+#include <Spore\Simulator\SubSystem\ObstacleManager.h>
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cArtilleryProjectile.h>
 #include <Spore\Simulator\cCulturalProjectile.h>
@@ -15,9 +20,14 @@
 #include <Spore\Simulator\cSpaceDefenseMissile.h>
 #include <Spore\Simulator\cCollectableItems.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
+#include <Spore\Simulator\cNpcTribeController.h>
+#include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
 
 namespace Simulator
 {
+	auto_METHOD_(cScenarioEditModeDisplayStrategy, bool, Load);
+
+
 	void cHerd::SetEnabled(bool enabled)
 	{
 		mbEnabled = enabled;
@@ -90,6 +100,12 @@ namespace Simulator
 
 	auto_METHOD_VOID(cIdentityColorable, AssignNames, Args(const eastl::string16& speciesName), Args(speciesName));
 
+	auto_STATIC_METHOD(Simulator, const Math::ColorRGB&, GetCachedColorFromId, Args(uint32_t colorId), Args(colorId));
+
+	eastl::map<uint32_t, Math::ColorRGB>& GetCachedColorIdMap() {
+		return *(eastl::map<uint32_t, Math::ColorRGB>*)GetAddress(Simulator, sCachedColorIdMap__ptr);
+	}
+
 	//// cDefaultToolProjectile ////
 
 	auto_STATIC_METHOD_VOID(Simulator, LaunchDefaultToolProjectile,
@@ -156,5 +172,77 @@ namespace Simulator
 	auto_METHOD_VOID(cPlanetaryArtifact, LoadFromItem, 
 		Args(SpaceInventoryItemType itemType, const ResourceKey& itemKey, int count, bool arg),
 		Args(itemType, itemKey, count, arg));
+
+	//// CinematicManager ////
+
+	auto_STATIC_METHOD_(cCinematicManager, cCinematicManager*, Get);
+
+	auto_METHOD_VOID(cCinematicManager, PlayCinematic,
+		Args(const char* cinematicName, int arg0, int arg1, int arg2, int arg3, int arg4),
+		Args(cinematicName, arg0, arg1, arg2, arg3, arg4));
+
+	CinematicActionFunction_t CinematicAction::GetStartVignetteFunction() {
+		return (CinematicActionFunction_t)(GetAddress(CinematicAction, StartVignetteFunction_ptr));
+	}
+
+	int CinematicVignetteActionData::AddRef() {
+		return DefaultRefCounted::AddRef();
+	}
+	int CinematicVignetteActionData::Release() {
+		return DefaultRefCounted::Release();
+	}
+	void* CinematicVignetteActionData::Cast(uint32_t type) const {
+		CLASS_CAST(CinematicVignetteActionData);
+		CLASS_CAST(Object);
+		return nullptr;
+	}
+
+	CinematicVignetteActionData::CinematicVignetteActionData()
+		: mActorId()
+		, mVignetteId()
+		, mVignetteKey()
+		, mPosition()
+		, mFacingOffset()
+		, mRelativePosType(PositionType::Unk1)
+		, mRelativePosId()
+		, mFacingType(PositionType::None)
+		, mFacingId()
+		, mNoWait()
+		, mOffsetMultiplier(OffsetMultiplier::None)
+		, field_50(-1)
+	{
+	}
+
+	int CinematicAction::AddRef() {
+		return RefCountTemplate::AddRef();
+	}
+	int CinematicAction::Release() {
+		return RefCountTemplate::Release();
+	}
+
+	/// BundleManager ///
+
+	auto_STATIC_METHOD_(cBundleManager, cBundleManager*, Get);
+
+	auto_METHOD(cBundleManager, cGameBundle*, CreateBundles,
+		Args(float amount, cGameBundleContainer* container, int bundleType),
+		Args(amount, container, bundleType));
+
+	/// GamePlantManager ///
+
+	auto_STATIC_METHOD_(cGamePlantManager, cGamePlantManager*, Get);
+
+	/// UIAssetDiscoveryManager ///
+
+	auto_STATIC_METHOD_(cUIAssetDiscoveryManager, cUIAssetDiscoveryManager*, Get);
+
+	/// ObstacleManager ///
+
+	auto_STATIC_METHOD_(cObstacleManager, cObstacleManager*, Get);
+
+	/// cNpcTribeController ///
+
+	auto_STATIC_METHOD_(cNpcTribeController, cNpcTribeController*, Get);
 }
+
 #endif

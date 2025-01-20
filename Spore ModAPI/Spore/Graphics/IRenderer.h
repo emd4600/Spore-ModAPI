@@ -23,6 +23,7 @@
 #include <Spore\Internal.h>
 #include <Spore\Graphics\ILayer.h>
 #include <Spore\Graphics\LambdaLayer.h>
+#include <Spore\Graphics\LayerSequence.h>
 #include <Spore\App\cJob.h>
 
 

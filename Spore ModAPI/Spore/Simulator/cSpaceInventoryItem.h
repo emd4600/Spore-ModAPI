@@ -87,13 +87,6 @@ namespace Simulator
 		/// @param instanceIDcddc
 		static void CreateMultiDeliveryObject(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, uint32_t instanceID);
 
-		/// Creates a trading object, which is an inventory item from GroupIDs::SpaceTrading_.
-		/// @param[out] dst Pointer where the new object will be written.
-		/// @param itemID Key to the item configuration in GroupIDs::SpaceTrading_
-		/// @param itemCount Number of items to create
-		/// @param itemCost Cost of the object
-		static void CreateTradingObject(cSpaceInventoryItemPtr& dst, const ResourceKey& itemID, int itemCount, float itemCost);
-
 	public:
 		/* 10h */	size_t mItemCount;  // 1
 		/* 14h */	SpaceInventoryItemType mItemType;  // 2

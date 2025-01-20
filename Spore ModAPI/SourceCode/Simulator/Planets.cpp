@@ -93,5 +93,8 @@ namespace Simulator
 	auto_STATIC_METHOD(cPlanetRecord, const ResourceKey&, GetTypeIconKey, Args(cPlanetRecord* record), Args(record));
 
 	auto_METHOD_(cPlanetRecord, const ResourceKey&, GetCitizenSpeciesKey);
+
+	auto_STATIC_METHOD_VOID(cPlanetRecord, AssignTerrainT0, Args(cPlanetRecord* planetRecord), Args(planetRecord));
+	auto_STATIC_METHOD_VOID(cPlanetRecord, AssignTerrainNonT0, Args(cPlanetRecord* planetRecord), Args(planetRecord));
 }
 #endif

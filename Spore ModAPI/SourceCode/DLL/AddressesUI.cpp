@@ -3,16 +3,23 @@
 #include <Spore\UI\LayerManager.h>
 #include <Spore\UI\SpaceGameUI.h>
 #include <Spore\UI\HintManager.h>
+#include <Spore\UI\cSPAssetView.h>
 #include <Spore\UI\ScrollFrameVertical.h>
 #include <Spore\UI\cSPUITextZoom.h>
 #include <Spore\UI\GameSettings.h>
 #include <Spore\UI\EditorNamePanel.h>
+#include <Spore\UI\SimulatorRollovers.h>
 
 namespace UI
 {
 	namespace Addresses(cLayerManager) 
 	{
 		DefineAddress(Get, SelectAddress(0x67CC20, 0x67CA90));
+	}
+
+	namespace Addresses(cSPAssetView) {
+		DefineAddress(_ctor, SelectAddress(0x657DA0, 0x657F30));
+		DefineAddress(sub_6590A0, SelectAddress(0x6590A0, 0x659230));
 	}
 
 	namespace Addresses(SpaceGameUI)
@@ -51,6 +58,13 @@ namespace UI
 		DefineAddress(HandleUIMessage, SelectAddress(0x5C0020, 0x5C01F0));
 		DefineAddress(SetExtended, SelectAddress(0x5C02A0, 0x5C0470));
 		DefineAddress(HandleMessage, SelectAddress(0x5BF900, 0x5BFAD0));
+	}
+
+	namespace Addresses(SimulatorRollover)
+	{
+		DefineAddress(GetRolloverIdForObject, SelectAddress(0xB67960, 0xB67D70));
+		DefineAddress(ShowRollover, SelectAddress(0xB69680, 0xB69A90));
+		DefineAddress(ShowRolloverInternal, SelectAddress(0xB68790, 0xB68BA0));
 	}
 }
 #endif

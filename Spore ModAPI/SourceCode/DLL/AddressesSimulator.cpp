@@ -11,6 +11,7 @@
 #include <Spore\Simulator\cCreatureCitizen.h>
 #include <Spore\Simulator\cCreatureBase.h>
 #include <Spore\Simulator\cCropCirclesToolStrategy.h>
+#include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
 #include <Spore\Simulator\cDeepSpaceProjectileToolStrategy.h>
 #include <Spore\Simulator\cDefaultAoETool.h>
 #include <Spore\Simulator\cDefaultBeamTool.h>
@@ -84,6 +85,10 @@
 #include <Spore\Simulator\cDefaultToolProjectile.h>
 #include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\cTribe.h>
+#include <Spore\Simulator\cTribeTool.h>
+#include <Spore\Simulator\cTribeToolData.h>
+#include <Spore\Simulator\cTribeInputStrategy.h>
+#include <Spore\Simulator\cNpcTribeController.h>
 #include <Spore\Simulator\SubSystem\cRelationshipManager.h>
 #include <Spore\Simulator\SubSystem\GameBehaviorManager.h>
 #include <Spore\Simulator\SubSystem\GameInputManager.h>
@@ -103,6 +108,11 @@
 #include <Spore\Simulator\SubSystem\AnimalSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\PlantSpeciesManager.h>
 #include <Spore\Simulator\SubSystem\GamePersistenceManager.h>
+#include <Spore\Simulator\SubSystem\CinematicManager.h>
+#include <Spore\Simulator\SubSystem\BundleManager.h>
+#include <Spore\Simulator\SubSystem\GamePlantManager.h>
+#include <Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h>
+#include <Spore\Simulator\SubSystem\ObstacleManager.h>
 #include <Spore\Simulator\NounClassFactories.h>
 
 namespace Addresses(Simulator)
@@ -141,10 +151,24 @@ namespace Addresses(Simulator)
 	DefineAddress(CreateUFO, SelectAddress(0x102BB50, 0x102AC60));
 
 	DefineAddress(SpawnNpcTribe, SelectAddress(0xC92860, 0xC932F0));
+	DefineAddress(sTribeFishHotSpots_ptr, SelectAddress(0x157EB90 ,0x157ABB0));
+	DefineAddress(sTribeFishTimer_ptr, SelectAddress(0x1699678 ,0x16953F8));
+	DefineAddress(sTribeFishEndTime_ptr, SelectAddress(0x16995E8 ,0x1695368));
+
+	DefineAddress(LoadTribeToolsData, SelectAddress(0xC9D7F0, 0xC9DFE0));
+	DefineAddress(sTribeToolDataArray_ptr, SelectAddress(0x169DC94 ,0x1699A14));
+	DefineAddress(GetTribeToolData, SelectAddress(0xC9C860, 0xC9D050));
+	DefineAddress(DisposeTribeToolsData, SelectAddress(0xC9DED0, 0xC9E6C0));
 	
 	DefineAddress(GetMainSpeciesImageKey, SelectAddress(0x1066AF0, 0x1065F10));
 
 	DefineAddress(GetPlayerHomePlanet, SelectAddress(0x10223F0, 0x1021220));
+
+	DefineAddress(GetSpecializedName, SelectAddress(0xB6B7E0, 0xB6BBF0));
+
+	DefineAddress(GetCachedColorFromId, SelectAddress(0xB6ED80, 0xB6F1C0));
+	DefineAddress(sCachedColorIdMap__ptr, SelectAddress(0x156F098, 0x156B0B8));
+
 
 #ifndef SDK_TO_GHIDRA
 	DefineAddress(LightingWorld_ptr, SelectAddress(0x1682CD4, 0x167EA54));
@@ -206,6 +230,9 @@ namespace Simulator
 	namespace Addresses(cCreatureCitizen) {
 		DefineAddress(Update, SelectAddress(0xC24210, 0xC24A30));
 		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
+		DefineAddress(DoAction, SelectAddress(0xC26EF0, 0xC27710));
+		DefineAddress(GetHandheldItemForTool, SelectAddress(0xC22E70, 0xC23740));
+		DefineAddress(GetSpecializedName, SelectAddress(0xB6B500, 0xB6B910));
 	}
 
 	namespace Addresses(cCreatureBase)
@@ -237,6 +264,7 @@ namespace Simulator
 	namespace Addresses(cCombatant)
 	{
 		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
+		DefineAddress(IsHervibore, SelectAddress(0xC0B040, 0xC0B8E0));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)
@@ -851,6 +879,8 @@ namespace Simulator
 		DefineAddress(HasControlledCity, SelectAddress(0xC6F4B0, 0xC702F0));
 		DefineAddress(GetTypeIconKey, SelectAddress(0xE2EBE0, 0xE2EB70));
 		DefineAddress(GetCitizenSpeciesKey, SelectAddress(0xB8D9C0, 0xB8E1E0));
+		DefineAddress(AssignTerrainT0, SelectAddress(0xBA5740, 0xBA6120));
+		DefineAddress(AssignTerrainNonT0, SelectAddress(0xBA5890, 0xBA6270));
 	}
 
 	namespace Addresses(cCivData) {
@@ -1034,6 +1064,11 @@ namespace Simulator
 		DefineAddress(GetRareHasBeenFound, SelectAddress(0x103BC30, 0x103AC50));
 		DefineAddress(SetRareAsFound, SelectAddress(0x1040820, 0x103FBB0));
 		DefineAddress(GenerateNPCStore, SelectAddress(0x103F560, 0x103E8F0));
+		DefineAddress(CreateTradingObject, SelectAddress(0x103B470, 0x103A490));
+	}
+
+	namespace Addresses(cScenarioEditModeDisplayStrategy) {
+		DefineAddress(Load, SelectAddress(0xED6000, 0xED5C70));
 	}
 
 	namespace Addresses(cGamePersistenceManager) 
@@ -1112,6 +1147,58 @@ namespace Simulator
 
 	namespace Addresses(cSpatialObject) {
 		DefineAddress(SetModelKey, SelectAddress(0xC87B30, 0xC889A0));
+	}
+
+	namespace Addresses(CinematicAction) {
+		DefineAddress(StartVignetteFunction_ptr, SelectAddress(0xAD3D50, 0xAD3EF0));
+	}
+
+	namespace Addresses(cCinematicManager) {
+		DefineAddress(Get, SelectAddress(0xB3D430, 0xB3D5D0));
+		DefineAddress(PlayCinematic, SelectAddress(0xAE0480, 0xAE08B0));
+	}
+
+	namespace Addresses(cTribe) {
+		DefineAddress(GetToolByType, SelectAddress(0xC8ED20, 0xC8F870));
+		DefineAddress(SpawnMember, SelectAddress(0xC97BA0, 0xC983C0));
+		DefineAddress(CreateTool, SelectAddress(0xC95950, 0xC96170));
+		DefineAddress(RemoveTool, SelectAddress(0xC96800, 0xC97020));
+		DefineAddress(UpdateFoodVisuals, SelectAddress(0xC94520, 0xC94CE0));
+	}
+
+	namespace Addresses(cTribeTool) {
+		DefineAddress(GetToolClass, SelectAddress(0xC9CAB0, 0xC9D2A0));
+		DefineAddress(GetRefundMoney, SelectAddress(0xC9C970, 0xC9D160));
+	}
+
+	namespace Addresses(cBundleManager) {
+		DefineAddress(Get, SelectAddress(0xB3D210, 0xB3D3B0));
+		DefineAddress(CreateBundles, SelectAddress(0xAC7810, 0xAC79F0));
+	}
+
+	namespace Addresses(cTribeInputStrategy) {
+		DefineAddress(DoToolActionForAllSelected, SelectAddress(0xCCFFE0, 0xCD09B0));
+		DefineAddress(DoActionForAllSelected, SelectAddress(0xCCFF70, 0xCD0940));
+		DefineAddress(ChooseInputActionID, SelectAddress(0xCCE870, 0xCCF130));
+		DefineAddress(DoActionGeneric, SelectAddress(0xCD0250, 0xCD0250));
+		DefineAddress(SetHoverObjectCursorAndRollover, SelectAddress(0xCCF800, 0xCD00C0));
+		DefineAddress(sIsInEditor_ptr, SelectAddress(0x168AD70, 0x1686AF0));
+	}
+
+	namespace Addresses(cGamePlantManager) {
+		DefineAddress(Get, SelectAddress(0xB3D310, 0xB3D4B0));
+	}
+
+	namespace Addresses(cUIAssetDiscoveryManager) {
+		DefineAddress(Get, SelectAddress(0xB3D450, 0xB3D5F0));
+	}
+
+	namespace Addresses(cObstacleManager) {
+		DefineAddress(Get, SelectAddress(0xB3D320, 0xB3D4C0));
+	}
+
+	namespace Addresses(cNpcTribeController) {
+		DefineAddress(Get, SelectAddress(0xCC8330, 0xCC8C90));
 	}
 }
 

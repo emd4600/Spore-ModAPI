@@ -14,9 +14,12 @@ namespace Terrain
 	public:
 		virtual ~ITerrainResourceManager();
 
+		/// Returns the property list assigned to the given planet; if the planet still doesn't have
+		/// a property list, it will select one from the game available planets and copy it.
+		/// @param planetKey
 		/* 04h */	virtual App::PropertyList* GetPropertyList(const ResourceKey& planetKey) = 0;
 		/// returns wta and planetinfo?
-		/* 08h */	virtual void func08h(const ResourceKey& key, int* dst) = 0;
+		/* 08h */	virtual void LoadPlanetInfo(const ResourceKey& key, eastl::tuple<float, float, float, float, float>& dst) = 0;
 		/* 0Ch */	virtual void func0Ch(const ResourceKey& key) = 0;  // removes player effects and models?
 
 		/// Creates a property list and saves it to a file with key `outputKey`,

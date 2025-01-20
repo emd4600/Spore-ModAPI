@@ -208,6 +208,8 @@ namespace Simulator
 		/// @returns
 		int PlayVoice(const char* pName, int param2, int param3);
 
+		bool IsHervibore();
+
 
 		/* 54h */	virtual void CreateLocomotionStrategy();
 
@@ -416,5 +418,6 @@ namespace Simulator
 		DeclareAddress(OnStartSwimming);  // 0xC147D0 0xC14F70
 		DeclareAddress(Update);  // 0xC20C50 0xC21530
 		DeclareAddress(TakeDamage);
+		DeclareAddress(IsHervibore);  // 0xC0B040 0xC0B8E0
 	}
 }

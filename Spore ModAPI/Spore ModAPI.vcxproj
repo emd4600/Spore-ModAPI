@@ -327,6 +327,20 @@
     <ClInclude Include="Spore\App\IDGenerator.h" />
     <ClInclude Include="Spore\App\JobManager.h" />
     <ClInclude Include="Spore\App\Thumbnail_cImportExport.h" />
+	<ClInclude Include="Spore\Graphics\LayerSequence.h" />
+	<ClInclude Include="Spore\OpenSSL.h" />
+    <ClInclude Include="Spore\Resource\FakeRecord.h" />
+    <ClInclude Include="Spore\Simulator\cBaseSimulatorInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cObstacle.h" />
+    <ClInclude Include="Spore\Simulator\cScenarioEditModeDisplayStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cTribeInputStrategy.h" />
+    <ClInclude Include="Spore\Simulator\cNpcTribeController.h" />
+    <ClInclude Include="Spore\Simulator\cTribeToolData.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\BundleManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\CinematicManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\GamePlantManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\ObstacleManager.h" />
+    <ClInclude Include="Spore\Simulator\SubSystem\UIAssetDiscoveryManager.h" />
     <ClInclude Include="Spore\Simulator\UIStateMachine.h" />
     <ClInclude Include="Spore\BasicIncludes.h" />
     <ClInclude Include="Spore\Cell.h" />
@@ -827,7 +841,10 @@
     <ClInclude Include="Spore\Swarm\Components\cTextureSlot.h" />
     <ClInclude Include="Spore\Terrain\cTerrainSphere.h" />
     <ClInclude Include="Spore\Terrain\cTerrainSphereQuad.h" />
+    <ClInclude Include="Spore\UI\AssetBrowserAssetGridUI.h" />
+    <ClInclude Include="Spore\UI\AssetDiscoveryCard.h" />
     <ClInclude Include="Spore\UI\CivCommCursorAttachment.h" />
+    <ClInclude Include="Spore\UI\cSPAssetView.h" />
     <ClInclude Include="Spore\UI\cUINewProgressBar.h" />
     <ClInclude Include="Spore\UI\CursorAttachment.h" />
     <ClInclude Include="Spore\UI\EditorNamePanel.h" />
@@ -838,6 +855,7 @@
     <ClInclude Include="Spore\UI\ITokenTranslator.h" />
     <ClInclude Include="Spore\UI\LayerManager.h" />
     <ClInclude Include="Spore\UI\Minimap.h" />
+    <ClInclude Include="Spore\UI\SimulatorRollovers.h" />
     <ClInclude Include="Spore\UI\ScrollFrameVertical.h" />
     <ClInclude Include="Spore\UI\SpaceGameUI.h" />
     <ClInclude Include="Spore\UI\cSPUITextZoom.h" />
@@ -851,6 +869,7 @@
     <ClInclude Include="Spore\UTFWin\CascadeEffect.h" />
     <ClInclude Include="Spore\UTFWin\ComboBoxDrawable.h" />
     <ClInclude Include="Spore\UTFWin\Constants.h" />
+    <ClInclude Include="Spore\UTFWin\cSPUIBehaviorEventBase.h" />
     <ClInclude Include="Spore\UTFWin\cSPUIMessageBox.h" />
     <ClInclude Include="Spore\UTFWin\CursorManager.h" />
     <ClInclude Include="Spore\UTFWin\Cursors.h" />
@@ -913,6 +932,7 @@
     <ClInclude Include="Spore\UTFWin\WinTreeView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SourceCode\DLL\AddressesOpenSSL.cpp" />
     <ClCompile Include="SourceCode\Allocator.cpp" />
     <ClCompile Include="SourceCode\Anim\Animations.cpp" />
     <ClCompile Include="SourceCode\App\App.cpp" />

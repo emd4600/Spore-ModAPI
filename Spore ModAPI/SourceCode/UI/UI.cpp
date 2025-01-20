@@ -1,6 +1,9 @@
 #ifndef MODAPI_DLL_EXPORT
 #include <Spore\UI\GameSettings.h>
 #include <Spore\UI\EditorNamePanel.h>
+#include <Spore\UI\cSPAssetView.h>
+#include <Spore\UI\AssetDiscoveryCard.h>
+#include <Spore\UI\SimulatorRollovers.h>
 
 namespace UI
 {
@@ -52,5 +55,58 @@ namespace UI
 		Args(pEntity, pContainer, layoutID, arg, randomNameType));
 
 	auto_METHOD_VOID_(EditorNamePanel, Dispose);
+
+
+	cSPAssetView::cSPAssetView() {
+		CALL(GetAddress(cSPAssetView, _ctor), void, Args(cSPAssetView*), Args(this));
+	}
+	// Leave empty implementations for everything, as these methods are never called
+	// We sue Spore's vftable by calling the original constructor
+
+	int cSPAssetView::AddRef() {
+		return DefaultRefCounted::AddRef();
+	}
+	int cSPAssetView::Release() {
+		return DefaultRefCounted::Release();
+	}
+	void* cSPAssetView::Cast(uint32_t) const {
+		return 0;
+	}
+	int cSPAssetView::GetEventFlags() const {
+		return 0;
+	}
+	bool cSPAssetView::HandleUIMessage(UTFWin::IWindow* pWindow, const UTFWin::Message& message) {
+		return false;
+	}
+
+	void cSPAssetView::Load(UTFWin::IWindow* window, Sporepedia::IAssetData* assetData, bool, bool) {
+	}
+	void cSPAssetView::func20h() {
+	}
+	void cSPAssetView::func24h(int, int) {
+	}
+	void cSPAssetView::SetVisible(bool visible) {
+	}
+
+	auto_METHOD_(cSPAssetView, bool, sub_6590A0);
+
+	AssetDiscoveryCard::AssetDiscoveryCard()
+		: mLayout()
+		, mAssetData()
+		, mAssetView()
+		, mContainerWindow()
+		, mAssetWindow()
+	{
+	}
+
+
+	auto_STATIC_METHOD(SimulatorRollover, SimulatorRolloverID, GetRolloverIdForObject,
+		Args(Simulator::cGameData* object), Args(object));
+
+	auto_STATIC_METHOD_VOID(SimulatorRollover, ShowRollover,
+		Args(Simulator::cGameData* object), Args(object));
+	
+	auto_STATIC_METHOD(SimulatorRollover, SimulatorRollover*, ShowRolloverInternal,
+		Args(Simulator::cGameData* object, SimulatorRolloverID rolloverId, float unk), Args(object, rolloverId, unk));
 }
 #endif

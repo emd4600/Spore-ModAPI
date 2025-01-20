@@ -14,15 +14,41 @@
 #include <Spore\Simulator\cCommunityLayout.h>
 #include <Spore\Simulator\cOrnament.h>
 #include <EASTL\fixed_vector.h>
+#include <EASTL\array.h>
 #include <EASTL\deque.h>
 
 #define cTribePtr eastl::intrusive_ptr<Simulator::cTribe>
 
 namespace Simulator
 {
-	//TODO sFishHotSpots
-	//TODO sFishTimer
-	//TODO sFishEndTime
+	struct cFishHotSpot
+	{
+		/* 00h */	Math::Vector3 mPos;
+		/* 0Ch */	float mCurrentFood;
+		/* 10h */	float mMaxFood;
+		/* 14h */	float mResupplyRate;
+		/* 18h */	eastl::array<int, 3> mCubeIndex;
+		/* 24h */	cHitSpherePtr mpFishingHitSphere;
+		/* 28h */	cOrnamentPtr mpFishingHotSpot;
+		/* 30h */	uint64_t mStartTime;
+		/* 38h */	bool mbActive;
+		/* 39h */	bool mbReplenishing;
+	};
+	ASSERT_SIZE(cFishHotSpot, 0x40);
+
+	struct cFishHotSpotUnk {
+		/* 00h */	char padding_0[0x1C];
+		/* 1Ch */	cFishHotSpot mData;
+	};
+	ASSERT_SIZE(cFishHotSpotUnk, 0x60);
+
+	eastl::vector<cFishHotSpotUnk>& GetTribeFishHotSpots();
+
+	cGonzagoTimer& GetTribeFishTimer();
+
+	uint64_t GetTribeFishEndTime();
+	void SetTribeFishEndTime(uint64_t);
+
 
 	/// A tribe from the tribe stage.
 	class cTribe
@@ -46,19 +72,28 @@ namespace Simulator
 		/* 90h */	virtual eastl::vector<cCreatureCitizenPtr>& GetTribeMembers();
 		/// Returns a vector of all selectable members of the tribe
 		/* 94h */	virtual eastl::vector<cSpatialObjectPtr>& GetSelectableMembers();
-		/* 98h */	virtual cCreatureCitizen* SpawnMember();
-		/* 9Ch */	virtual void func9Ch(int, bool);
+		/* 98h */	virtual cCreatureCitizen* SpawnMember(int);
+		/// Removes a member of the tribe. index seems to cause issues if not 0.
+		/* 9Ch */	virtual void func9Ch(int index, bool);
 		/// Calls func9Ch() with second parameter true
-		/* A0h */	virtual void funcA0h(int);
+		/* A0h */	virtual void funcA0h(int index);
 		/* A4h */	virtual int GetTotalFood();
 		/* A8h */	virtual void funcA8h();
 		/* ACh */	virtual cTribeHut* GetHut();
 		/* B0h */	virtual cTribeHut* funcB0h();
-		/// Creates a cCreatureCitizen*
-		/* B4h */	virtual cCreatureCitizen* funcB4h(int);
-		/* B8h */	virtual void funcB8h(int);
+		/* B4h */	virtual cTribeTool* CreateTool(int toolType);
+		// Destroys a bunch of things
+		/* B8h */	virtual void RemoveTool(cTribeTool* tribeTool);
 		/* BCh */	virtual eastl::vector<cTribeToolPtr>& GetTools();
 		/* C0h */	virtual eastl::vector<cTribeToolPtr>& funcC0h();
+
+		/// Checks the mTools vector and returns the first tool that has the given tool type,
+		/// or nullptr if no tool was found.
+		/// @param toolType
+		/// @returns
+		cTribeTool* GetToolByType(int toolType);
+
+		void UpdateFoodVisuals(float amount);
 
 	public:
 		/* 260h */	cTribeFoodMatPtr mpFoodMat;
@@ -71,7 +106,7 @@ namespace Simulator
 		/* 2A8h */	eastl::vector<int> field_2A8;
 		/* 2BCh */	int field_2BC;
 		/* 2C0h */	float mEggPenFoodValue;
-		/* 2C4h */	float mInitialRelationship;
+		/* 2C4h */	float mInitialRelationship; // does not seem to change from 0
 		/* 2C8h */	float mChieftainRespawnTimer;
 		/* 2CCh */	float mGiftRelationshipDecayTimer;
 		/* 2D0h */	ObjectPtr field_2D0;
@@ -94,7 +129,7 @@ namespace Simulator
 		/* 310h */	float mClosestWaterDistance;
 		/* 314h */	eastl::vector<Vector3> mClosestForests;
 		/* 328h */	int field_328;  // not initialized
-		/* 32Ch */	int mUpgradeLevel;
+		/* 32Ch */	int mUpgradeLevel; // may be a uint32 or have errors?
 		/* 330h */	float mZoningRadius;  // 30.0
 		/* 334h */	bool mbRoboTribe;
 		/* 338h */	int mRoboPopulationCount;
@@ -105,7 +140,7 @@ namespace Simulator
 		/* 36Ch */	eastl::vector<cTribeToolPtr> mTools;
 		/* 380h */	eastl::vector<cTribeToolPtr> mSocialTools;
 		/* 394h */	eastl::hash_map<int, cCommunityLayout> field_394;
-		/* 3B4h */	cCommunityLayout field_3B4;
+		/* 3B4h */	cCommunityLayout mTribeLayout;
 		/* 418h */	eastl::fixed_vector<int, 45> field_418;
 		/* 4E4h */	eastl::hash_map<int, eastl::deque<ObjectPtr>> field_4E4;
 		/* 504h */	int field_504;  // not initialized
@@ -116,7 +151,7 @@ namespace Simulator
 		/* 550h */	int mTribeArchetype;  //TODO
 		/* 554h */	bool field_554;
 		/* 555h */	bool field_555;
-		/* 556h */	bool field_556;
+		/* 556h */	bool mbDefeated; // if true, creatures run away in fear then die.
 		/* 557h */	bool mGoodyPopped;
 		/* 558h */	char _padding_558[0x1310];
 		/* 1868h */	int field_1868;
@@ -139,7 +174,7 @@ namespace Simulator
 		/* 18A4h */	int field_18A4;  // -1
 		/* 18A8h */	bool field_18A8;
 		/* 18A9h */	bool field_18A9;
-		/* 18ACh */	int field_18AC;  // not initialized
+		/* 18ACh */	uint32_t field_18AC;  // not initialized
 		/* 18B0h */	int field_18B0;
 		/* 18B4h */	int field_18B4;
 		/* 18B8h */	int field_18B8;
@@ -159,9 +194,20 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cTribe, 0x19E0);
 
+	namespace Addresses(cTribe) {
+		DeclareAddress(GetToolByType);  // 0xC8ED20 0xC8F870
+		DeclareAddress(SpawnMember);  // 0xC97BA0 0xC983C0
+		DeclareAddress(CreateTool);  // 0xC95950 0xC96170
+		DeclareAddress(RemoveTool);  // 0xC96800 0xC97020
+		DeclareAddress(UpdateFoodVisuals);  // 0xC94520 0xC94CE0
+	}
+
 	cTribe* SpawnNpcTribe(const Math::Vector3& position, int tribeArchetype, int numMembers, int foodAmount, bool, cSpeciesProfile* species);
 }
 
 namespace Addresses(Simulator) {
 	DeclareAddress(SpawnNpcTribe);  // 0xC92860 0xC932F0
+	DeclareAddress(sTribeFishHotSpots_ptr);  // 0x157EB90 0x157ABB0
+	DeclareAddress(sTribeFishTimer_ptr);  // 0x1699678 0x16953F8
+	DeclareAddress(sTribeFishEndTime_ptr);  // 0x16995E8 0x1695368
 }

@@ -82,4 +82,13 @@ namespace Simulator
 	{
 		DeclareAddress(AssignNames);  // 0xB6F040 0xB6F480
 	}
+
+	const Math::ColorRGB& GetCachedColorFromId(uint32_t colorId);
+
+	eastl::map<uint32_t, Math::ColorRGB>& GetCachedColorIdMap();
+}
+
+namespace Addresses(Simulator) {
+	DeclareAddress(GetCachedColorFromId);  // 0xB6ED80 0xB6F1C0
+	DeclareAddress(sCachedColorIdMap__ptr);  // 0x156F098 0x156B0B8
 }

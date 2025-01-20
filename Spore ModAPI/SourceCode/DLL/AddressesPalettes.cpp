@@ -14,6 +14,7 @@
 #include <Spore\Palettes\PaletteIterator.h>
 #include <Spore\Palettes\StandardItemUI.h>
 #include <Spore\Palettes\SwatchManager.h>
+#include <Spore\Palettes\OutfitterItemUI.h>
 
 namespace Palettes
 {
@@ -160,6 +161,10 @@ namespace Palettes
 		DefineAddress(HasNext, SelectAddress(0x5C7CD0, 0x5C7D00));
 		DefineAddress(Start, SelectAddress(0x5C7F40, 0x5C7F70));
 		DefineAddress(Next, SelectAddress(0x5C7EE0, 0x5C7F10));
+	}
+
+	namespace Addresses(OutfitterItemUI) {
+		DefineAddress(Initialize, SelectAddress(0x5EF6E0, 0x5EF8D0));
 	}
 }
 #endif

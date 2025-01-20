@@ -8,6 +8,7 @@
 #include <Spore\Resource\PFIndexModifiable.h>
 #include <Spore\Resource\PFRecordRead.h>
 #include <Spore\Resource\PFRecordWrite.h>
+#include <Spore\Resource\FakeRecord.h>
 #include <Spore\Resource\Paths.h>
 
 namespace Resource
@@ -299,6 +300,10 @@ namespace Resource
 		DefineAddress(GetKeyFromFileName, SelectAddress(0x8D6500, 0x8D61F0));
 		//DefineAddress(GetDefaultGroupId);
 		//DefineAddress(SetDefaultGroupId);
+	}
+
+	namespace Addresses(FakeRecord) {
+		DefineAddress(_ctor, SelectAddress(0x8E2940, 0x8E2650));
 	}
 }
 
