@@ -63,6 +63,7 @@ namespace Simulator
 
 	namespace Addresses(cCreatureCitizen) {
 		DeclareAddress(Update);  // 0xC24210 0xC24A30
+		DeclareAddress(TakeDamage);
 		DeclareAddress(DoAction);  // 0xC26EF0 0xC27710
 		DeclareAddress(GetHandheldItemForTool);  // 0xC22E70 0xC23740
 		DeclareAddress(GetSpecializedName);  // 0xB6B500 0xB6B910
