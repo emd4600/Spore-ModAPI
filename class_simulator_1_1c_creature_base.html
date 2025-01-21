@@ -227,7 +227,7 @@
             <dt id="aaf71dc3c4033b1a996bac6af195cf1bb">
               <span class="m-doc-wrap-bumper">auto <a href="#aaf71dc3c4033b1a996bac6af195cf1bb" class="m-doc-self">IsHervibore</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>also returns true for omnivores</dd>
             <dt id="af1322e8692070dbeac732da91d7fbd14">
               <span class="m-doc-wrap-bumper">auto <a href="#af1322e8692070dbeac732da91d7fbd14" class="m-doc-self">CreateLocomotionStrategy</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
@@ -264,10 +264,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a17eaa144709e10aec605f0037a93fae8" class="m-doc-self">func74h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>*) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="adc0a81146ab04b64b016aeba647822b9">
-              <span class="m-doc-wrap-bumper">auto <a href="#adc0a81146ab04b64b016aeba647822b9" class="m-doc-self">func78h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
+            <dt id="a6ddf47afffb7f8d33d7d53d61267857c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ddf47afffb7f8d33d7d53d61267857c" class="m-doc-self">GrowUp</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Make the creature grow up and play the baby grow up effect. Will run even if the creature is already an adult.</dd>
             <dt id="a7be7866308a236d4a06435f5250976cf">
               <span class="m-doc-wrap-bumper">auto <a href="#a7be7866308a236d4a06435f5250976cf" class="m-doc-self">GetBaseMaxHitPoints</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -483,10 +483,10 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ac749e6c67b81551dab5fd0eea326b616" class="m-doc-self">mbIsDiseased</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="aad4cf4cb8221dcaed365616af8ff7bc9">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#aad4cf4cb8221dcaed365616af8ff7bc9" class="m-doc-self">field_B63</a>
+            <dt id="a5c33a9f9521fddda905360091b00a8fb">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a5c33a9f9521fddda905360091b00a8fb" class="m-doc-self">mbMarkedForDeletion</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Setting this to true deletes the creature.</dd>
             <dt id="a64b0b64b4bb4d0e373c548422f18588d">
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#a64b0b64b4bb4d0e373c548422f18588d" class="m-doc-self">field_B64</a>
             </dt>
@@ -711,10 +711,10 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#ac4cc6ea62229a9243584dffff474e550" class="m-doc-self">field_E64</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ac56e5bd11713f40d8bebbce1c96e58a4">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#ac56e5bd11713f40d8bebbce1c96e58a4" class="m-doc-self">field_E68</a>
+            <dt id="afad36ccd6b147d8ca6d18787fbd71e2f">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <a href="#afad36ccd6b147d8ca6d18787fbd71e2f" class="m-doc-self">mbMindMelded</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>If true, green sparkles and smiles will emanate from the creature.</dd>
             <dt id="a0e96606d50100720b8ccd60f0a0cbd0c">
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a0e96606d50100720b8ccd60f0a0cbd0c" class="m-doc-self">field_E6C</a>
             </dt>

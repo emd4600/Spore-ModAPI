@@ -1921,6 +1921,7 @@
               <a href="#a3068a6e284562d7b8e1aa81aec62abbdaa7c64fc57aa7a52cface2e0f0c0aae48" class="m-doc">kCitizenActionFish</a> = 1,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbdaa10a5f50b189ddf9b6a32cac462af214" class="m-doc">kCitizenActionGather</a> = 2,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbdae94200d8f18d07deb570cc3b3b547f75" class="m-doc">kCitizenActionGrabTool</a> = 3,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbda507f46177651baf0270975627443ff3b" class="m-doc">kCitizenActionWalkTo</a> = 4,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbdadb23153e615d2cbd76f15c9b3d1ce98c" class="m-doc">kCitizenActionHeal</a> = 5,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbda27724ecdc17eb333e66b7213398bf7a2" class="m-doc">kCitizenActionAttack</a> = 7,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbda34d3cbbbea6d096734ccd2cbd043f8d7" class="m-doc">kCitizenActionRaid1</a> = 8,
@@ -1936,7 +1937,8 @@
               <a href="#a3068a6e284562d7b8e1aa81aec62abbda6537382e14c985cac59f09053db3a398" class="m-doc">kCitizenActionRepair</a> = 24,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbda77d07cc1a25ec7fbe9f3ac76b2f88f48" class="m-doc">kCitizenActionTame</a> = 25,
               <a href="#a3068a6e284562d7b8e1aa81aec62abbda763e5f3128652565f63af6e334f03f67" class="m-doc">kCitizenActionRecruit</a> = 26,
-              <a href="#a3068a6e284562d7b8e1aa81aec62abbdadc39f28346f7de31b66210ccc0b32672" class="m-doc">kCitizenActionGatherMeat</a> = 27 }</span>
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdadc39f28346f7de31b66210ccc0b32672" class="m-doc">kCitizenActionGatherMeat</a> = 27,
+              <a href="#a3068a6e284562d7b8e1aa81aec62abbdad137d054d69fd404db6f13a1e65e72cc" class="m-doc">kCitizenActionUnk1</a> = 28 }</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -1995,6 +1997,9 @@
               <a href="#a4b1f459203b8dbf8583312aa067c8c54aa2f3153c23e6a87ed245b3eb6a44420e" class="m-doc">kMsgCinematicTRG2CVGShowCityHall</a> = 0x069479a8,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ad3cfb3a3b039a8ca29f7cf114198b0ae" class="m-doc">kMsgCinematicTRG2CVGHideCityHall</a> = 0x0694797d,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a8f5d9b2b677b1b2b5f5c0e71d28daad4" class="m-doc">kMsgCinematicNewCityAppears</a> = 0x05668f43,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54ad8e7fe02d1d2796f3302b06fa4802c4c" class="m-doc">kMsgCinematicSendVehicleToCommodityPart2</a> = 0x056cfe69,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a064f3d924d92eb3cf22bd3538621b1e0" class="m-doc">kCinematicMessageCityChangeShowCaptureEffect</a> = 0x05f4d02a,
+              <a href="#a4b1f459203b8dbf8583312aa067c8c54a8ca9825352215dc9aa9001e066a940bb" class="m-doc">kCinematicMessageCityChangeTriggerVignette</a> = 0x05f4d02a,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ae72860a65464daed0340c1b8fb0d5288" class="m-doc">kMsgCinematicCityChangeStartBuildingsEffects</a> = 0x05f4d02a,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54a92d71311de7f04f260030a24440565cd" class="m-doc">kMsgCinematicCityChangeSwapBuildings</a> = 0x05dfb77f,
               <a href="#a4b1f459203b8dbf8583312aa067c8c54ae78f78a09e2a1771b8a7a7d5c54079ec" class="m-doc">kMsgCinematicCityChangeChangeWallColor</a> = 0x05dfb782,
@@ -3861,6 +3866,10 @@
             </dt>
             <dd>Initializes certain <a href="namespace_simulator.html" class="m-doc">Simulator</a> systems so that most things can be used without being in a star or planet.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0ee18695394d13cb16490f3b204078b5" class="m-doc">GetMinimapWindow</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_i_1_1_minimap.html" class="m-doc">UI::<wbr />Minimap</a>*</span>
+            </dt>
+            <dd>Returns a pointer to the current minimap, if one exists.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae236ba73201c78ae60504b4d641607fd" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_simulator_system.html" class="m-doc">cSimulatorSystem</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
@@ -5267,31 +5276,49 @@
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a8f5d9b2b677b1b2b5f5c0e71d28daad4" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a8f5d9b2b677b1b2b5f5c0e71d28daad4">kMsgCinematicNewCityAppears</a></td>
                   <td>
-                  <p>Sent when the cutscene for a new city appearing plays in civ stage.</p>
+                  <p>Sent when the cutscene for a new city appearing plays in civ stage. Not sent when a city is founded outside of a cutscene.</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ad8e7fe02d1d2796f3302b06fa4802c4c" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ad8e7fe02d1d2796f3302b06fa4802c4c">kMsgCinematicSendVehicleToCommodityPart2</a></td>
+                  <td>
+                  <p>Sent when a vehicle is sent to spice (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a064f3d924d92eb3cf22bd3538621b1e0" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a064f3d924d92eb3cf22bd3538621b1e0">kCinematicMessageCityChangeShowCaptureEffect</a></td>
+                  <td>
+                  <p>Sent when a city is captured and plays an effect (TODO: What effect?) (Cutscene only)</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a8ca9825352215dc9aa9001e066a940bb" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a8ca9825352215dc9aa9001e066a940bb">kCinematicMessageCityChangeTriggerVignette</a></td>
+                  <td>
+                  <p>TODO (Cutscene only)</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae72860a65464daed0340c1b8fb0d5288" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae72860a65464daed0340c1b8fb0d5288">kMsgCinematicCityChangeStartBuildingsEffects</a></td>
                   <td>
-                  <p>Sent when the captured city&#x27;s buildings restart their runtime effects in civ stage.</p>
+                  <p>Sent when the captured city&#x27;s buildings restart their runtime effects in civ stage (Cutscene only)</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a92d71311de7f04f260030a24440565cd" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a92d71311de7f04f260030a24440565cd">kMsgCinematicCityChangeSwapBuildings</a></td>
                   <td>
-                  <p>Sent when the captured city&#x27;s buildings swap their models in civ stage.</p>
+                  <p>Sent when the captured city&#x27;s buildings swap their models in civ stage (Cutscene only)</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54ae78f78a09e2a1771b8a7a7d5c54079ec" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54ae78f78a09e2a1771b8a7a7d5c54079ec">kMsgCinematicCityChangeChangeWallColor</a></td>
                   <td>
-                  <p>Sent when the captured city&#x27;s wall color changes in civ stage.</p>
+                  <p>Sent when the captured city&#x27;s wall color changes in civ stage (Cutscene only)</p>
                   </td>
                 </tr>
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54aed559e3177187ac2f2f227affba6033f" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54aed559e3177187ac2f2f227affba6033f">kMsgCinematicCityChangeChangeCivilization</a></td>
                   <td>
-                  <p>Sent when the captured city&#x27;s civilization ownership changes in civ stage.</p>
+                  <p>Sent when the captured city&#x27;s civilization ownership changes in civ stage (Cutscene only)</p>
                   </td>
                 </tr>
                 <tr>
@@ -5309,7 +5336,7 @@
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54aed449f3052e6040dc3eca33cdd4e6e41" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54aed449f3052e6040dc3eca33cdd4e6e41">kMsgSpaceGameFromLaunchScreen</a></td>
                   <td>
-                  <p>Sent when launching a space stage game form the main menu.</p>
+                  <p>Sent when launching a space stage game from the main menu.</p>
                   </td>
                 </tr>
                 <tr>
@@ -8802,6 +8829,14 @@
             </h3>
             <p>Initializes certain <a href="namespace_simulator.html" class="m-doc">Simulator</a> systems so that most things can be used without being in a star or planet.</p>
 <p>This method does:</p><ul><li>Uses the StarManager temporary star with a temporary planet on it, and sets those as the current star/planet in <a href="class_simulator_1_1_space_player_data.html" class="m-doc">SpacePlayerData</a>.</li><li>Calls the PrepareSimulator() method in GameViewManager so that the simulator objects are displayed on the screen.</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a0ee18695394d13cb16490f3b204078b5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="class_u_i_1_1_minimap.html" class="m-doc">UI::<wbr />Minimap</a>* Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0ee18695394d13cb16490f3b204078b5" class="m-doc-self">GetMinimapWindow</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_system_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/SimulatorSystem.h&gt;</a></div>
+            </h3>
+            <p>Returns a pointer to the current minimap, if one exists.</p>
+<p>Call via <a href="namespace_simulator.html#a0ee18695394d13cb16490f3b204078b5" class="m-doc">Simulator::<wbr />GetMinimapWindow()</a> TODO: should this be moved to a different class?</p>
           </div></section>
           <section class="m-doc-details" id="ae236ba73201c78ae60504b4d641607fd"><div>
             <h3>
