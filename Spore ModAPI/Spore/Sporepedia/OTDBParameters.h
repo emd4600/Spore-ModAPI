@@ -65,6 +65,7 @@ namespace Sporepedia
 
 		namespace Parameters
 		{
+			// TODO: Some of these don't seem to work; the ones that are verified to work are commented.
 			enum Parameters : uint32_t
 			{
 				type = 0x2DD90AF,
@@ -73,16 +74,16 @@ namespace Sporepedia
 				cost = 0x5B06E36,
 				baseGear = 0x2F05C60,
 				height = 0x7358629A,
-				carnivore = 0x2F05C58,
-				herbivore = 0x2F05C59,
+				carnivore = 0x2F05C58, // works
+				herbivore = 0x2F05C59, // works
 				cuteness = 0x2F05C5E,
-				totalSocial = 0x2F05C5F,
+				totalSocial = 0x2F05C5F, // works
 				social = 0x5B15AA5,
-				numGraspers = 0x2F05C61,
 				meanLookingScore = 0x3FEA210,
-				totalAttack = 0x3FEA1A0,
+				totalAttack = 0x3FEA1A0, // works
 				attack = 0x5B15A92,
 				numFeet = 0x3FEA1C0,
+				numGraspers = 0x2F05C61,
 				biteCapRange = 0x4AB3BD8,
 				strikeCapRange = 0x4AB3BD9,
 				chargeCapRange = 0x4AB3BDA,

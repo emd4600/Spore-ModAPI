@@ -22,6 +22,7 @@
 #include <Spore\App\MessageListenerData.h>
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\SubSystem\ISimulatorUIGraphic.h>
+#include <Spore\UI\Minimap.h>
 #include <EASTL\list.h>
 
 #define SimulatorSystem (*Simulator::cSimulatorSystem::Get())
@@ -111,6 +112,11 @@ namespace Simulator
 	/// - Calls the PrepareSimulator() method in GameViewManager so that the simulator objects are displayed
 	/// on the screen.
 	void InitializeWithoutPlanet();
+
+	/// Returns a pointer to the current minimap, if one exists.
+	/// Call via Simulator::GetMinimapWindow()
+	/// TODO: should this be moved to a different class?
+	UI::Minimap* GetMinimapWindow();
 
 	namespace Addresses(cSimulatorSystem)
 	{

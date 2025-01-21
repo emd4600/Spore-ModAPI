@@ -434,15 +434,18 @@ namespace Simulator
 			{
 				None = 0,
 				Body = 12,
+
 				Mandible = 2,
 				Filter = 3,
 				Proboscis = 4,
-				Cilia = 8,
-				Flagella = 9,
-				Jet = 10,
+
 				Chemical = 5,
 				Electric = 6,
-				Spike = 7
+				Spike = 7,
+
+				Cilia = 8,
+				Flagella = 9,
+				Jet = 10
 			};
 
 			/* 00h */	cCellDataReference<cCellStructureResource>* structure;

@@ -43,6 +43,26 @@ ThumbnailCaptureScript::~ThumbnailCaptureScript()
 {
 }
 
+//---------------------------------------------------
+// Detours
+
+Palettes::PaletteUI* pLastPalette;
+
+// Editor parts palette loading func, PaletteUI::Load. Used to pull the ingame palettes
+member_detour(PaletteUILoad_detour, Palettes::PaletteUI, void(Palettes::PaletteMain*, UTFWin::IWindow*, bool, Palettes::PaletteInfo*)) {
+	void detoured(Palettes::PaletteMain* pPalette, UTFWin::IWindow* pWindow, bool bool1, Palettes::PaletteInfo* pInfo) {
+		pLastPalette = this;
+		original_function(this, pPalette, pWindow, bool1, pInfo);
+	}
+};
+
+void ThumbnailCaptureScript::AttachDetour() {
+	PaletteUILoad_detour::attach(GetAddress(Palettes::PaletteUI, Load));
+}
+
+//---------------------------------------------------
+
+
 int ThumbnailCaptureScript::GetEventFlags() const {
 	return UTFWin::kEventRefresh;
 }
@@ -52,7 +72,7 @@ bool ThumbnailCaptureScript::HandleUIMessage(IWindow* pWindow, const Message& me
 		mpItemViewer = mItemViewers[pWindow];
 	}
 	else if (message.IsType(kMsgMouseLeave)) {
-		// For some reason this might happen in paralel to Render? We don't want them to race
+		// For some reason this might happen in parallel to Render? We don't want them to race
 		//mpItemViewer = nullptr;
 	}
 	return false;
@@ -154,54 +174,97 @@ void ThumbnailCaptureScript::CaptureImage() {
 	device->SetRenderTarget(0, surface);
 }
 
+
+PaletteUIPtr ThumbnailCaptureScript::GetCurrentPalette() const {
+	// Editor is valid, get the parts palette
+	if (GetEditor() && GetEditor()->IsActive()) { return GetEditor()->mpPartsPaletteUI; }
+	// Editor is invalid, try the last loaded palette
+	else { return pLastPalette; }
+
+}
+
 void ThumbnailCaptureScript::InjectListeners() {
+
+	PaletteUIPtr palette = GetCurrentPalette();
+	if (!palette) { return; }
+
 	RemoveListeners();
-	for (auto catUI : GetEditor()->mpPartsPaletteUI->mCategories) {
-		auto subCatUIs = catUI->mpSubcategoriesUI;
+	for (PaletteCategoryUIPtr catUI : palette->mCategories) {
+		PaletteSubcategoriesUIPtr subCatUIs = catUI->mpSubcategoriesUI;
+
+		// subcategories present
 		if (subCatUIs) {
-			for (auto subCatUI : subCatUIs->mCategoryUIs) {
-				for (auto pageUI : catUI->mPageUIs) {
-					for (auto itemUI : pageUI.page->mStandardItems) {
-						itemUI->field_18->AddWinProc(this);
-						mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+			for (PaletteCategoryUIPtr subCatUI : subCatUIs->mCategoryUIs) {
+				for (auto pageUI : subCatUI->mPageUIs) {
+					// standard editor/planner
+					if (pageUI.page->mStandardItems.size() > 0) {
+						for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
+							itemUI->field_18->AddWinProc(this);
+							mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+						}
 					}
+					// adventure editor
+					/*
+					else {
+						for (eastl::intrusive_ptr<Palettes::IAdvancedItemUI> itemUI : pageUI.page->mAdvancedItems) {
+							itemUI->mpWindow
+							mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+						}
+					}*/
+					
 				}
 			}
 		}
+		// simple category
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
-				for (auto itemUI : pageUI.page->mStandardItems) {
+				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
 					itemUI->field_18->AddWinProc(this);
 					mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
 				}
 			}
 		}
 		
-
-		
 	}
 
 	Renderer.RegisterLayer(this, 40);
 }
 
+
+
 void ThumbnailCaptureScript::RemoveListeners() {
 
-	for (auto catUI : GetEditor()->mpPartsPaletteUI->mCategories) {
+	PaletteUIPtr palette = GetCurrentPalette();
+	if (!palette) { return; }
+
+	for (auto catUI : palette->mCategories) {
 		auto subCatUIs = catUI->mpSubcategoriesUI;
+
+		// subcategories present
 		if (subCatUIs) {
-			for (auto subCatUI : subCatUIs->mCategoryUIs) {
-				for (auto pageUI : catUI->mPageUIs) {
-					for (auto itemUI : pageUI.page->mStandardItems) {
-						if (itemUI && itemUI->field_18) {
+			for (PaletteCategoryUIPtr subCatUI : subCatUIs->mCategoryUIs) {
+				for (auto pageUI : subCatUI->mPageUIs) {
+					// standard editor/planner
+					if (pageUI.page->mStandardItems.size() > 0) {
+						for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
 							itemUI->field_18->RemoveWinProc(this);
 						}
 					}
+					/*
+					// adventure editor
+					else {
+						for (StandardItemUIPtr itemUI : pageUI.page->mpPage->mItems) {
+							itemUI->field_18->RemoveWinProc(this);
+						}
+					}
+					*/
 				}
 			}
 		}
+		// simple category
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
-				for (auto itemUI : pageUI.page->mStandardItems) {
+				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
 					if (itemUI && itemUI->field_18) {
 						itemUI->field_18->RemoveWinProc(this);
 					}
@@ -223,9 +286,23 @@ void ThumbnailCaptureScript::ParseLine(const ArgScript::Line& line) {
 		return;
 	}
 
+	//auto editor = GetEditor();
+
 	if (!Editor.IsActive()) {
-		App::ConsolePrintF("Must be in editor to use this cheat.");
-		return;
+
+		if (Simulator::GetGameModeID() == kEditorMode) {
+			App::ConsolePrintF("Must be in editor or a community planner to use this cheat.");
+			return;
+		}
+		// TODO: make this work in the adventure editor.
+		else if (Simulator::IsTribeGame() || Simulator::IsCivGame() || Simulator::IsSpaceGame()) { // || Simulator::IsScenarioMode()
+			// found a palette that's been loaded anyway
+			if (!pLastPalette) {
+				App::ConsolePrintF("Must be in editor or a community planner to use this cheat.");
+			}
+		}
+		
+		//return;
 	}
 	else if (!Editor.IsMode(Mode::BuildMode)) {
 		App::ConsolePrintF("Must be in editor build mode to use this cheat.");

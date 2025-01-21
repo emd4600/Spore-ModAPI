@@ -53,6 +53,32 @@ enum ModelTypes
 
 };
 
+enum EditorManipulators : uint32_t
+{
+	kEditorManipulationStackingSimple = 0x889CDBFF,
+	kEditorManipulationStacking = 0x67B68E4D,
+	kEditorManipulationPinning = 0xA9910288,
+	kEditorManipulationReplacement = 0x58891023,
+	kEditorManipulationDeformHandle = 0x9F48C094,
+	kEditorManipulationRotationHandle = 0x855DE44D,
+
+
+	kEditorManipulationSpine = 0x5FDE642E,
+	kEditorManipulationSpineScaling = 0x7AD67439,
+	kEditorManipulationSpineResize = 0xBB46D99A,
+	kEditorManipulationLimb = 0x8665F54D,
+	kEditorManipulationBoneRotation = 0xE931544D,
+
+	kEditorManipulationTranslateCreature = 0x9ED74A02,
+	kEditorManipulationCreatureTest = 0xF818C5BA,
+	kEditorManipulationCellTorso = 0x2D35AF62,
+	kEditorManipulationCellPinning = 0x1B73114C,
+
+	kEditorManipulationInterpenetration = 0x6125EE88,
+	kEditorManipulationPlanarInterpenetration = 0xF48AB41C,
+
+};
+
 enum GameModeIDs
 {
 	/// Not a game mode by itself, used to index game modes.
@@ -218,6 +244,7 @@ namespace GroupIDs
 		SpaceTrading_ = 0x034D97FA,
 
 		TribalTools = 0xF37C24E6,
+		TribeToolData = 0x04292F52,
 		TribePlans = 0x72D02C25,
 
 		Abilities = 0x01B68DB4,

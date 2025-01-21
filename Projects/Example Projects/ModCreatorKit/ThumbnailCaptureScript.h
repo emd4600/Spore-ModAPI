@@ -53,12 +53,14 @@ public:
 	bool HandleMessage(uint32_t messageID, void* pMessage) override;
 
 	static void AddCheat();
+	static void AttachDetour();
 
 private:
 
 	void CaptureImage();
 	Vector3 CalculateOffset(Graphics::Model* model);
 
+	PaletteUIPtr GetCurrentPalette() const;
 	void InjectListeners();
 	void RemoveListeners();
 

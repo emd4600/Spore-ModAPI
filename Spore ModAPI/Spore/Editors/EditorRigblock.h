@@ -55,7 +55,7 @@ namespace Editors
 
 	struct EditorRigblockPaint
 	{
-		/* 00h */	uint32_t mPaintID;
+		/* 00h */	uint32_t mPaintID; // ID of the skinPaint_script~ entry
 		/* 04h */	ColorRGB mPaintColor1;
 		/* 10h */	ColorRGB mPaintColor2;
 	};
@@ -110,7 +110,7 @@ namespace Editors
 		kEditorRigblockModelIsNullBlock = 0x14,
 		kEditorRigblockModelUseHullForBBox = 0x15,
 		kEditorRigblockModelHasStayAbove = 0x16,
-		kEditorRigblockModelHasSnapDawnTo = 0x17,
+		kEditorRigblockModelHasSnapDownTo = 0x17,
 		kEditorRigblockModelHideDeformHandles = 0x18,
 		kEditorRigblockModelHideRotationHandles = 0x19,
 		kEditorRigblockModelHasAlignLateralWith = 0x1A,
@@ -122,7 +122,7 @@ namespace Editors
 		kEditorRigblockModelHasSocketConnector = 0x20,
 		kEditorRigblockModelCellAllowOnTopOfBody = 0x21,
 		kEditorRigblockModelPreferToBeOnPlaneOfSymmetry = 0x22,
-		kEditorRigblockModelCanBeParentless = 0x23,
+		kEditorRigblockModelCannotBeParentless = 0x23, // formerly kEditorRigblockModelCanBeParentless; functionality appeared to be inverted
 		kEditorRigblockModelBoundsCheckOnlyForDelete = 0x24,
 
 		kEditorRigblockModelHasRotationBallHandle = 0x26,
@@ -226,7 +226,7 @@ namespace Editors
 		/* CCh */	Matrix3 field_CC;
 		/* F0h */	Matrix3 mUserOrientation;
 		/* 114h */	Matrix3 field_114;
-		/* 138h */	Vector3 field_138;
+		/* 138h */	Vector3 field_138; // position relative to parent?
 		/* 144h */	Vector3 field_144;
 		/* 150h */	int field_150;  // -2
 		/* 154h */	EditorBaseHandlePtr mAxisHandles[3];  //TODO  sub_483CE0

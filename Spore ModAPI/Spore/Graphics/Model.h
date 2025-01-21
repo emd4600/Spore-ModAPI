@@ -61,10 +61,14 @@ namespace Graphics
 	enum ModelFlags
 	{
 		kModelFlagUseColor = 0x2,  // actually 4?
-
+		kModelFlagUseIdentityColor = 0x4, // is required for ID color to apply, overrides flag 0x2
 		kModelFlagObjectTypeColor = 0x8,
+		kModelFlagUnk1Color = 0x16, // has something to do with slightly tinting the color
 
 		kModelFlagOverrideRaycastMode = 0x100,
+
+		kModelFlagMatteColorMask = 0x400, // applies a flat gray color in the color masked areas.
+		kModelFlagApplyIdentityColor = 0x800, // required for Identity color to apply
 
 		kModelFlagHighRes = 0x2000,
 		kModelFlagIsLoaded = 0x4000,
@@ -93,6 +97,9 @@ namespace Graphics
 		void SetColor(const Math::ColorRGBA& color);
 
 		bool IsVisible() const;
+
+		bool UsesColorAsIdentity() const;
+		void SetUseColorAsIdentity(bool state);
 
 		///
 		/// Assigns the required flags to this model depending on the groupID specified.
@@ -195,6 +202,20 @@ namespace Graphics
 	inline bool Model::IsVisible() const
 	{
 		return (mFlags & kModelFlagVisible) != 0;
+	}
+
+	inline bool Model::UsesColorAsIdentity() const
+	{
+		return (mFlags & 0x804) != 0;
+	}
+	inline void Model::SetUseColorAsIdentity(bool state)
+	{
+		if (state) {
+			mFlags |= 0x804;
+		}
+		else {
+			mFlags &= ~0x804;
+		}
 	}
 
 	inline Math::ColorRGBA Model::GetColor() const {

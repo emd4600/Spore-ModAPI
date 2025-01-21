@@ -12,8 +12,8 @@ namespace Simulator
 	public:
 		enum class AbilityMode : int
 		{
-			Attack = 0,
-			Social = 1
+			Social = 0,
+			Attack = 1
 		};
 
 		static cCreatureGameData* Get();
