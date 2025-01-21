@@ -192,5 +192,11 @@ namespace Editors
 
 
 	auto_METHOD_VOID(EditorRigblock, SetShadedDisplay, Args(bool isShaded), Args(isShaded));
+
+	auto_STATIC_METHOD(cEditor, uint32_t, GetEditorForAssetType, Args(uint32_t assetTypeID), Args(assetTypeID));
+
+	auto_STATIC_METHOD(cEditor, uint32_t, GetTypeIDForAssetType, Args(uint32_t assetTypeID), Args(assetTypeID));
+
+	auto_STATIC_METHOD(cEditor, const char16_t*, GetNameForAssetType, Args(uint32_t assetTypeID), Args(assetTypeID));
 }
 #endif

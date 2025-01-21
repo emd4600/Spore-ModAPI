@@ -208,6 +208,12 @@ namespace Editors
 
 		void PostEventToActors(uint32_t eventID, int = -1, float = 1.0f, float = 0.0f);
 
+		static uint32_t GetEditorForAssetType(uint32_t assetTypeID);
+
+		static const char16_t* GetNameForAssetType(uint32_t assetTypeID);
+
+		static uint32_t GetTypeIDForAssetType(uint32_t assetTypeID);
+
 	public:
 
 		int vftable_1C;
@@ -630,6 +636,11 @@ namespace Editors
 		DeclareAddress(PostEventToActors);  // 0x574000 0x574110
 
 		DeclareAddress(HandleMessage);  // 0x591C80 0x591FA0
+
+
+		DeclareAddress(GetEditorForAssetType);
+		DeclareAddress(GetNameForAssetType);
+		DeclareAddress(GetTypeIDForAssetType);
 	}
 
 #ifdef SDK_TO_GHIDRA

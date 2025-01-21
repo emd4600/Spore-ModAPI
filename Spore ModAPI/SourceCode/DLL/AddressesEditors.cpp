@@ -80,6 +80,11 @@ namespace Editors
 		DefineAddress(PostEventToActors, SelectAddress(0x574000, 0x574110));
 
 		DefineAddress(HandleMessage, SelectAddress(0x591C80, 0x591FA0));
+
+
+		DefineAddress(GetEditorForAssetType, SelectAddress(0x00433010, 0x004333e0));
+		DefineAddress(GetNameForAssetType, SelectAddress(0x004badc0, 0x004bba50));
+		DefineAddress(GetTypeIDForAssetType, SelectAddress(0x004bb110, 0x004bbda0));
 	}
 
 	namespace Addresses(EditorCamera)
