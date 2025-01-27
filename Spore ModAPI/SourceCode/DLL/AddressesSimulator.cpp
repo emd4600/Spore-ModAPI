@@ -259,12 +259,13 @@ namespace Simulator
 		DefineAddress(OnStartSwimming, SelectAddress(0xC147D0, 0xC14F70));
 		DefineAddress(Update, SelectAddress(0xC20C50, 0xC21530));
 		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
+		DefineAddress(IsHervibore, SelectAddress(0xC0B040, 0xC0B8E0));
+		DefineAddress(CanEatPlants, SelectAddress(0xC0B040, 0xC0B8E0));
 	}
 
 	namespace Addresses(cCombatant)
 	{
 		DefineAddress(TakeDamage, SelectAddress(0xBFC500, 0xBFCF10));
-		DefineAddress(IsHervibore, SelectAddress(0xC0B040, 0xC0B8E0));
 	}
 
 	namespace Addresses(cCropCirclesToolStrategy)

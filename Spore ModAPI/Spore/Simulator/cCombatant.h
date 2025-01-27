@@ -151,7 +151,7 @@ namespace Simulator
 	};
 	ASSERT_SIZE(cCombatant, 0xC8);
 
-	namespace Addresses(cCombatant){
+	namespace Addresses(cCombatant) {
 		DeclareAddress(TakeDamage);
 	}
 
