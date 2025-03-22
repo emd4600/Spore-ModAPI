@@ -814,8 +814,8 @@ namespace Simulator
 		kHandheldItemTrgRepairMallet = 19,
 		/// trg_water_bucket
 		kHandheldItemTrgWaterBucket = 20,
-		/// 0xA8F747AE, some tribal horn
-		kHandheldItemUnk21 = 21,
+		/// trg_wildhorn
+		kHandheldItemTrgWildHorn = 21,
 		/// trg_firebomb
 		kHandheldItemTrgFireBomb = 22,
 		/// trg_eating_egg
