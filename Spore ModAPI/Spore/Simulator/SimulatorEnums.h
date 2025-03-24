@@ -774,11 +774,11 @@ namespace Simulator
 	enum HandheldItem
 	{
 		kHandheldItemNone = 0,
-		/// trg_hunting_tool1
+		/// trg_hunting_tool1 - Allowed in combat
 		kHandheldItemTrgHuntingTool1 = 1,
-		/// trg_hunting_tool2
+		/// trg_hunting_tool2  - Allowed in combat
 		kHandheldItemTrgHuntingTool2 = 2,
-		/// trg_hunting_tool3
+		/// trg_hunting_tool3  - Allowed in combat
 		kHandheldItemTrgHuntingTool3 = 3,
 		/// trg_fishing_tool and related
 		kHandheldItemTrgFishingTool = 4,
@@ -806,7 +806,7 @@ namespace Simulator
 		kHandheldItemTrgSocialDidgeridoo = 15,
 		/// trg_gathering_treesmacker
 		kHandheldItemTrgGatheringTreeSmacker = 16,
-		/// trg_chieftain_staff
+		/// trg_chieftain_staff - Allowed in combat
 		kHandheldItemTrgChieftainStaff = 17,
 		/// trg_healing_staff
 		kHandheldItemTrgHealingStaff = 18,
