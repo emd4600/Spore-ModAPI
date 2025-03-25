@@ -750,18 +750,18 @@ namespace Simulator
 		kCitizenActionHeal = 5,
 
 		kCitizenActionAttack = 7,
-		kCitizenActionRaid1 = 8,
-		kCitizenActionGift1 = 9,
+		kCitizenActionRaidFood = 8,
+		kCitizenActionGiftFood = 9,
 		kCitizenActionHunt = 10,
 		kCitizenActionMate = 11,
-		kCitizenActionParty = 12,
+		kCitizenActionParty = 12, // Dance around the fire, actionObject = fire pit
 		kCitizenActionCollectEgg = 13,
 		kCitizenActionBundle = 14,
 
-		kCitizenActionRaid2 = 15,
+		kCitizenActionRaidHuts = 15,
 
 		kCitizenActionFeedWild = 20,
-		kCitizenActionGift2 = 21,
+		kCitizenActionGiftMember = 21,
 
 		kCitizenActionRepair = 24, // actionObject = cTribeHut or cTribeTool
 		kCitizenActionTame = 25,
