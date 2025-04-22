@@ -8,7 +8,10 @@ namespace UI
 {
 	enum class SimulatorRolloverID
 	{
-
+		// Invalid / Dead, 0 health no information
+		Invalid = 0,
+		/// No rollover
+		None = 1,
 		/// Rollover_TribeTool
 		TribeTool = 2,
 		/// Rollover_TribeCitizen

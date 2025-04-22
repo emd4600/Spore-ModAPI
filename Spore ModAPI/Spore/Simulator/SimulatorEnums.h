@@ -749,26 +749,28 @@ namespace Simulator
 
 		kCitizenActionHeal = 5,
 
-		kCitizenActionAttack = 7,
+		kCitizenActionSleep = 6, // Sends the creature into the main tribe hut
+
+		kCitizenActionAttack = 7,  // Attack a citizen
 		kCitizenActionRaidFood = 8,
 		kCitizenActionGiftFood = 9,
-		kCitizenActionHunt = 10,
+		kCitizenActionHunt = 10, // Attack a wild animal
 		kCitizenActionMate = 11,
-		kCitizenActionParty = 12, // Dance around the fire, actionObject = fire pit
+		kCitizenActionParty = 12, // Dance around the game object, actionObject = fire pit or other cTribeTool
 		kCitizenActionCollectEgg = 13,
 		kCitizenActionBundle = 14,
 
-		kCitizenActionRaidHuts = 15,
+		kCitizenActionRaidHuts = 15, // Attack huts or tools of this tribe, starting with the actionObject = cTribeHut or cTribeTool
 
 		kCitizenActionFeedWild = 20,
 		kCitizenActionGiftMember = 21,
 
 		kCitizenActionRepair = 24, // actionObject = cTribeHut or cTribeTool
 		kCitizenActionTame = 25,
-		kCitizenActionRecruit = 26,
+		kCitizenActionRecruit = 26, // Begin social minigame
 		kCitizenActionGatherMeat = 27,
 
-		kCitizenActionUnk1 = 28, // common ID, actionObject = nullptr
+		kCitizenActionReturnToTribe = 28, // Sends the creature back to their tribe. actionObject = nullptr
 	};
 
 	enum HandheldItem

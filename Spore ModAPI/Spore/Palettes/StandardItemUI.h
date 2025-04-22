@@ -43,9 +43,9 @@ namespace Palettes
 
 	public:
 		/* 0Ch */	PaletteItemPtr mpItem;
-		/* 10h */	uint32_t field_10;
+		/* 10h */	uint32_t field_10; // 0x1CEB6B70
 		/* 14h */	ItemViewerPtr mpViewer;
-		/* 18h */	IWindowPtr field_18;
+		/* 18h */	IWindowPtr mpWindow; // Main window. Holds the icon and detects focus
 		/* 1Ch */	bool field_1C;
 	};
 	ASSERT_SIZE(StandardItemUI, 0x20);

@@ -101,7 +101,7 @@ namespace Simulator
 		/* ACh */	int field_AC;
 		/* B0h */	cGonzagoTimer field_B0;
 		/* D0h */	eastl::vector<cSpatialObjectPtr> field_D0;  // With release at C0h
-		/* E4h */	eastl::vector<ObjectPtr> mCommunityMembers;
+		/* E4h */	eastl::vector<cCreatureCitizenPtr> mCommunityMembers;
 		/* F8h */	eastl::string16 mName;
 		/* 108h */	eastl::string16 mDescription;
 		/* 118h */	int field_118;  // -1

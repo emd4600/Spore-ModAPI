@@ -41,7 +41,7 @@ namespace Simulator
 		
 		/// Sets the current cursor, and maybe shows a rollover, depending on the current object
 		/// pointed at by the mouse cursor. The object will be cGameViewManager::GetHoveredObject()
-		/// The method will do nothing is IsInEditor() returns true.
+		/// The method will do nothing if IsInEditor() returns true.
 		void SetHoverObjectCursorAndRollover();
 
 		/// Returns true if the player has gone to the creature outfitter editor, false otherwise.
