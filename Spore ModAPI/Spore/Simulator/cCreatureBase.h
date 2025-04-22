@@ -208,8 +208,8 @@ namespace Simulator
 		/// @returns
 		int PlayVoice(const char* pName, int param2, int param3);
 
-		/// also returns true for omnivores
-		bool IsHervibore(); // TODO: fix typo without causing crash.
+		/// Returns true if the creature's diet can eat plants, that is, for herbivores and omnivores
+		bool CanEatPlants();
 
 
 		/* 54h */	virtual void CreateLocomotionStrategy();
@@ -423,5 +423,6 @@ namespace Simulator
 		DeclareAddress(Update);  // 0xC20C50 0xC21530
 		DeclareAddress(TakeDamage);
 		DeclareAddress(IsHervibore);  // 0xC0B040 0xC0B8E0
+		DeclareAddress(CanEatPlants);  // 0xC0B040 0xC0B8E0
 	}
 }
