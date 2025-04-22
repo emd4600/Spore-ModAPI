@@ -8,6 +8,8 @@
 #include "Cheats.h"
 #include "ThumbnailCaptureScript.h"
 #include "AnimLogCheat.h"
+#include "EffectLogCheat.h"
+#include "SFXLogCheat.h"
 #include "UILogCheat.h"
 #include "AnimEditorMode.h"
 
@@ -108,6 +110,8 @@ void AttachDetours()
 	Debugging::AttachDetour();
 	cEffectsManager_detour::attach(GetAddress(Swarm::cSwarmManager, GetDirectoryAndEffectIndex));
 	AnimLogCheat::AttachDetour();
+	EffectLogCheat::AttachDetour();
+	SFXLogCheat::AttachDetour();
 	UILogCheat::AttachDetour();
 	ThumbnailCaptureScript::AttachDetour();
 }
