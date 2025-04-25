@@ -74,7 +74,7 @@ namespace Anim
 		/* 18h */	virtual bool StartAnimation(AnimIndex index) = 0;
 		/* 1Ch */	virtual bool func1Ch(AnimIndex index, float) = 0;
 
-		/// Enables or disables looping in this animation, which is repating the animation once it ends playing. 
+		/// Enables or disables looping in this animation, which is repeating the animation once it ends playing. 
 		/// SetLoopTimes() must also be called to set how many times
 		/// the animation is looped, setting it to -1 loops it indefinitely.
 		/// @param index Index of the animation
