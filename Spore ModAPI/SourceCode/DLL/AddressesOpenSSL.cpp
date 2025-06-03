@@ -35,7 +35,6 @@ namespace Addresses(OpenSSL)
 	DefineAddress(SSLv23_method, SelectAddress(0x01185960, 0x011831f0));
 	DefineAddress(SSLv23_server_method, SelectAddress(0x01185930, 0x011831c0));
 
-	DefineAddress(sk_SSL_CIPHER_free, SelectAddress(0x01180560, 0x0117ddd0));
 	DefineAddress(ssl_cert_free, SelectAddress(0x01197300, 0x01194b90));
 	DefineAddress(ssl_clear_bad_session, SelectAddress(0x01184680, 0x01181f10));
 	DefineAddress(ssl_clear_cipher_ctx, SelectAddress(0x0117ea20, 0x0117c2a0));
@@ -88,6 +87,7 @@ namespace Addresses(OpenSSL)
 	DefineAddress(CRYPTO_set_locking_callback, SelectAddress(0x01183a70, 0x01181300));
 	DefineAddress(CRYPTO_set_mem_functions, SelectAddress(0x01185af0, 0x01183380));
 
+	DefineAddress(sk_free, SelectAddress(0x01180560, 0x0117ddd0));
 	DefineAddress(sk_X509_NAME_pop_free, SelectAddress(0x011807e0, 0x0117e050));
 	DefineAddress(i2d_X509, SelectAddress(0x0117f700, 0x0117cf80));
 	DefineAddress(X509_free, SelectAddress(0x0117f730, 0x0117cfb0));
