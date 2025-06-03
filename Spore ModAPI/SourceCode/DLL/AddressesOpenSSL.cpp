@@ -11,6 +11,7 @@ namespace Addresses(OpenSSL)
 	DefineAddress(SSL_ctrl, SelectAddress(0x0117f0e0, 0x0117c960));
 	DefineAddress(SSL_CTX_ctrl, SelectAddress(0x0117dca0, 0x0117b520));
 	DefineAddress(SSL_CTX_free, SelectAddress(0x0117e1b0, 0x0117ba30));
+	DefineAddress(SSL_CTX_load_verify_locations, SelectAddress(0x0117eb90, 0x0117c410));
 	DefineAddress(SSL_CTX_new, SelectAddress(0x0117f200, 0x0117ca80));
 	DefineAddress(SSL_CTX_set_cipher_list, SelectAddress(0x0117df20, 0x0117b7a0));
 	DefineAddress(SSL_CTX_set_tmp_dh_callback, SelectAddress(0x0117ebc0, 0x0117c440));
@@ -34,8 +35,6 @@ namespace Addresses(OpenSSL)
 	DefineAddress(SSLv23_method, SelectAddress(0x01185960, 0x011831f0));
 	DefineAddress(SSLv23_server_method, SelectAddress(0x01185930, 0x011831c0));
 
-	DefineAddress(sk_SSL_CIPHER_free, SelectAddress(0x01180560, 0x0117ddd0));
-	//DefineAddress(ssl23_read, SelectAddress(0x0, 0x011a0420)); // TODO?
 	DefineAddress(ssl_cert_free, SelectAddress(0x01197300, 0x01194b90));
 	DefineAddress(ssl_clear_bad_session, SelectAddress(0x01184680, 0x01181f10));
 	DefineAddress(ssl_clear_cipher_ctx, SelectAddress(0x0117ea20, 0x0117c2a0));
@@ -44,7 +43,13 @@ namespace Addresses(OpenSSL)
 	DefineAddress(ssl_load_ciphers, SelectAddress(0x01195610, 0x01192eb0));
 	DefineAddress(ssl_sess_cert_free, SelectAddress(0x01197440, 0x01194cd0));
 	DefineAddress(ssleay_rand_add, SelectAddress(0x01188050, 0x011858c0));
-	//DefineAddress(ssleay_rand_seed, SelectAddress(0x0, 0x01185c10)); // TODO?
+
+	DefineAddress(ERR_clear_error, SelectAddress(0x011835d0, 0x01180e60));
+	DefineAddress(ERR_error_string_n, SelectAddress(0x01183640, 0x01180ed0));
+	DefineAddress(ERR_get_state, SelectAddress(0x01183060, 0x011808f0));
+	DefineAddress(ERR_print_errors_cb, SelectAddress(0x011d1300, 0x011cec10));
+	DefineAddress(ERR_put_error, SelectAddress(0x011834e0, 0x01180d70));
+	DefineAddress(ERR_set_error_data, SelectAddress(0x01183170, 0x01180a00));
 
 	DefineAddress(OPENSSL_add_all_algorithms_noconf, SelectAddress(0x01185970, 0x01183200));
 	DefineAddress(OpenSSL_add_all_ciphers, SelectAddress(0x011ab3d0, 0x011a8c70));
@@ -54,7 +59,6 @@ namespace Addresses(OpenSSL)
 	DefineAddress(OPENSSL_showfatal, SelectAddress(0x01183b80, 0x01181410));
 	DefineAddress(OpenSSLDie, SelectAddress(0x01183ca0, 0x01181530));
 
-	//DefineAddress(BIO_callback_ctrl, SelectAddress(0x0, 0x01177330)); // TODO?
 	DefineAddress(BIO_ctrl, SelectAddress(0x01179a00, 0x011772a0));
 	DefineAddress(BIO_f_buffer, SelectAddress(0x01199100, 0x01196990));
 	DefineAddress(BIO_free, SelectAddress(0x011796b0, 0x01176f50));
@@ -83,6 +87,7 @@ namespace Addresses(OpenSSL)
 	DefineAddress(CRYPTO_set_locking_callback, SelectAddress(0x01183a70, 0x01181300));
 	DefineAddress(CRYPTO_set_mem_functions, SelectAddress(0x01185af0, 0x01183380));
 
+	DefineAddress(sk_free, SelectAddress(0x01180560, 0x0117ddd0));
 	DefineAddress(sk_X509_NAME_pop_free, SelectAddress(0x011807e0, 0x0117e050));
 	DefineAddress(i2d_X509, SelectAddress(0x0117f700, 0x0117cf80));
 	DefineAddress(X509_free, SelectAddress(0x0117f730, 0x0117cfb0));
