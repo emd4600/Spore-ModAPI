@@ -82,8 +82,6 @@ namespace UTFWin
 		/// 
 		/// The method will try to use the existing drawable of the window; if there's no drawable or it's not an StdDrawable or
 		/// an ImageDrawable, one will be created; by default an ImageDrawable will be created, unless an image index is specified.
-		///
-		/// To detour this method, you must use GetAddress(Image, SetBackground_2).
 		/// 
 		/// @param pWindow The IWindow whose drawable will change.
 		/// @param imageName The ResourceKey that points to the image file that will be displayed in the window.

@@ -44,7 +44,7 @@ namespace Simulator
 		/* 20h */	float field_20;
 		/* 24h */	int field_24;  // not initialized
 		/* 28h */	bool field_28;
-		/* 2Ch */	Quaternion field_2C;
+		/* 2Ch */	Quaternion field_2C; // Orientation?
 		/* 3Ch */	eastl::vector<int> field_3C;
 		/* 50h */	eastl::vector<cLayoutSlot> mSlots;
 	};

@@ -25,7 +25,7 @@
 
 namespace UTFWin
 {
-	class IGlideEffect : public UTFWinObject
+	class IGlideEffect : public IBiStateEffect
 	{
 	public:
 		///

@@ -29,5 +29,26 @@ namespace Simulator
 	void cLocomotiveObject::SetVelocity(const Vector3& velocity) {
 		this->mVelocity = velocity;
 	}
+
+	Math::Quaternion cSpatialObject::GetOrientationYawTowards(const Vector3& targetpos)
+	{
+		Vector3 upVector = GetPosition().Normalized(); // Local up axis
+
+		// Compute direction to the target
+		Vector3 direction = (targetpos - GetPosition()).Normalized();
+
+		// Project onto the X-Z plane (perpendicular to upVector)
+		direction = (direction - upVector * direction.Dot(upVector)).Normalized();
+
+		// Project forward vector onto the same X-Z plane
+		Vector3 forward = (GetDirection() - upVector * GetDirection().Dot(upVector)).Normalized();
+
+		// Compute the yaw rotation needed
+		Quaternion yawRotation;
+		yawRotation = yawRotation.GetRotationTo(forward, direction);
+
+		// Apply the yaw rotation while maintaining the original pitch and roll
+		return (yawRotation * GetOrientation());
+	}
 }
 #endif

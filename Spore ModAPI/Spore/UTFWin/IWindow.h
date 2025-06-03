@@ -196,7 +196,7 @@ namespace UTFWin
 		/* 58h */	virtual void SetState(int state) = 0;
 
 		///
-		/// Returns the color modulation value. This color acts as a tint: after the window is painted, it gets multiplied by this color.
+		/// Sets the color modulation value. This color acts as a tint: after the window is painted, it gets multiplied by this color.
 		/// @param color The color to use as the 'shadeColor' property.
 		///
 		/* 5Ch */	virtual void SetShadeColor(Math::Color color) = 0;
@@ -544,20 +544,34 @@ namespace UTFWin
 		}
 
 		///
-		/// Tells whether the window is visible. This is equivalent to GetFlags() & kWinFlagEnabled.
+		/// Tells whether the window is enabled. This is equivalent to GetFlags() & kWinFlagEnabled.
 		///
 		inline bool IsEnabled() const
 		{
 			return GetFlags() & kWinFlagEnabled;
 		}
 		///
-		/// Switches the visibility of this window. This is equivalent to SetFlag(kWinFlagEnabled, bEnabled).
+		/// Switches the enabled state of this window. This is equivalent to SetFlag(kWinFlagEnabled, bEnabled).
 		///
 		inline void SetEnabled(bool bEnabled)
 		{
 			SetFlag(kWinFlagEnabled, bEnabled);
 		}
 
+		///
+		/// Tells whether the window ignores the mouse. This is equivalent to GetFlags() & kWinFlagIgnoreMouse.
+		///
+		inline bool IsIgnoringMouse() const
+		{
+			return GetFlags() & kWinFlagIgnoreMouse;
+		}
+		///
+		/// Switches whether the window ignores the mouse. This is equivalent to SetFlag(kWinFlagIgnoreMouse, bEnabled).
+		///
+		inline void SetIgnoreMouse(bool bIgnoreMouse)
+		{
+			SetFlag(kWinFlagIgnoreMouse, bIgnoreMouse);
+		}
 
 		///
 		/// Sets the given UTFWin::IWindow to fit the entire area of its parent.

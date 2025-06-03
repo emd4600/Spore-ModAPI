@@ -199,8 +199,8 @@ void ThumbnailCaptureScript::InjectListeners() {
 					// standard editor/planner
 					if (pageUI.page->mStandardItems.size() > 0) {
 						for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-							itemUI->field_18->AddWinProc(this);
-							mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+							itemUI->mpWindow->AddWinProc(this);
+							mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
 						}
 					}
 					// adventure editor
@@ -208,7 +208,7 @@ void ThumbnailCaptureScript::InjectListeners() {
 					else {
 						for (eastl::intrusive_ptr<Palettes::IAdvancedItemUI> itemUI : pageUI.page->mAdvancedItems) {
 							itemUI->mpWindow
-							mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+							mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
 						}
 					}*/
 					
@@ -219,8 +219,8 @@ void ThumbnailCaptureScript::InjectListeners() {
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
 				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-					itemUI->field_18->AddWinProc(this);
-					mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+					itemUI->mpWindow->AddWinProc(this);
+					mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
 				}
 			}
 		}
@@ -247,14 +247,14 @@ void ThumbnailCaptureScript::RemoveListeners() {
 					// standard editor/planner
 					if (pageUI.page->mStandardItems.size() > 0) {
 						for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-							itemUI->field_18->RemoveWinProc(this);
+							itemUI->mpWindow->RemoveWinProc(this);
 						}
 					}
 					/*
 					// adventure editor
 					else {
 						for (StandardItemUIPtr itemUI : pageUI.page->mpPage->mItems) {
-							itemUI->field_18->RemoveWinProc(this);
+							itemUI->mpWindow->RemoveWinProc(this);
 						}
 					}
 					*/
@@ -265,8 +265,8 @@ void ThumbnailCaptureScript::RemoveListeners() {
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
 				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-					if (itemUI && itemUI->field_18) {
-						itemUI->field_18->RemoveWinProc(this);
+					if (itemUI && itemUI->mpWindow) {
+						itemUI->mpWindow->RemoveWinProc(this);
 					}
 				}
 			}
