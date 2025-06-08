@@ -53,7 +53,7 @@ namespace Simulator
 		/* 00h */	bool field_00;
 		/* 01h */	bool field_01;
 		/* 04h */	int field_04;
-		/* 08h */	ResourceID field_08;
+		/* 08h */	ResourceID field_08; // Ability resource?
 	};
 	ASSERT_SIZE(cAbilityState, 0x10);
 	// Maybe used in other places as well?
@@ -140,7 +140,7 @@ namespace Simulator
 		/// @param amount
 		void ConsumeEnergy(float amount);
 
-		/// Returns the index to the first ability of the craeture that has the specified ability type.
+		/// Returns the index to the first ability of the creature that has the specified ability type.
 		/// @param abilityType
 		/// @returns Index to ability, or -1 if not found
 		int GetAbilityIndexByType(int abilityType);

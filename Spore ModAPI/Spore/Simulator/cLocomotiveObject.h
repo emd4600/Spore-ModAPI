@@ -71,7 +71,8 @@ namespace Simulator
 		/* D8h */	virtual float funcD8h() const;
 		/* DCh */	virtual void funcDCh(int);  // some kind of movement request? sets mInTransitTime = 0
 		// the bool might be "relative" position?
-		/* E0h */	virtual void MoveTo(const Vector3& dst, float goalStopDistance = 1.0f, float acceptableStopDistance = 2.0f, bool=false);
+		// setting it to true makes vehicles move properly in straight lines.
+		/* E0h */	virtual void MoveTo(const Vector3& dst, float goalStopDistance = 1.0f, float acceptableStopDistance = 2.0f, bool unk1 = false);
 		/* E4h */	virtual void funcE4h(const Vector3&, int);
 		/* E8h */	virtual void funcE8h(const Vector3&, float, float);
 		/* ECh */	virtual void StopMovement();

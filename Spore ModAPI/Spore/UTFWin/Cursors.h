@@ -116,12 +116,12 @@ namespace UTFWin
 			/// STD_Center-alpha09
 			StdCenterAlpha09 = 0x1023,
 
+			///-------------------
+			/// Simulator Cursors
+			///------------------- 
 
 			/// cursor-no-opt
 			NoOptions = 0x3a204b0,
-
-			/// cursor_goodie-hut
-			QuestionHut = 0x56e3a22,
 
 			// cursor-object-translate
 			Pan = 0x600cd69,
@@ -131,6 +131,14 @@ namespace UTFWin
 
 			/// cursor-ban-mode
 			BanMode = 0x5ecbdffd,
+
+
+			///-------------------
+			/// CRG Cursors
+			///-------------------
+			
+			/// cur_ClaimNest
+			ClaimNest = 0x7542cdb5,
 
 			/// cursor_skeleton2
 			UnlockSkeleton = 0x342d221f,
@@ -159,6 +167,23 @@ namespace UTFWin
 			/// cursor_friend
 			Friend = 0x755c4eb5,
 
+			/// cursor-crg-pickup
+			Pickup = 0x3b360dc,
+
+			/// cursor-crg-putdown
+			Putdown = 0x3b360df,
+
+			/// cursor-crg-throw
+			Throw = 0x3b360e4,
+
+
+			///-------------------
+			/// TRG Cursors
+			///-------------------
+
+			/// cursor-dance
+			Dance = 0x3febe3d,
+
 			/// cursor-trg-domesticate
 			Domesticate = 0xe382f00e,
 
@@ -179,15 +204,6 @@ namespace UTFWin
 
 			/// cursor-gather
 			Gather = 0x3febe40,
-
-			/// cursor-crg-pickup
-			Pickup = 0x3b360dc,
-
-			/// cursor-crg-putdown
-			Putdown = 0x3b360df,
-
-			/// cursor-crg-throw
-			Throw = 0x3b360e4,
 
 			/// cursor_pickup-maracas
 			PickupMaracas = 0x63fe8d4,
@@ -216,15 +232,21 @@ namespace UTFWin
 			/// cursor_pickup-heal
 			PickupHealing = 0x3febe3b,
 
-			/// cursor-dance
-			Dance = 0x3febe3d,
+
+			///-------------------
+			/// CVG Cursors
+			///-------------------
 
 			/// cursor-claim-spicemine
 			ClaimSpice = 0x5d53800,
 
-			/// cur_ClaimNest
-			ClaimNest = 0x7542cdb5,
+			/// cursor_goodie-hut
+			QuestionHut = 0x56e3a22,
 
+
+			///-------------------
+			/// SPG Cursors
+			///------------------- 
 
 			/// cursor-spg-sculpting-norm
 			SpgSculpting = 0x682102e,
@@ -259,6 +281,20 @@ namespace UTFWin
 			/// cursor-spg-atmospheric-norm
 			SpgAtmosphere = 0x6821042,
 
+
+			///-------------------
+			/// EP1 Cursors
+			///-------------------
+
+			/// cursor-object-scale
+			ObjectScale = 0xe84563d4,
+
+			/// cursor-translate-XY
+			TranslateXY = 0xf728e452,
+			
+			/// cursor-translate-Z
+			TranslateZ = 0x7391920b,
+			
 		};
 	}
 }

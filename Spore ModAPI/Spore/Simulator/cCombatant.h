@@ -79,7 +79,7 @@ namespace Simulator
 		/* 14h */	virtual cSpaceToolData* GetWeapon();
 
 		/// Called when the combatant is attacked, takes the damage
-		/* 18h */	virtual int TakeDamage(float damage, uint32_t attackerPoliticalID, int, const Vector3&, cCombatant* pAttacker);  // used to substract health?
+		/* 18h */	virtual int TakeDamage(float damage, uint32_t attackerPoliticalID, int, const Vector3&, cCombatant* pAttacker);  // used to substract health
 
 		/* 1Ch */	virtual void AddHostileUnit(cCombatant* combatant);
 		/* 20h */	virtual Math::Vector3 func20h();

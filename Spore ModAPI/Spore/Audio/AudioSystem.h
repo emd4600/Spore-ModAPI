@@ -32,7 +32,7 @@ namespace Audio
 
 	class AudioSystem
 	{
-		//PLACEHODER we might need to complete this
+		//PLACEHOLDER we might need to complete this
 
 		/* 00h */	int func00h();
 		/* 04h */	int func04h();

@@ -193,6 +193,14 @@ namespace UTFWin
 		virtual void SetAlignmentVertical(AlignmentV alignment) override;
 		virtual AlignmentV GetAlignmentVertical() const override;
 
+		inline OutlineFormat GetImageOutline() {
+			return mImageOutline;
+		}
+
+		inline OutlineFormat SetImageOutline(OutlineFormat outline) {
+			mImageOutline = outline;
+		}
+
 	protected:
 
 		/* 10h */	float mfScale;
@@ -237,6 +245,7 @@ namespace UTFWin
 		DeclareAddress(AddImageWindow);
 		DeclareAddress(SetImageForWindow);  // 0xE2F550 0xE2F590
 	}
+
 
 	inline ImageDrawable::ImageDrawable()
 		: mfScale(1.0f)
