@@ -1,4 +1,4 @@
-/****************************************************************************
+﻿/****************************************************************************
 * Copyright (C) 2019 Eric Mor
 *
 * This file is part of Spore ModAPI.
@@ -71,16 +71,22 @@ namespace Editors
 		/* 24h */	float field_24;
 		/* 28h */	float mfInitialZoom;  // 1.0
 		/* 2Ch */	bool field_2C;
-		/* 30h */	float field_30;  // cameraInitialHeading
+		/* 30h */	float field_30;  // cameraInitialHeading (unclamped float Camera heading)
 		/* 34h */	float field_34;  // cameraInitialPitch
 		/* 38h */	float mfZoom;  // 10.0  // cameraInitialZoom
-		/* 3Ch */	float field_3C;  // cameraInitialOffsetX
-		/* 40h */	float field_40;  // cameraInitialOffsetY
+		/* 3Ch */	float field_3C;  // cameraInitialOffsetX (desired)
+		/* 40h */	float field_40;  // cameraInitialOffsetY (desired)
+		
+		/// field_44 is Camera heading in positive and negative radians
+		// range -pi to -0 facing creature front (☻)
+		// range pi to 0 facing creature back (•)
+		// +pi/2 creature facing screen right ->
+		// -pi/2 creature facing screen left <-
 		/* 44h */	float field_44;  // cameraInitialHeading
 		/* 48h */	float field_48;  // cameraInitialPitch
 		/* 4Ch */	float field_4C;  // cameraInitialZoom
-		/* 50h */	float field_50;  // cameraInitialOffsetX
-		/* 54h */	float field_54;  // cameraInitialOffsetY
+		/* 50h */	float field_50;  // cameraInitialOffsetX (current/lerp from?)
+		/* 54h */	float field_54;  // cameraInitialOffsetY (current/lerp from?)
 		/* 58h */	float mfMinZoomDistance;  // 5.0
 		/* 5Ch */	float mfMaxZoomDistance;  // 25.0
 		/* 60h */	float mfMinPitch;
@@ -89,12 +95,12 @@ namespace Editors
 		/* 6Ch */	float mfFarClip;  // -1
 		/* 70h */	float mfInitialFOV;  // 57.29578
 		/* 74h */	Vector3 mCameraPosition;
-		/* 80h */	Vector3 field_80;
+		/* 80h */	Vector3 field_80; // also camera pos, one is probably current and one is desired...
 		/* 8Ch */	float field_8C;  // 1.0
 		/* 90h */	bool mbEditorCameraTurntableStyle;
 		/* 94h */	float field_94;
 		/* 98h */	float field_98;
-		/* 9Ch */	bool field_9C;
+		/* 9Ch */	bool mbFOVisCurrent; // change to false to update camera FOV to mfInitialFOV's value
 		/* A0h */	GameInput mInput;
 		/* E8h */	App::cViewer* mpViewer;
 	};

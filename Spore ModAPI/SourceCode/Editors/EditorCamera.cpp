@@ -54,7 +54,7 @@ namespace Editors
 		, mbEditorCameraTurntableStyle()
 		, field_94()
 		, field_98()
-		, field_9C()
+		, mbFOVisCurrent()
 		, mInput()
 		, mpViewer(nullptr)
 	{

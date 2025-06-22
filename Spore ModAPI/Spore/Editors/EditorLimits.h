@@ -38,7 +38,7 @@ namespace Editors
 
 		/// Limits the value at the given index so that it's not greater than the limit.
 		/* 1Ch */	virtual void EnsureLimit(int index);
-		/// Adds a certain amount to the value of the given index. The total value will be capped at its limit.
+		/// Adds a certain amount to the value of the given EditorLimitType index. The total value will be capped at its limit.
 		/// A message of type `0x3150C27` will be sent
 		/* 20h */	virtual void AddValue(int index, int value);
 		/// Sets a certain value of the given index. The total value will be capped at its limit.
