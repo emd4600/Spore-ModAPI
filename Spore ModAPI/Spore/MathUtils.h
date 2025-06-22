@@ -105,6 +105,8 @@ namespace Math
 		/// @param other
 		float Dot(const Vector2& other) const;
 
+		Vector2 Lerp(const Vector2& other, float mix) const;
+
 		Vector2& operator+=(const Vector2&);
 		Vector2& operator+=(float);
 		Vector2& operator-=(const Vector2&);
@@ -158,6 +160,8 @@ namespace Math
 		/// @param orientationAxis
 		static float OrientedAngle(const Vector3& v1, const Vector3& v2, const Vector3& orientationAxis);
 
+		Vector3 Lerp(const Vector3& other, float mix) const;
+
 		Vector3& operator+=(const Vector3&);
 		Vector3& operator+=(float);
 		Vector3& operator-=(const Vector3&);
@@ -195,6 +199,8 @@ namespace Math
 		/// The dot product is computed as `a.x * b.x + a.y * b.y + a.z * b.z`
 		/// @param other
 		float Dot(const Vector4& other) const;
+
+		Vector4 Lerp(const Vector4& other, float mix) const;
 
 		Vector4& operator+=(const Vector4&);
 		Vector4& operator+=(float);
@@ -1197,12 +1203,9 @@ namespace Math
 		return x * other.x + y * other.y + z * other.z + w * other.w;
 	}
 
-
-
 	inline Vector3 BoundingBox::GetCenter() const {
 		return (lower + upper) / 2.0f;
 	}
-
 
 
 	inline bool Vector2::operator==(const Vector2& b) const {
@@ -1357,6 +1360,21 @@ namespace Math
 	inline ColorRGBA lerp<ColorRGBA>(const ColorRGBA& a, const ColorRGBA& b, float mix) {
 		return { lerp(a.r, b.r, mix), lerp(a.g, b.g, mix), lerp(a.b, b.b, mix), lerp(a.a, b.a, mix) };
 	}
+
+	// Vector Lerps
+
+	inline Vector2 Vector2::Lerp(const Vector2& other, float mix) const {
+		return { lerp(x, other.x, mix), lerp(y, other.y, mix) };
+	}
+
+	inline Vector3 Vector3::Lerp(const Vector3& other, float mix) const {
+		return { lerp(x, other.x, mix), lerp(y, other.y, mix), lerp(z, other.z, mix) };
+	}
+
+	inline Vector4 Vector4::Lerp(const Vector4& other, float mix) const {
+		return { lerp(x, other.x, mix), lerp(y, other.y, mix), lerp(z, other.z, mix), lerp(w, other.w, mix) };
+	}
+
 }
 
 #ifdef SDK_TO_GHIDRA
