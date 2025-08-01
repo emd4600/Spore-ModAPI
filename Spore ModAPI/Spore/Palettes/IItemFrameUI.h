@@ -51,6 +51,9 @@ namespace Palettes
 		uint32_t mFrameTypeID;
 	};
 
+#define IAdvancedItemUIPtr eastl::intrusive_ptr<Palettes::IAdvancedItemUI>
+#define DefaultItemFrameUIPtr eastl::intrusive_ptr<Palettes::DefaultItemFrameUI>
+
 	class IAdvancedItemUI : public IItemFrameUI, public UTFWin::IWinProc {};
 
 	class DefaultItemFrameUI 

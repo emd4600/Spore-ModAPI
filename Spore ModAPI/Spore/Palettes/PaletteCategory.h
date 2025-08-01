@@ -64,7 +64,7 @@ namespace Palettes
 		PalettePage* GetPageAt(size_t nIndex);
 
 		/// 
-		/// Tells whether the given  subcategory is a children of this subcategory.
+		/// Tells whether the given subcategory is a children of this subcategory.
 		/// @param pCategory
 		bool HasCategory(PaletteCategory* pCategory);
 

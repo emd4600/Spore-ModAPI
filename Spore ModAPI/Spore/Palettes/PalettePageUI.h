@@ -85,7 +85,7 @@ namespace Palettes
 		/* 18h */	float field_18;
 		/* 1Ch */	float field_1C;
 		/* 20h */	eastl::vector<StandardItemUIPtr> mStandardItems;
-		/* 34h */	eastl::vector<eastl::intrusive_ptr<IAdvancedItemUI>> mAdvancedItems;
+		/* 34h */	eastl::vector<IAdvancedItemUIPtr> mAdvancedItems;
 	};
 	ASSERT_SIZE(PalettePageUI, 0x48);
 
