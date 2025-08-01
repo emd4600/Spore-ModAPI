@@ -79,8 +79,7 @@ namespace UTFWin
 		/* 44h */	Math::Point mOffsetPosition;  // (0, 30)
 		/* 4Ch */	int field_4C;
 		/* 50h */	uint32_t mLocaleID;
-		/// layout group ID, by default 0x40464100 / layouts~
-		/* 54h */	uint32_t mLayoutGroupID; // 0x40464100
+		/* 54h */	uint32_t mLayoutGroupID; // 0x40464100 (layouts~)
 		/* 58h */	bool field_58;
 		/// Sets the tooltip display behavior.
 		/* 5Ch */	TooltipBehaviour mBehaviour;
