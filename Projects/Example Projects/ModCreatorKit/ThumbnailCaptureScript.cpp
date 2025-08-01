@@ -34,7 +34,7 @@ ThumbnailCaptureScript::ThumbnailCaptureScript()
 	, mItemViewers()
 	, mpItemViewer(nullptr)
 	, mFolderPath()
-	, mIsEnabled(false)
+	, mbIsEnabled(false)
 {
 }
 
@@ -206,9 +206,13 @@ void ThumbnailCaptureScript::InjectListeners() {
 					// adventure editor
 					/*
 					else {
-						for (eastl::intrusive_ptr<Palettes::IAdvancedItemUI> itemUI : pageUI.page->mAdvancedItems) {
-							itemUI->mpWindow
-							mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
+						for (IAdvancedItemUIPtr itemUI : pageUI.page->mAdvancedItems) {
+							auto item = object_cast<Palettes::DefaultItemFrameUI>(itemUI.get());
+							if (item && item->mpWindow) {
+								item->mpWindow->AddWinProc(this);
+								mItemViewers[item->mpWindow.get()] = itemUI->mpViewer.get();
+							}
+							
 						}
 					}*/
 					
@@ -218,9 +222,11 @@ void ThumbnailCaptureScript::InjectListeners() {
 		// simple category
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
-				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-					itemUI->mpWindow->AddWinProc(this);
-					mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
+				if (pageUI.page->mStandardItems.size() > 0) {
+					for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
+						itemUI->mpWindow->AddWinProc(this);
+						mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
+					}
 				}
 			}
 		}
@@ -279,10 +285,10 @@ void ThumbnailCaptureScript::RemoveListeners() {
 }
 
 void ThumbnailCaptureScript::ParseLine(const ArgScript::Line& line) {
-	if (mIsEnabled) {
+	if (mbIsEnabled) {
 		RemoveListeners();
 		App::ConsolePrintF("Icon capture disabled.");
-		mIsEnabled = false;
+		mbIsEnabled = false;
 		return;
 	}
 
@@ -327,7 +333,7 @@ void ThumbnailCaptureScript::ParseLine(const ArgScript::Line& line) {
 	InjectListeners();
 
 	App::ConsolePrintF("Icon capture enabled: hover a palette item and wait until it starts rotating to generate the icon.");
-	mIsEnabled = true;
+	mbIsEnabled = true;
 }
 
 const char* ThumbnailCaptureScript::GetDescription(ArgScript::DescriptionMode mode) const {

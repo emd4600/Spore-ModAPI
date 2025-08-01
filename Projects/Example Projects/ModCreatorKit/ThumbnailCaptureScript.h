@@ -73,6 +73,6 @@ private:
 	ColorRGB mOldColor;
 	ColorRGB mIdentityColor;
 	string16 mFolderPath;
-	bool mIsEnabled;
+	bool mbIsEnabled;
 };
 
