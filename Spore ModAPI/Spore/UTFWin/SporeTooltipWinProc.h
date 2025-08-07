@@ -78,8 +78,8 @@ namespace UTFWin
 		/// The offset of the tooltip window relative to the cursor, by default (0, 30).
 		/* 44h */	Math::Point mOffsetPosition;  // (0, 30)
 		/* 4Ch */	int field_4C;
-		/* 50h */	int field_50;
-		/* 54h */	int field_54;
+		/* 50h */	uint32_t mLocaleID;
+		/* 54h */	uint32_t mLayoutGroupID; // 0x40464100 (layouts~)
 		/* 58h */	bool field_58;
 		/// Sets the tooltip display behavior.
 		/* 5Ch */	TooltipBehaviour mBehaviour;

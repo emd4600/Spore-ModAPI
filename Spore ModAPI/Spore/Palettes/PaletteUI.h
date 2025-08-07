@@ -91,11 +91,11 @@ namespace Palettes
 		/// The layout of the palette, loaded using the ID in Palettes::PaletteMain::mLayoutID.
 		/* 0Ch */	UILayoutPtr mpLayout;
 		/// The window that contains the category selection buttons.
-		/* 10h */	UTFWin::IWindow* mpCategoryButtonsWindow;  // 0x72DF4CEE
-		/* 14h */	UTFWin::IWindow* field_14;  // 0xBA83C461
-		/* 18h */	UTFWin::IWindow* field_18;  // 0x90D4AADC
-		/* 1Ch */	UTFWin::IWindow* field_1C;  // 0x05AEFF7F
-		/* 20h */	UTFWin::SporeAnimatedIconWin* mpAnimatedWindow;
+		/* 10h */	UTFWin::IWindow* mpCategoryButtonsWindow;  // 0x72DF4CEE  Buttons stored in reverse order
+		/* 14h */	UTFWin::IWindow* mpWindowLeft;  // 0xBA83C461
+		/* 18h */	UTFWin::IWindow* mpWindowRight;  // 0x90D4AADC
+		/* 1Ch */	UTFWin::IWindow* mpWindowBehind;  // 0x05AEFF7F
+		/* 20h */	UTFWin::SporeAnimatedIconWin* mpAnimatedWindow; // 0x49AFE6A1 highlight tab?
 		/// The window that is used to display the category content (e.g. its pages)
 		/* 24h */	UTFWin::IWindow* mpCategoryContent;  // 0x93019DBC
 		/// The main window of the UILayout, with ControlID 0xFFFFFFFF.
@@ -105,7 +105,8 @@ namespace Palettes
 		/* 30h */	PaletteInfoPtr mpPaletteInfo;
 		/// The UI objects for all categories contained in the palette. They are in the same order as the PaletteMain::mCategories field.
 		/* 34h */	eastl::vector<PaletteCategoryUIPtr> mCategories;
-		/* 48h */	eastl::vector<int> field_48;  // intrusive_ptrs too, but it's never used?
+		/// The category SLOTS activated by and behind the category buttons. Must be cleared before reloading palette
+		/* 48h */	eastl::vector<int> mCategorySlots;  // intrusive_ptr to unknown class.
 		/* 5Ch */	int field_5C;
 		/* 60h */	int field_60;
 		/* 64h */	PaletteCategoryUIPtr mpActiveCategory;

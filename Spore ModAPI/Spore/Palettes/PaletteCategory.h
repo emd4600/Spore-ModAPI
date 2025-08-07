@@ -40,7 +40,7 @@ namespace Palettes
 
 		///
 		/// Loads the configuration .prop file of this category; this does not load the pages nor the subcategories 
-		/// contained on it. If the groupID of the ResourceKey given is 0, 0x406B0100 will be used as folder instead.
+		/// contained on it. If the groupID of the ResourceKey given is 0, 0x406B0100 (palette_config~) will be used as folder instead.
 		///
 		/// @param name The ResourceKey that points to the .prop file.
 		/// @param defaultLayoutID The default instance ID of the layout file that the category will use, if no layout is specified in the .prop file.
@@ -64,7 +64,7 @@ namespace Palettes
 		PalettePage* GetPageAt(size_t nIndex);
 
 		/// 
-		/// Tells whether the given  subcategory is a children of this subcategory.
+		/// Tells whether the given subcategory is a children of this subcategory.
 		/// @param pCategory
 		bool HasCategory(PaletteCategory* pCategory);
 

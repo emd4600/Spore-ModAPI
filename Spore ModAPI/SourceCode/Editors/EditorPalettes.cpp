@@ -226,14 +226,14 @@ namespace Palettes
 	PaletteUI::PaletteUI()
 		: mpLayout(nullptr)
 		, mpCategoryButtonsWindow()
-		, field_14()
-		, field_18()
-		, field_1C()
+		, mpWindowLeft()
+		, mpWindowRight()
+		, mpWindowBehind()
 		, mpAnimatedWindow(nullptr)
 		, mpCategoryContent()
 		, mpPalette(nullptr)
 		, mCategories()
-		, field_48()
+		, mCategorySlots()
 		, field_5C()
 		, field_60()
 		, mpActiveCategory()
@@ -276,6 +276,13 @@ namespace Palettes
 			Args(PaletteUI*, Editors::EditorRigblockPaint&),
 			Args(this, paint));
 		return paint;
+	}
+
+	void PaletteUI::SetActiveCategory(int categoryIndex)
+	{
+		CALL(GetAddress(PaletteUI, SetActiveCategory), void,
+			Args(PaletteUI*, int),
+			Args(this, categoryIndex));
 	}
 
 	auto_METHOD_VOID(PaletteUI, Load, Args(PaletteMain* pPalette, UTFWin::IWindow* pWindow, bool arg_8, PaletteInfo* arg_C),

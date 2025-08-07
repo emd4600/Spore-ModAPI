@@ -749,36 +749,38 @@ namespace Simulator
 
 		kCitizenActionHeal = 5,
 
-		kCitizenActionAttack = 7,
-		kCitizenActionRaid1 = 8,
-		kCitizenActionGift1 = 9,
-		kCitizenActionHunt = 10,
+		kCitizenActionSleep = 6, // Sends the creature into the main tribe hut
+
+		kCitizenActionAttack = 7,  // Attack a citizen
+		kCitizenActionRaidFood = 8,
+		kCitizenActionGiftFood = 9,
+		kCitizenActionHunt = 10, // Attack a wild animal
 		kCitizenActionMate = 11,
-		kCitizenActionParty = 12,
+		kCitizenActionParty = 12, // Dance around the game object, actionObject = fire pit or other cTribeTool
 		kCitizenActionCollectEgg = 13,
 		kCitizenActionBundle = 14,
 
-		kCitizenActionRaid2 = 15,
+		kCitizenActionRaidHuts = 15, // Attack huts or tools of this tribe, starting with the actionObject = cTribeHut or cTribeTool
 
 		kCitizenActionFeedWild = 20,
-		kCitizenActionGift2 = 21,
+		kCitizenActionGiftMember = 21,
 
 		kCitizenActionRepair = 24, // actionObject = cTribeHut or cTribeTool
 		kCitizenActionTame = 25,
-		kCitizenActionRecruit = 26,
+		kCitizenActionRecruit = 26, // Begin social minigame
 		kCitizenActionGatherMeat = 27,
 
-		kCitizenActionUnk1 = 28, // common ID, actionObject = nullptr
+		kCitizenActionReturnToTribe = 28, // Sends the creature back to their tribe. actionObject = nullptr
 	};
 
 	enum HandheldItem
 	{
 		kHandheldItemNone = 0,
-		/// trg_hunting_tool1
+		/// trg_hunting_tool1 - Allowed in combat
 		kHandheldItemTrgHuntingTool1 = 1,
-		/// trg_hunting_tool2
+		/// trg_hunting_tool2  - Allowed in combat
 		kHandheldItemTrgHuntingTool2 = 2,
-		/// trg_hunting_tool3
+		/// trg_hunting_tool3  - Allowed in combat
 		kHandheldItemTrgHuntingTool3 = 3,
 		/// trg_fishing_tool and related
 		kHandheldItemTrgFishingTool = 4,
@@ -806,7 +808,7 @@ namespace Simulator
 		kHandheldItemTrgSocialDidgeridoo = 15,
 		/// trg_gathering_treesmacker
 		kHandheldItemTrgGatheringTreeSmacker = 16,
-		/// trg_chieftain_staff
+		/// trg_chieftain_staff - Allowed in combat
 		kHandheldItemTrgChieftainStaff = 17,
 		/// trg_healing_staff
 		kHandheldItemTrgHealingStaff = 18,
@@ -814,8 +816,8 @@ namespace Simulator
 		kHandheldItemTrgRepairMallet = 19,
 		/// trg_water_bucket
 		kHandheldItemTrgWaterBucket = 20,
-		/// 0xA8F747AE, some tribal horn
-		kHandheldItemUnk21 = 21,
+		/// trg_wildhorn
+		kHandheldItemTrgWildHorn = 21,
 		/// trg_firebomb
 		kHandheldItemTrgFireBomb = 22,
 		/// trg_eating_egg

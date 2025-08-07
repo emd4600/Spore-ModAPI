@@ -48,7 +48,7 @@ namespace Simulator
 		/* FF0h */	int field_FF0;
 		/* FF4h */	int mSelectionGroup;  // -1
 		/* FF8h */	int field_FF8;  // -1
-		/* FFCh */	int field_FFC;
+		/* FFCh */	int mCurrentHandheldItem; // HandheldItem index
 		/* 1000h */	bool mAffectedByRecruiting;
 		/* 1001h */	bool field_1001;  // not initialized
 		/* 1002h */	bool field_1002;  // true

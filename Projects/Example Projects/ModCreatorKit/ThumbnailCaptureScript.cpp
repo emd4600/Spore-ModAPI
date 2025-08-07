@@ -34,7 +34,7 @@ ThumbnailCaptureScript::ThumbnailCaptureScript()
 	, mItemViewers()
 	, mpItemViewer(nullptr)
 	, mFolderPath()
-	, mIsEnabled(false)
+	, mbIsEnabled(false)
 {
 }
 
@@ -199,16 +199,20 @@ void ThumbnailCaptureScript::InjectListeners() {
 					// standard editor/planner
 					if (pageUI.page->mStandardItems.size() > 0) {
 						for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-							itemUI->field_18->AddWinProc(this);
-							mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+							itemUI->mpWindow->AddWinProc(this);
+							mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
 						}
 					}
 					// adventure editor
 					/*
 					else {
-						for (eastl::intrusive_ptr<Palettes::IAdvancedItemUI> itemUI : pageUI.page->mAdvancedItems) {
-							itemUI->mpWindow
-							mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+						for (IAdvancedItemUIPtr itemUI : pageUI.page->mAdvancedItems) {
+							auto item = object_cast<Palettes::DefaultItemFrameUI>(itemUI.get());
+							if (item && item->mpWindow) {
+								item->mpWindow->AddWinProc(this);
+								mItemViewers[item->mpWindow.get()] = itemUI->mpViewer.get();
+							}
+							
 						}
 					}*/
 					
@@ -218,9 +222,11 @@ void ThumbnailCaptureScript::InjectListeners() {
 		// simple category
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
-				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-					itemUI->field_18->AddWinProc(this);
-					mItemViewers[itemUI->field_18.get()] = itemUI->mpViewer.get();
+				if (pageUI.page->mStandardItems.size() > 0) {
+					for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
+						itemUI->mpWindow->AddWinProc(this);
+						mItemViewers[itemUI->mpWindow.get()] = itemUI->mpViewer.get();
+					}
 				}
 			}
 		}
@@ -247,14 +253,14 @@ void ThumbnailCaptureScript::RemoveListeners() {
 					// standard editor/planner
 					if (pageUI.page->mStandardItems.size() > 0) {
 						for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-							itemUI->field_18->RemoveWinProc(this);
+							itemUI->mpWindow->RemoveWinProc(this);
 						}
 					}
 					/*
 					// adventure editor
 					else {
 						for (StandardItemUIPtr itemUI : pageUI.page->mpPage->mItems) {
-							itemUI->field_18->RemoveWinProc(this);
+							itemUI->mpWindow->RemoveWinProc(this);
 						}
 					}
 					*/
@@ -265,8 +271,8 @@ void ThumbnailCaptureScript::RemoveListeners() {
 		else {
 			for (auto pageUI : catUI->mPageUIs) {
 				for (StandardItemUIPtr itemUI : pageUI.page->mStandardItems) {
-					if (itemUI && itemUI->field_18) {
-						itemUI->field_18->RemoveWinProc(this);
+					if (itemUI && itemUI->mpWindow) {
+						itemUI->mpWindow->RemoveWinProc(this);
 					}
 				}
 			}
@@ -279,10 +285,10 @@ void ThumbnailCaptureScript::RemoveListeners() {
 }
 
 void ThumbnailCaptureScript::ParseLine(const ArgScript::Line& line) {
-	if (mIsEnabled) {
+	if (mbIsEnabled) {
 		RemoveListeners();
 		App::ConsolePrintF("Icon capture disabled.");
-		mIsEnabled = false;
+		mbIsEnabled = false;
 		return;
 	}
 
@@ -327,7 +333,7 @@ void ThumbnailCaptureScript::ParseLine(const ArgScript::Line& line) {
 	InjectListeners();
 
 	App::ConsolePrintF("Icon capture enabled: hover a palette item and wait until it starts rotating to generate the icon.");
-	mIsEnabled = true;
+	mbIsEnabled = true;
 }
 
 const char* ThumbnailCaptureScript::GetDescription(ArgScript::DescriptionMode mode) const {

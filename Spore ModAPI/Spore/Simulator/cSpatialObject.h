@@ -113,6 +113,9 @@ namespace Simulator
 		/* BCh */	virtual int AddRef() = 0;
 		/* C0h */	virtual int Release() = 0;
 
+		// Return a new orientation towards a target pos, preserving the pitch and roll of the current orientation
+		Math::Quaternion GetOrientationYawTowards(const Math::Vector3& targetpos);
+
 	public:
 
 		/* 04h */	Math::Vector3 mPosition;

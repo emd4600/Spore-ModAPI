@@ -64,6 +64,10 @@ bool AnimEditorMode::Initialize(App::IGameModeManager* pManager)
 				GameModeManager.SetActiveMode(MODE_ID);
 			}
 			else {
+				if (auto args = line.GetOption("help", 1))
+				{
+					App::ConsolePrintF("Params: -add, -remove, -play [hash], -default, -help, -exit");
+				}
 				if (auto args = line.GetOption("remove", 1)) 
 				{
 					int index = mpFormatParser->ParseInt(args[0]);
@@ -75,7 +79,7 @@ bool AnimEditorMode::Initialize(App::IGameModeManager* pManager)
 					request.shopperID = id("CreatureShopper");
 					Sporepedia::ShopperRequest::Show(request);
 				}
-				else if (line.HasFlag("exit"))
+				else if (line.HasFlag("exit") || line.HasFlag("quit"))
 				{
 					GameModeManager.SetActiveMode(kGGEMode);
 				}
