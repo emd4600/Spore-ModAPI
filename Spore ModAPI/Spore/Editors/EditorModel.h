@@ -89,7 +89,7 @@ namespace Editors
 		/* 5Ch */	eastl::string16 mName;
 		/* 6Ch */	eastl::string16 mDescription;  // message 0x14418C3F ?
 		/* 7Ch */	eastl::string16 mAcceptedName;  // the name after removing illegal characters
-		/* 8Ch */	int mSkinEffectIDs[3];	// Skinpaint IDs
+		/* 8Ch */	uint32_t mSkinEffectIDs[3];	// Skinpaint IDs
 		/* 98h */	int mSkinEffectSeeds[3];  // 1234
 		/* A4h */	ColorRGB mColors[3];	// Skinpaint Colors
 		/* C8h */	eastl::vector<BoundingBox> field_C8;
