@@ -212,7 +212,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae5521dd7bf0dcb86ad4f52ca3f7863a0" class="m-doc">SetShadeColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> color) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd>Returns the color modulation value.</dd>
+            <dd>Sets the color modulation value.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a6540bc683d45f8367d67e93be0bc12f2" class="m-doc">SetArea</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_math_1_1_rectangle.html" class="m-doc">Math::<wbr />Rectangle</a>&amp; area) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -442,11 +442,19 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ae0e6b08575a58f06801a5b7617a98eec" class="m-doc">IsEnabled</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
-            <dd>Tells whether the window is visible.</dd>
+            <dd>Tells whether the window is enabled.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ad0ae74a42bba84ac98b6a2dc8262a2dc" class="m-doc">SetEnabled</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> bEnabled) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
-            <dd>Switches the visibility of this window.</dd>
+            <dd>Switches the enabled state of this window.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a760c9150e7470172c863dce09fe28586" class="m-doc">IsIgnoringMouse</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Tells whether the window ignores the mouse.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a24f7080b09ad44dc6b7d5344685c13ab" class="m-doc">SetIgnoreMouse</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> bIgnoreMouse) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd>Switches whether the window ignores the mouse.</dd>
           </dl>
         </section>
         <section>
@@ -803,7 +811,7 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae5521dd7bf0dcb86ad4f52ca3f7863a0" class="m-doc-self">SetShadeColor</a>(</span><span class="m-doc-wrap"><a href="struct_math_1_1_color.html" class="m-doc">Math::<wbr />Color</a> color) <span class="m-label m-warning">pure virtual</span></span></span>
             </h3>
-            <p>Returns the color modulation value.</p>
+            <p>Sets the color modulation value.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1490,15 +1498,29 @@
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae0e6b08575a58f06801a5b7617a98eec" class="m-doc-self">IsEnabled</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>Tells whether the window is visible.</p>
+            <p>Tells whether the window is enabled.</p>
 <p>This is equivalent to <a href="class_u_t_f_win_1_1_i_window.html#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc">GetFlags()</a> &amp; kWinFlagEnabled.</p>
           </div></section>
           <section class="m-doc-details" id="ad0ae74a42bba84ac98b6a2dc8262a2dc"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0ae74a42bba84ac98b6a2dc8262a2dc" class="m-doc-self">SetEnabled</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> bEnabled)</span></span>
             </h3>
-            <p>Switches the visibility of this window.</p>
+            <p>Switches the enabled state of this window.</p>
 <p>This is equivalent to SetFlag(kWinFlagEnabled, bEnabled).</p>
+          </div></section>
+          <section class="m-doc-details" id="a760c9150e7470172c863dce09fe28586"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a760c9150e7470172c863dce09fe28586" class="m-doc-self">IsIgnoringMouse</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Tells whether the window ignores the mouse.</p>
+<p>This is equivalent to <a href="class_u_t_f_win_1_1_i_window.html#af083ac2e7a61a76db1cd74f156aff77e" class="m-doc">GetFlags()</a> &amp; kWinFlagIgnoreMouse.</p>
+          </div></section>
+          <section class="m-doc-details" id="a24f7080b09ad44dc6b7d5344685c13ab"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> UTFWin::<wbr />IWindow::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a24f7080b09ad44dc6b7d5344685c13ab" class="m-doc-self">SetIgnoreMouse</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> bIgnoreMouse)</span></span>
+            </h3>
+            <p>Switches whether the window ignores the mouse.</p>
+<p>This is equivalent to SetFlag(kWinFlagIgnoreMouse, bEnabled).</p>
           </div></section>
         </section>
       </div>
