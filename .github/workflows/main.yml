@@ -24,6 +24,12 @@ jobs:
           echo "Building version $count"
           msbuild "Spore ModAPI" -t:BuildDlls -p:BuildVer=$count -p:Config=Release
           msbuild "Spore ModAPI" -t:BuildCombinedDll -p:BuildVer=$count -p:Config=Release
+      
+      - name: Compile Legacy DLLs
+        run: |
+          $count = git log --oneline | wc -l
+          echo "Building version $count"
+          msbuild "Spore ModAPI Legacy" -t:BuildLegacyDlls -p:BuildVer=$count -p:Config=Release
 
       - name: Upload compiled files
         uses: actions/upload-artifact@v4
@@ -34,6 +40,14 @@ jobs:
             dll\Release\SporeModAPI.disk.dll
             dll\Release\SporeModAPI.combined.dll
             dll\Release\SporeModAPI.lib
+
+      - name: Upload compiled legacy files
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-modapi-legacy-dlls
+          path: |
+            legacydll\Release\SporeModAPI-disk.dll
+            legacydll\Release\SporeModAPI-steam_patched.dll
 
   deploy:
     name: Deploy ModAPI DLLs update
@@ -46,8 +60,16 @@ jobs:
         with:
           name: compiled-modapi-dlls
 
+      - name: Download compiled legacy files
+        uses: actions/download-artifact@v4
+        with:
+          name: compiled-modapi-legacy-dlls
+
       - name: Create update bundle
         run: zip SporeModAPIdlls.zip SporeModAPI.march2017.dll SporeModAPI.disk.dll SporeModAPI.combined.dll SporeModAPI.lib
+
+      - name: Create legacy update bundle
+        run: zip SporeModAPIlegacydlls.zip SporeModAPI-disk.dll SporeModAPI-steam_patched.dll
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -76,7 +98,9 @@ jobs:
           name: ModAPI SDK v2.5.${{ steps.version_number.outputs.version }}
           tag_name: v2.5.${{ steps.version_number.outputs.version }}
           body: ${{ steps.commit_message.outputs.message }}
-          files: SporeModAPIdlls.zip
+          files: |
+            SporeModAPIdlls.zip
+            SporeModAPIlegacydlls.zip
 
   documentation:
     name: Generate documentation
