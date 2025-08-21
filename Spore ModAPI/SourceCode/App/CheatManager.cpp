@@ -36,9 +36,9 @@ namespace App
 	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func30h, Args(Object* arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func34h, Args(Object* arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, ArgScript::FormatParser*, GetArgScript);
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func3Ch, Args(int arg_0), Args(arg_0));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func40h, Args(int arg_0), Args(arg_0));
-	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func44h, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, ActivateConsole, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, DeactivateConsole, Args(int arg_0), Args(arg_0));
+	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, ToggleConsole, Args(int arg_0), Args(arg_0));
 	auto_METHOD_VIRTUAL_(cCheatManager, cCheatManager, bool, func48h);
 	auto_METHOD_VIRTUAL_VOID(cCheatManager, cCheatManager, func4Ch, Args(bool arg_0), Args(arg_0));
 
