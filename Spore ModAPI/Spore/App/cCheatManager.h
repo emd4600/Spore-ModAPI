@@ -59,9 +59,9 @@ namespace App
 		virtual void func30h(Object*) override;
 		virtual void func34h(Object*) override;
 		virtual ArgScript::FormatParser* GetArgScript() override;
-		virtual void func3Ch(int) override;
-		virtual void func40h(int) override;
-		virtual void func44h(int) override;
+		virtual void ActivateConsole(int) override;
+		virtual void DeactivateConsole(int) override;
+		virtual void ToggleConsole(int) override;
 		virtual bool func48h() override;
 		virtual void func4Ch(bool) override;
 
@@ -93,9 +93,9 @@ namespace App
 		DeclareAddress(func30h);
 		DeclareAddress(func34h);
 		DeclareAddress(GetArgScript);
-		DeclareAddress(func3Ch);
-		DeclareAddress(func40h);
-		DeclareAddress(func44h);
+		DeclareAddress(ActivateConsole);
+		DeclareAddress(DeactivateConsole);
+		DeclareAddress(ToggleConsole);
 		DeclareAddress(func48h);
 		DeclareAddress(func4Ch);
 	}

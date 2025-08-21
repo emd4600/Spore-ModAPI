@@ -84,9 +84,9 @@ namespace App
 		DefineAddress(func30h, SelectAddress(0x67F7E0, 0x67F500));
 		DefineAddress(func34h, SelectAddress(0x67F860, 0x67F580));
 		DefineAddress(GetArgScript, SelectAddress(0x113BA60, 0x113AE80));
-		DefineAddress(func3Ch, SelectAddress(0x67E880, 0x67E6B0));
-		DefineAddress(func40h, SelectAddress(0x67E8C0, 0x67E6F0));
-		DefineAddress(func44h, SelectAddress(0x67E900, 0x67E730));
+		DefineAddress(ActivateConsole, SelectAddress(0x67E880, 0x67E6B0));
+		DefineAddress(DeactivateConsole, SelectAddress(0x67E8C0, 0x67E6F0));
+		DefineAddress(ToggleConsole, SelectAddress(0x67E900, 0x67E730));
 		DefineAddress(func48h, SelectAddress(0xABFB10, 0xABF790));
 		DefineAddress(func4Ch, SelectAddress(0x67E200, 0x67E0A0));
 	}

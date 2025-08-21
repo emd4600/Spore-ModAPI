@@ -107,9 +107,23 @@ namespace App
 		///
 		/* 38h */	virtual ArgScript::FormatParser* GetArgScript() = 0;
 
-		/* 3Ch */	virtual void func3Ch(int) = 0;
-		/* 40h */	virtual void func40h(int) = 0;
-		/* 44h */	virtual void func44h(int) = 0;
+		///
+		/// Opens the cheat console.
+		///
+		/* 3Ch */	virtual void ActivateConsole(int = 1) = 0;
+
+		///
+		/// Closes the cheat console.
+		/// Called when the game automatically closes the console, such as when opening certain UIs.
+		///
+		/* 40h */	virtual void DeactivateConsole(int = 1) = 0;
+
+		///
+		/// Toggles whether the cheat console is open.
+		/// Called when the user presses Ctrl+Shift+C.
+		///
+		/* 44h */	virtual void ToggleConsole(int = 1) = 0;
+
 		/* 48h */	virtual bool func48h() = 0;
 		/* 4Ch */	virtual void func4Ch(bool) = 0;
 
