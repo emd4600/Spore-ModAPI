@@ -87,12 +87,17 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x3C609F8;
 
-		/// Determines whether the specified AI empire is aware of the player.
+		/// Checks whether the specified empire is aware of the player.
 		/// An empire is considered "aware" if the player has contacted it at least once,
 		/// or if the empire has ever sent a transmission to the player.
 		/// @param empireID The ID of the empire to check.
 		/// @returns True if the empire is aware of the player, false otherwise.
 		bool EmpireIsAwareOfPlayer(uint32_t empireID);
+
+		/// Checks whether the player has ever contacted the specified empire.
+		/// @param empireID The ID of the empire to check.
+		/// @returns True if the player has contacted the empire at least once, false otherwise.
+		bool PlayerContactedEmpire(uint32_t empireID);
 
 	public:
 		/* 38h */	eastl::sp_fixed_hash_set<ResourceKey, 64> mOneTimeEventFlags;
@@ -146,5 +151,6 @@ namespace Simulator
 	namespace Addresses(cPlayer)
 	{
 		DeclareAddress(EmpireIsAwareOfPlayer); // 0xc79900   0xc7a910
+		DeclareAddress(PlayerContactedEmpire); // 0xc798a0   0xc7a8b0
 	}
 }

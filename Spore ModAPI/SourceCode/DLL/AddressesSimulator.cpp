@@ -444,6 +444,7 @@ namespace Simulator
 	namespace Addresses(cPlayer)
 	{
 		DefineAddress(EmpireIsAwareOfPlayer, SelectAddress(0xc79900, 0xc7a910));
+		DefineAddress(PlayerContactedEmpire, SelectAddress(0xc798a0, 0xc7a8b0));
 	}
 
 	namespace Addresses(cPlayerInventory)

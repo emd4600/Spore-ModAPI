@@ -22,5 +22,6 @@
 namespace Simulator
 {
 	auto_METHOD(cPlayer, bool, EmpireIsAwareOfPlayer, Args(uint32_t empireID), Args(empireID));
+	auto_METHOD(cPlayer, bool, PlayerContactedEmpire, Args(uint32_t empireID), Args(empireID));
 }
 #endif
