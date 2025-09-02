@@ -87,6 +87,13 @@ namespace Simulator
 	public:
 		static const uint32_t TYPE = 0x3C609F8;
 
+		/// Determines whether the specified AI empire is aware of the player.
+		/// An empire is considered "aware" if the player has contacted it at least once,
+		/// or if the empire has ever sent a transmission to the player.
+		/// @param empireID The ID of the empire to check.
+		/// @returns True if the empire is aware of the player, false otherwise.
+		bool EmpireIsAwareOfPlayer(uint32_t empireID);
+
 	public:
 		/* 38h */	eastl::sp_fixed_hash_set<ResourceKey, 64> mOneTimeEventFlags;
 		/* 68Ch */	int field_68C;
@@ -135,4 +142,9 @@ namespace Simulator
 		/* 129Ch */	eastl::fixed_vector<uint32_t, 9> mAdventuresCompleted;
 	};
 	ASSERT_SIZE(cPlayer, 0x12D8);
+
+	namespace Addresses(cPlayer)
+	{
+		DeclareAddress(EmpireIsAwareOfPlayer); // 0xc79900   0xc7a910
+	}
 }

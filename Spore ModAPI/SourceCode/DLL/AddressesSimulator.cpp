@@ -40,6 +40,7 @@
 #include <Spore\Simulator\cPlaceObjectToolStrategy.h>
 #include <Spore\Simulator\cPlanet.h>
 #include <Spore\Simulator\cPlanetRecord.h>
+#include <Spore\Simulator\cPlayer.h>
 #include <Spore\Simulator\cPlayerInventory.h>
 #include <Spore\Simulator\cTimeOfDay.h>
 #include <Spore\Simulator\cRallyCallToolStrategy.h>
@@ -438,6 +439,11 @@ namespace Simulator
 		DefineAddress(GetTemperatureScore, SelectAddress(0xC6FD80, 0xC70BC0));
 		DefineAddress(SetRepresentationMode, SelectAddress(0xC70CD0, 0xC71B70));
 		DefineAddress(GetRingEffect, SelectAddress(0xC6FB50, 0xC70990));
+	}
+
+	namespace Addresses(cPlayer)
+	{
+		DefineAddress(EmpireIsAwareOfPlayer, SelectAddress(0xc79900, 0xc7a910));
 	}
 
 	namespace Addresses(cPlayerInventory)
