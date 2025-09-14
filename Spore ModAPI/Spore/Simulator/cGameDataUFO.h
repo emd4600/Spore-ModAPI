@@ -81,7 +81,7 @@ namespace Simulator
 		/* 6D0h */	cGonzagoTimer field_6D0;
 		/* 6F0h */	cGonzagoTimer field_6F0;
 		/* 710h */	int field_710;
-		/// 0 is player UFO
+		/// 0 is player UFO. See UfoType enum.
 		/* 714h */	int mUFOType;  // -1
 		/* 718h */	Vector3 mNextPosition;
 		/* 724h */	Vector3 mNextVelocity;

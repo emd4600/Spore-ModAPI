@@ -70,7 +70,7 @@ namespace Editors
 
 		/* 0Ch */	PlayModeUIPtr mpUI;
 		/* 10h */	char padding_10[0x7C - 0x10];
-		/* 7Ch */	PlayModeActor** mpMainActor;  // at 10h, AnimatedCreatureController
+		/* 7Ch */	PlayModeActor* mpMainActor;  // at 10h, AnimatedCreatureController
 		/* 80h */	char padding_80[0xC8 - 0x80];
 		/* C8h */	IPlayModeModule* mModules[4];
 		/* D8h */	char padding_D8[0x3588 - 0xD8];

@@ -62,7 +62,7 @@ namespace Simulator
 		/* 11h */	bool field_11;
 		/* 14h */	int field_14;
 		/* 18h */	Math::Vector3 field_18;
-		/* 24h */	AbilityMode mAbilityMode;
+		/* 24h */	AbilityMode mAbilityMode; // Social / Attack stance
 		/* 28h */	float mEvolutionPoints;
 		/* 30h */	uint64_t DEPRECATED_mLearnedAbilities;
 		/* 38h */	int mLearnedAbilities[3];

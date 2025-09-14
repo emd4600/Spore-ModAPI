@@ -107,10 +107,13 @@ namespace Anim
 		/* 64h */	virtual int func64h() = 0;
 		/* 68h */	virtual int func68h() = 0;
 		/* 6Ch */	virtual int func6Ch() = 0;
-		/* 70h */	virtual Graphics::IModelWorld* GetAnimWorld() = 0;
+		/* 70h */	virtual Graphics::IModelWorld* zGetModelWorld() = 0; // Broken.
 		/* 74h */	virtual int func74h() = 0;
 		/* 78h */	virtual int func78h() = 0;  // returns main anim_query?
 		/* 7Ch */	virtual ~AnimatedCreature();
+
+		IAnimWorld* GetAnimWorld() { return (mpAnimWorld); }
+		Graphics::IModelWorld* GetModelWorld() { return GetModel() ? GetModel()->GetModelWorld() : nullptr; }
 
 		static bool IsIdleWalkLookatStart(uint32_t animID);
 		static bool IsIdleWalkStop(uint32_t animID);
@@ -124,12 +127,14 @@ namespace Anim
 
 		/* 04h */	Vector3 mPosition;
 		/* 10h */	Quaternion mOrientation;
-		/* 20h */	char padding_20[0x154 - 0x20];
+		/* 20h */	char padding_20[0x74 - 0x20];
 
 		// 3Ch scale?
 
 		// 70h flags?
-		// 74h ColorRGBA that gets copied to model color
+		/* 74h */ ColorRGBA mColor; // gets copied to model color initially. At runtime, color should be applied directly to the mpModel.
+
+		/* 84h */	char padding_84[0x154 - 0x84];
 
 		/* 154h */	int field_154;
 		/* 158h */	int field_158;

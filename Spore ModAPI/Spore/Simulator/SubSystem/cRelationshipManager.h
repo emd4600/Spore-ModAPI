@@ -52,7 +52,7 @@ namespace Simulator
 		/* 00h */	float mValue;
 		// Flag 0x1 is at war, 0x2 allied?
 		/* 04h */	int mFlags;
-		/* 08h */	eastl::map<uint32_t, float> mRelationshipEvents;
+		/* 08h */	eastl::map<uint32_t, float> mRelationshipEvents; // map of RelationshipEvents to their values.
 	};
 
 	/// Handles relationships between political entities.
@@ -149,13 +149,21 @@ namespace Simulator
 		/// @returns
 		float GetRelationshipEventValue(uint32_t politicalID1, uint32_t politicalID2, uint32_t relationshipID);
 
+		/// Returns the cRelationshipData between 2 political entities.
+		/// NOTE: order of the IDs does not matter.
+		cRelationshipData* GetRelationshipData(uint32_t politicalID1, uint32_t politicalID2) {
+			eastl::pair<uint32_t, uint32_t> key = eastl::make_pair(politicalID1, politicalID2);
+			auto it = mRelationships.find(key);
+			if (it != mRelationships.end()) { return &(it->second); } { return nullptr; }
+		}
+
 	public:
 		/* 10h */	float field_10;
 		/* 14h */	float field_14;
 		/* 18h */	float field_18;
 		/* 1Ch */	float field_1C;
 		/* 20h */	bool mbIsInitialized;
-		/* 24h */	eastl::map<eastl::pair<uint32_t, uint32_t>, cRelationshipData> mRelationships;  // map of maps?
+		/* 24h */	eastl::map<eastl::pair<uint32_t, uint32_t>, cRelationshipData> mRelationships;  // map of maps? seems to tie pairs of political IDs to relationship data 
 		/* 40h */	int field_40;
 		/* 44h */	int field_44;
 		/* 48h */	eastl::vector<int> field_48;

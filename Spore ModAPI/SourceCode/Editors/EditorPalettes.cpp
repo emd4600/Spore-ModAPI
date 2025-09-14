@@ -531,17 +531,17 @@ namespace Palettes
 	auto_METHOD_VOID(AdvancedItemViewer, SetAutoRotate, Args(bool arg), Args(arg));
 	auto_METHOD_VOID(AdvancedItemViewer, SetZoom, Args(float zoom), Args(zoom));
 
-	void AdvancedItemViewer::func2Ch(bool value) {
-		field_166 = value;
+	void AdvancedItemViewer::SetShowModelOnHover(bool value) {
+		mbShowModelOnHover = value;
 	}
-	bool AdvancedItemViewer::func30h() const {
-		return field_166;
+	bool AdvancedItemViewer::GetShowModelOnHover() const {
+		return mbShowModelOnHover;
 	}
 	UTFWin::IWindow* AdvancedItemViewer::GetWindow() const {
 		return mpWindow.get();
 	}
 	void AdvancedItemViewer::Set3dPreview(bool value) {
-		field_EA = value;
+		mb3DPreviewEnabled = value;
 	}
 	Anim::AnimatedCreature* AdvancedItemViewer::GetAnimatedCreature() const {
 		return mpCreature.get();
@@ -607,32 +607,32 @@ namespace Palettes
 		, field_34()
 		, field_38()
 		, field_3C()
-		, field_40()
-		, field_44()
-		, field_48()
+		, mInstanceID()
+		, mTypeID()
+		, mGroupID()
 		, mFileName()
 		, mpWindow()
-		, field_60()
-		, mZoom(1.0f)
+		, mpWindowUnk1()
+		, mInitialZoom(1.0f)
 		, mRotation(0.0f)
-		, field_6C(0.0f)
+		, mInitialRotation(0.0f)
+		, mZoom(1.0f)
 		, mFinalZoom(1.0f)
-		, field_94(1.0f)
 		, field_98(Matrix3().SetIdentity())
 		, field_BC()
 		, field_C0()
 		, field_C4()
 		, field_C8(-1)
 		, field_CC(-1)
-		, field_D0(u"ui_material_blink")
-		, field_D4(u"ui_material_blink")
+		, mUIMaterialUnk1(u"ui_material_blink")
+		, mUIMaterialUnk2(u"ui_material_blink")
 		, field_D8()
 		, field_DC()
 		, field_E0(-1)
-		, field_E4(u"ui_material_blink")
+		, mUIMaterialUnk3(u"ui_material_blink")
 		, field_E8(true)
 		, field_E9()
-		, field_EA(true)
+		, mb3DPreviewEnabled(true)
 		, field_EB()
 		, field_EC()
 		, mpCreature()
@@ -640,7 +640,7 @@ namespace Palettes
 		, field_F8()
 		, field_FC(true)
 		, field_FD()
-		, field_100(0x71FA7D3F)
+		, mTriggerBehavior(TriggerBehaviors::Drag)
 		, field_104()
 		, mpModel()
 		, field_11C()
@@ -654,10 +654,10 @@ namespace Palettes
 		, mbCreationIsBaked()
 		, field_164()
 		, field_165(true)
-		, field_166(true)
+		, mbShowModelOnHover(true)
 		, field_167()
 		, field_169()
-		, field_16A(true)
+		, mbRotationEnabled(true)
 		, mShowTooltip(true)
 		, mbOmitBackground()
 		, field_170()

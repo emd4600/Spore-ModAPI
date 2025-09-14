@@ -32,6 +32,13 @@
 
 namespace Palettes
 {
+	enum class TriggerBehaviors : uint32_t
+	{
+		None = 0x2CA33BDB,
+		Drag = 0x71FA7D3,
+		Click = 0x5E71AB9B,
+	};
+
 	class ItemViewer 
 		: public UTFWin::IWinProc
 		, public DefaultRefCounted
@@ -52,8 +59,8 @@ namespace Palettes
 		/* 24h */	virtual void Load(const ResourceKey& fileName) = 0;
 		/* 28h */	virtual void SetName(const ResourceKey& fileName) = 0;
 
-		/* 2Ch */	virtual void func2Ch(bool) = 0;
-		/* 30h */	virtual bool func30h() const = 0;
+		/* 2Ch */	virtual void SetShowModelOnHover(bool enabled) = 0;
+		/* 30h */	virtual bool GetShowModelOnHover() const = 0;
 		/* 34h */	virtual UTFWin::IWindow* GetWindow() const = 0;
 		/* 38h */	virtual void Set3dPreview(bool enabled) = 0;
 		/* 3Ch */	virtual Anim::AnimatedCreature* GetAnimatedCreature() const = 0;  //PLACEHOLDER GetAnimatedCreature()
@@ -84,34 +91,34 @@ namespace Palettes
 		/* 34h */	ObjectPtr field_34;
 		/* 38h */	ObjectPtr field_38;
 		/* 3Ch */	int field_3C;
-		/* 40h */	int field_40;
-		/* 44h */	int field_44;
-		/* 48h */	int field_48;
-		/* 4Ch */	ResourceKey mFileName;
-		/* 58h */	int field_58;  // not initialized
+		/* 40h */	uint32_t mInstanceID; // Item instanceID
+		/* 44h */	uint32_t mTypeID; // Item typeID
+		/* 48h */	uint32_t mGroupID; // Item groupID
+		/* 4Ch */	ResourceKey mFileName; // Item Key
+		/* 58h */	uint32_t mTypeIDUnk1;  // not initialized, usually set to 'prop' hash
 		/* 5Ch */	IWindowPtr mpWindow;
-		/* 60h */	IWindowPtr field_60;
-		/* 64h */	float mZoom;  // 1
+		/* 60h */	IWindowPtr mpWindowUnk1; // Same as above?
+		/* 64h */	float mInitialZoom;  // 1
 		/* 68h */	float mRotation;  // 0
-		/* 6Ch */	float field_6C;  // 0
-		/* 70h */	float mFinalZoom;  // 1
+		/* 6Ch */	float mInitialRotation;  // 0
+		/* 70h */	float mZoom;  // 1 // Current zoom?
 		/* 74h */	char _padding_74[0x20];
-		/* 94h */	float field_94;  // 1
-		/* 98h */	Math::Matrix3 field_98;
+		/* 94h */	float mFinalZoom;  // 1 // Desired zoom
+		/* 98h */	Math::Matrix3 field_98; // Something to do with model transforms
 		/* BCh */	bool field_BC;
 		/* C0h */	float field_C0;
 		/* C4h */	float field_C4;
 		/* C8h */	int field_C8;  // -1
 		/* CCh */	int field_CC;  // -1
-		/* D0h */	const char16_t* field_D0;  // "ui_material_blink"
-		/* D4h */	const char16_t* field_D4;  // "ui_material_blink"
+		/* D0h */	const char16_t* mUIMaterialUnk1;  // "ui_material_blink"
+		/* D4h */	const char16_t* mUIMaterialUnk2;  // "ui_material_blink"
 		/* D8h */	float field_D8;
 		/* DCh */	float field_DC;
 		/* E0h */	int field_E0;  // -1
-		/* E4h */	const char16_t* field_E4;  // "ui_material_blink"
+		/* E4h */	const char16_t* mUIMaterialUnk3;  // "ui_material_blink"
 		/* E8h */	bool field_E8;  // true
 		/* E9h */	bool field_E9;
-		/* EAh */	bool field_EA;  // true
+		/* EAh */	bool mb3DPreviewEnabled;  // true // If set to false, model will not show when hovered
 		/* EBh */	bool field_EB;
 		/* ECh */	bool field_EC;
 		/* F0h */	AnimatedCreaturePtr mpCreature;
@@ -119,7 +126,7 @@ namespace Palettes
 		/* F8h */	int field_F8;
 		/* FCh */	bool field_FC;  // true
 		/* FDh */	bool field_FD;
-		/* 100h */	uint32_t field_100;  // 0x71FA7D3F ('drag')
+		/* 100h */	TriggerBehaviors mTriggerBehavior;  // TriggerBehaviors::Drag
 		/* 104h */	eastl::vector<ModelPtr> field_104;
 		/* 118h */	ModelPtr mpModel;
 		/* 11Ch */	eastl::vector<ModelPtr> field_11C;
@@ -134,11 +141,11 @@ namespace Palettes
 		/* 163h */	bool mbCreationIsBaked;
 		/* 164h */	bool field_164;
 		/* 165h */	bool field_165;  // true
-		/* 166h */	bool field_166;  // true
+		/* 166h */	bool mbShowModelOnHover;  // true
 		/* 167h */	bool field_167; 
 		/* 168h */	bool field_168;  // not initialized
 		/* 169h */	bool field_169;
-		/* 16Ah */	bool field_16A;  // true  // mbRotationEnabled ?
+		/* 16Ah */	bool mbRotationEnabled;  // true
 		/* 16Bh */	bool mShowTooltip;  // true
 		/// If true, no background image will be set in the preview.
 		/* 16Ch */	bool mbOmitBackground;
