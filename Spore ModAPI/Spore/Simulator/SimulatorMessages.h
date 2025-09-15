@@ -32,7 +32,7 @@ namespace Simulator
 		/// Simulator::EnterEditorMessage; Enters the correct editor modifying the specified creation.
 		kMsgEnterEditor = 0x53850BAE,
 
-		/// Switches the editor. Use the desired editor ID as the message data .
+		/// Switches the editor. Use the desired editor ID as the message data.
 		kMsgSwitchEditor = 0x0212D3E7,
 
 		kMsgSwitchGameMode = 0x0212D3E7,

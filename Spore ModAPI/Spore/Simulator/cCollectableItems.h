@@ -82,7 +82,7 @@ namespace Simulator
 		void AddUnlockableItem(uint32_t instanceID, uint32_t groupID, int itemUnlockLevel, uint32_t categoryID, int row, int column, int pageIndex, float itemUnlockFindPercentage, uint32_t itemUnlockEffect);
 
 		/// Reads the prop file, checks the `itemUnlockLevel`, `itemUnlockEffect` and `itemUnlockFindPercentage` properties, and calls AddUnlockableItem().
-		/// If itemUnlockFindPercentage is greater or equal than 1, it unlocks the item.
+		/// If itemUnlockFindPercentage is greater than or equal to 1, it unlocks the item.
 		/// @param key
 		/// @param categoryID
 		/// @param row
