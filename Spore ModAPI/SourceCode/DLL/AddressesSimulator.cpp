@@ -1128,9 +1128,15 @@ namespace Simulator
 
 	namespace Addresses(cCollectableItems)
 	{
+		DefineAddress(sub_5976E0, SelectAddress(0x5976E0, 0x597A20));
 		DefineAddress(LoadConfig, SelectAddress(0x599100, 0x599440));
 		DefineAddress(AddUnlockableItem, SelectAddress(0x598A70, 0x598DB0));
 		DefineAddress(AddUnlockableItemFromProp, SelectAddress(0x598B50, 0x598E90));
+
+		DefineAddress(UnlockPart, SelectAddress(0x596A60, 0x596DA0));
+		DefineAddress(LockPart, SelectAddress(0x596AD0, 0x596E10));
+		DefineAddress(sub_594010, SelectAddress(0x594010, 0x5942E0));
+
 		DefineAddress(sub_597BC0, SelectAddress(0x597BC0, 0x597F00));
 		DefineAddress(sub_597390, SelectAddress(0x597390, 0x5976D0));
 	}
