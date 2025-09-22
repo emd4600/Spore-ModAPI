@@ -192,7 +192,7 @@ namespace Editors
 		// Editor::ScalePart(EditorRigblock *, int, int)
 
 
-		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value);
+		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value); // MorphPart?
 
 		// loc_573BB1 -> set part is hovered?
 

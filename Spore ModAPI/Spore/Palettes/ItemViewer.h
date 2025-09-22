@@ -98,12 +98,12 @@ namespace Palettes
 		/* 58h */	uint32_t mTypeIDUnk1;  // not initialized, usually set to 'prop' hash
 		/* 5Ch */	IWindowPtr mpWindow;
 		/* 60h */	IWindowPtr mpWindowUnk1; // Same as above?
-		/* 64h */	float mInitialZoom;  // 1
+		/* 64h */	float mZoom;  // 1
 		/* 68h */	float mRotation;  // 0
 		/* 6Ch */	float mInitialRotation;  // 0
-		/* 70h */	float mZoom;  // 1 // Current zoom?
+		/* 70h */	float mFinalZoom;  // 1 // Desired zoom
 		/* 74h */	char _padding_74[0x20];
-		/* 94h */	float mFinalZoom;  // 1 // Desired zoom
+		/* 94h */	float mInitialZoom;  // 1 
 		/* 98h */	Math::Matrix3 field_98; // Something to do with model transforms
 		/* BCh */	bool field_BC;
 		/* C0h */	float field_C0;

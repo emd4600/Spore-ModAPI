@@ -91,14 +91,14 @@ namespace UTFWin
 		/// Gets the component color for the given text type.
 		/// @param index The type of text affected by the color, in the TextColors enum.
 		///
-		/* 1Ch */	virtual Color GetColor(TextColors index) const = 0;
+		/* 1Ch */	virtual Math::Color GetColor(TextColors index) const = 0;
 
 		///
 		/// Specifies the component colors for the given text mode.
 		/// @param index The type of text affected by this color, in the TextColors enum.
 		/// @param color The new Color.
 		///
-		/* 20h */	virtual void SetColor(TextColors index, Color color) = 0;
+		/* 20h */	virtual void SetColor(TextColors index, Math::Color color) = 0;
 		/* 24h */	virtual const Math::Rectangle& GetBorderWidth() const = 0;
 		/* 28h */	virtual void SetBorderWidth(const Math::Rectangle& widths) = 0;
 
