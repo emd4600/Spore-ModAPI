@@ -154,6 +154,11 @@ namespace Anim
 	};
 	ASSERT_SIZE(AnimatedCreature, 0x19C);
 
+	namespace Addresses(AnimatedCreature)
+	{
+		DeclareAddress(PlayAnimation);  // 0xA0C5D0 0xA0C5D0
+	}
+
 	struct anim_query
 	{
 		struct AnimReference {

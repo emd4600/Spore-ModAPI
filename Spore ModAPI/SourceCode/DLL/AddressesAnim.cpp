@@ -4,6 +4,11 @@
 
 namespace Anim
 {
+	namespace Addresses(AnimatedCreature)
+	{
+		DefineAddress(PlayAnimation, SelectAddress(0xA0C5D0, 0xA0C5D0));
+	}
+
 	namespace Addresses(IAnimManager)
 	{
 		DefineAddress(Get, SelectAddress(0x67CC70, 0x67CAE0));
