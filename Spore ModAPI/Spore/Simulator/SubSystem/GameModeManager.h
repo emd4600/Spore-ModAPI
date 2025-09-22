@@ -122,6 +122,11 @@ namespace Simulator
 		return GetGameModeID() == kLoadGameMode;
 	}
 
+	/// Returns true if the game is currently in the editor
+	inline bool IsEditorMode() {
+		return GetGameModeID() == kEditorMode;
+	}
+
 	/// Returns true if the game is currently in one of the ingame "X Stage" modes
 	inline bool IsStageGameMode() {
 		switch (GetGameModeID())
