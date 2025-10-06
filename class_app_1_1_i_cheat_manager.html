@@ -170,18 +170,18 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a451854b8698566f7a3f7ea9673432153" class="m-doc-self">GetArgScript</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
             <dd>Returns the <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a> instance that this manager is using.</dd>
-            <dt id="abe46f4b0e2d7fc5f9be4c34b7f9e7a4c">
-              <span class="m-doc-wrap-bumper">auto <a href="#abe46f4b0e2d7fc5f9be4c34b7f9e7a4c" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dt id="a998b86f8dcd5b6a736d1348b23cb893d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a998b86f8dcd5b6a736d1348b23cb893d" class="m-doc-self">ActivateConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 1) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ace1779db2e1fe5a44c871fa2b100ed44">
-              <span class="m-doc-wrap-bumper">auto <a href="#ace1779db2e1fe5a44c871fa2b100ed44" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Opens the cheat console.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abc8609020ad0e9f89811a0bd3fdc0e04" class="m-doc">DeactivateConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 1) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aa83ad16d865a196749bc79b6c050a3f1">
-              <span class="m-doc-wrap-bumper">auto <a href="#aa83ad16d865a196749bc79b6c050a3f1" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            <dd>Closes the cheat console.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a27b7bc984848a01a9fdfe243020dd151" class="m-doc">ToggleConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 1) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Toggles whether the cheat console is open.</dd>
             <dt id="abcb75493cc66eff363060eaeade37c05">
               <span class="m-doc-wrap-bumper">auto <a href="#abcb75493cc66eff363060eaeade37c05" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
             </dt>
@@ -328,6 +328,20 @@
               </tfoot>
             </table>
 <p>The pattern uses the character &#x27;?&#x27; to allow any character, and &#x27;*&#x27; to allow any sequence of characters.</p>
+          </div></section>
+          <section class="m-doc-details" id="abc8609020ad0e9f89811a0bd3fdc0e04"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />ICheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abc8609020ad0e9f89811a0bd3fdc0e04" class="m-doc-self">DeactivateConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 1) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Closes the cheat console.</p>
+<p>Called when the game automatically closes the console, such as when opening certain UIs.</p>
+          </div></section>
+          <section class="m-doc-details" id="a27b7bc984848a01a9fdfe243020dd151"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />ICheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a27b7bc984848a01a9fdfe243020dd151" class="m-doc-self">ToggleConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> = 1) <span class="m-label m-warning">pure virtual</span></span></span>
+            </h3>
+            <p>Toggles whether the cheat console is open.</p>
+<p>Called when the user presses Ctrl+Shift+C.</p>
           </div></section>
         </section>
       </div>

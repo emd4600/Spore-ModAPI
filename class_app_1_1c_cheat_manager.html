@@ -161,18 +161,18 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a15200dfa1aa1d48a5d9c392805b3081b" class="m-doc-self">GetArgScript</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a>* <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Returns the <a href="class_arg_script_1_1_format_parser.html" class="m-doc">ArgScript::<wbr />FormatParser</a> instance that this manager is using.</dd>
-            <dt id="a347fdead087766d7ec927876a17ab246">
-              <span class="m-doc-wrap-bumper">auto <a href="#a347fdead087766d7ec927876a17ab246" class="m-doc-self">func3Ch</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a5a6e6e9dd843bdb51bdde57d28638364">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5a6e6e9dd843bdb51bdde57d28638364" class="m-doc-self">ActivateConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a0fb5336d1c39da2b0650718c3eb8951b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0fb5336d1c39da2b0650718c3eb8951b" class="m-doc-self">func40h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dd>Opens the cheat console.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a891a018453776e5821464bbf2690b128" class="m-doc">DeactivateConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a97dfa0e34112688efef1bd9ed6c7140e">
-              <span class="m-doc-wrap-bumper">auto <a href="#a97dfa0e34112688efef1bd9ed6c7140e" class="m-doc-self">func44h</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
+            <dd>Closes the cheat console.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a53e99c8a350f1d022a9b6ea7f8e6c2e3" class="m-doc">ToggleConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Toggles whether the cheat console is open.</dd>
             <dt id="a402a43e7fef2543a2f739678d4bae950">
               <span class="m-doc-wrap-bumper">auto <a href="#a402a43e7fef2543a2f739678d4bae950" class="m-doc-self">func48h</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> <span class="m-label m-flat m-warning">override</span></span>
             </dt>
@@ -327,6 +327,20 @@
               </tfoot>
             </table>
 <p>The pattern uses the character &#x27;?&#x27; to allow any character, and &#x27;*&#x27; to allow any sequence of characters.</p>
+          </div></section>
+          <section class="m-doc-details" id="a891a018453776e5821464bbf2690b128"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a891a018453776e5821464bbf2690b128" class="m-doc-self">DeactivateConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Closes the cheat console.</p>
+<p>Called when the game automatically closes the console, such as when opening certain UIs.</p>
+          </div></section>
+          <section class="m-doc-details" id="a53e99c8a350f1d022a9b6ea7f8e6c2e3"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a> App::<wbr />cCheatManager::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a53e99c8a350f1d022a9b6ea7f8e6c2e3" class="m-doc-self">ToggleConsole</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>) <span class="m-label m-warning">override</span></span></span>
+            </h3>
+            <p>Toggles whether the cheat console is open.</p>
+<p>Called when the user presses Ctrl+Shift+C.</p>
           </div></section>
         </section>
       </div>
