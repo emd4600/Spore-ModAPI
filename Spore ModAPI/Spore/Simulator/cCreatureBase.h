@@ -115,7 +115,7 @@ namespace Simulator
 
 		// sub_C1BE40 WALK TO??
 		// arg_8 is normalized vector
-		void WalkTo(int speedState, const Vector3& dstPos, const Vector3& arg_8, float goalStopDistance=1.0f, float acceptableStopDistance=2.0f);
+		void WalkTo(int speedState, const Vector3& dstPos, const Vector3& arg_8, float goalStopDistance = 1.0f, float acceptableStopDistance = 2.0f);
 
 		//TODO loc_D315AE know how much distance advances with WASD
 
