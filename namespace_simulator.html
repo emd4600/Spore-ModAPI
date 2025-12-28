@@ -223,6 +223,10 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              struct <a href="struct_simulator_1_1c_collectable_row_i_d.html" class="m-doc">cCollectableRowID</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               class <a href="class_simulator_1_1c_combatant.html" class="m-doc">cCombatant</a>
             </dt>
             <dd>Any object that has hit points and can combat other units.</dd>
@@ -1223,7 +1227,7 @@
             <dt>
               struct <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>One of these structs per unlockable page.</dd>
             <dt>
               struct <a href="struct_simulator_1_1_unk_mission_manager_struct.html" class="m-doc">UnkMissionManagerStruct</a>
             </dt>
@@ -1701,7 +1705,54 @@
               <a href="#a8796ef7d3c55cbf57acdbd86080e8050a3b3377366dccba4d4f89fce69f390ed8" class="m-doc">kRelationshipEventTribeCheatBad</a> = 0x0530CF0B,
               <a href="#a8796ef7d3c55cbf57acdbd86080e8050a10e4da7f8fbd5b5e5c1392cc0398c829" class="m-doc">kRelationshipEventTribeSocialPower</a> = 0x54EAB4B3 }</span>
             </dt>
-            <dd>Properties of relationships between communities (tribes, civilizations, empires)</dd>
+            <dd>NOTE: RelationshipEvents corresponds to configurations in 0x0568DE14 (space_npc_relationship_effects~) which abide by the below format: All values x10.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#a8c78ac98b19e36ad3514f3542f66de3b" class="m-doc">CnvActions</a> { </span><span class="m-doc-wrap"><a href="#a8c78ac98b19e36ad3514f3542f66de3ba00c19260215287bdc82e3adc3af00571" class="m-doc">kCnvCommExit</a> = 0x01994745,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3baf2398d1fb088d3391d5a99644aa03b1f" class="m-doc">kCnvCommcontinue</a> = 0xCAFF0F72,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba862a67aa07bcacd3e869cd858b97c204" class="m-doc">kCnvCommEvent</a> = 0x02D5DCEC,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bacc40a794dfc74c4ff557e8a24bd143e7" class="m-doc">kCnvInsult</a> = 0x26B14441,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba9389c3dae6aaf11bd49132d48ee0095a" class="m-doc">kCnvCompliment</a> = 0x70C14C34,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba3c55b0da3ace290fcf45d9f2b028d374" class="m-doc">kCnvAttackCity1</a> = 0x18646F3F,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba14badc1bfd40bbe88434dd07339d6270" class="m-doc">kCnvAttackCity2</a> = 0x18646F3C,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba3ffacfe744b9225d64530e784a698844" class="m-doc">kCnvAttackCity3</a> = 0x18646F3D,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba99982e285448203df224601bac30e2a5" class="m-doc">kCnvAttackCity4</a> = 0x18646F3A,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bad9986b0762cc152a058aa94b9589f2ac" class="m-doc">kCnvAttackCity5</a> = 0x18646F3B,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba12d8f967908e5b48acde29b1104a754d" class="m-doc">kCnvAttackCity6</a> = 0x18646F38,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba7882c539033652d254c8365f0e6d02b7" class="m-doc">kCnvAttackCity7</a> = 0x18646F39,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba2e2e793b7440264a89b8ce5ebf94376f" class="m-doc">kCnvAttackCity8</a> = 0x18646F36,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba92137cda25125c1f7e68906e2b70bef5" class="m-doc">kCnvAttackCity9</a> = 0x18646F37,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bab6d1be654f0f94d79d8e0c253957d87f" class="m-doc">kCnvAttackCity10</a> = 0xA51B201D,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba8ecf37a3fe3f9abda3bfffb08656241f" class="m-doc">kCnvAcceptSurrender</a> = 0x3EF09234,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3baeb4ed2c249e2d5ec39f43d741ec6e1e4" class="m-doc">kCnvBuyCityFor3200</a> = 0x758330B8,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba1a9a2133740f803b4b2e7b3c649e26c6" class="m-doc">kCnvBuyCityFor2400</a> = 0x758330BB,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba5c2a1ee414f64fb362e5ad2b5a28c380" class="m-doc">kCnvBuyCityFor1600</a> = 0x758330BA,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba1c7d89b2caecc04eedc253b6cdb21415" class="m-doc">kCnvBuyCityFor8000</a> = 0x758330BD,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba501a67185afa65fb7b3156c84d1d65db" class="m-doc">kCnvBuyCityFor4000</a> = 0x758330BC,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba5691f77938712f638952fe65b9f6a21c" class="m-doc">kCnvCancelBuy</a> = 0xA3C1D501,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bafdc051b9a0f0a51d1684ababbc4ae003" class="m-doc">kCnvCaptureCitybyMilitary</a> = 0x6BA64250,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bafee2cd1897931b3d5b62e231b4ea33ee" class="m-doc">kCnvCityBuyAccepted</a> = 0x8650BD5B,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bac808591f60dab98fa24ba3d254454384" class="m-doc">kCnvCityBuyAcceptedHigh</a> = 0x6668560E,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3baa191203ce4d84053bc44a5c797d8b24d" class="m-doc">kCnvLargeGift</a> = 0xD648ED4D,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba8c1235124b951098e60d977623338b3d" class="m-doc">kCnvMediumGift</a> = 0x5EA6D3ED,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba2724d2579408d205a6fc7922e678caee" class="m-doc">kCnvSmallGift</a> = 0x410C4A65,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba300594a7f3535e736619501d2a98c608" class="m-doc">kCnvTradeRouteAccept</a> = 0xCADAC8A0,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3baf9ac4329b35ae3785602000ee2df8c4f" class="m-doc">kCnvTradeRouteDeny</a> = 0x1125D6A9,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba95d740f305e24b257fd888b043ed45ea" class="m-doc">kCnvAllianceAccept</a> = 0x24E1525D,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba018b24f919441ffd4617fa0f0ae584e5" class="m-doc">kCnvAllianceRequestMoney</a> = 0x9F0FF4CB,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba9074132185db72c762bbadb6a8884131" class="m-doc">kCnvAllianceRefuse</a> = 0x0764C336,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bada5dfb4333b987d663706ed8e21a9f77" class="m-doc">kCnvEmbargoAccept</a> = 0xD50A1A6D,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba6745cf6dcba70a754b11b0de5c6ecfad" class="m-doc">kCnvEmbargoRequestMoney</a> = 0xE7977907,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba6c0c0d5ec30ed19531520391d00e7728" class="m-doc">kCnvEmbargoRefuse</a> = 0x789418DC,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba99e203cf1afe582b274811948fc1848c" class="m-doc">kCnvPlayerBidTooLow</a> = 0x96508A98,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3bab22ccd1c8d306247c1c07381e42d7869" class="m-doc">kCnvDemandAccept</a> = 0x23A2D684,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3baf63d518c1afd9a0858bde3cd37636199" class="m-doc">kCnvDemandDeny</a> = 0x764EA37C,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba75368fb52363595d6d1b56626aba421b" class="m-doc">kCnvUnk1</a> = 0x6BA64250,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba65445abf14760852cb3111baf87dcd9b" class="m-doc">kCnvUnk2</a> = 0xBF3B803A,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba0787f53e8456e1e4b0482695516b2b74" class="m-doc">kCnvUnk3</a> = 0x015BC92B,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3baebedfb41f135ffe997acdb22f4e0b777" class="m-doc">kCnvUnk4</a> = 0x7E41D64A,
+              <a href="#a8c78ac98b19e36ad3514f3542f66de3ba9a71e7485230e9dcae8b04727bc6afaa" class="m-doc">kCnvUnk5</a> = 0x91386D6C }</span>
+            </dt>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#a7b46e49652b772806664b81d8828175f" class="m-doc">ScenarioGenre</a>: <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> { </span><span class="m-doc-wrap"><a href="#a7b46e49652b772806664b81d8828175faf0034302cfcb7046953b3b12e15d0100" class="m-doc">ScenarioUnset</a> = 0x20790816,
               <a href="#a7b46e49652b772806664b81d8828175faacfe3567bd1701516bf0323358ee3e37" class="m-doc">ScenarioPlanet</a> = 0x24720859,
@@ -2048,6 +2099,28 @@
             </dt>
             <dd><span></span></dd>
             <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#abb41219e98bbab7d49c62e3f338a2490" class="m-doc">CommWindowIDs</a> { </span><span class="m-doc-wrap"><a href="#abb41219e98bbab7d49c62e3f338a2490a5c6ac2a1aa55745d6b8cc94fa34d41c6" class="m-doc">kWindowPanelViewport</a> = 0x06429C80,
+              <a href="#abb41219e98bbab7d49c62e3f338a2490a27d97e0313407c534849ce833b556eeb" class="m-doc">kWindowPanelLower</a> = 0x05E4E5F0,
+              <a href="#abb41219e98bbab7d49c62e3f338a2490a61725bf0607b94292c2283124a270c8d" class="m-doc">kWindowBackground</a> = 0x05EDFF88,
+              <a href="#abb41219e98bbab7d49c62e3f338a2490ac7a5779d5d77f72697fd5d6b08d5928d" class="m-doc">kWindowTrading</a> = 0x05E62A48,
+              <a href="#abb41219e98bbab7d49c62e3f338a2490a27a949272e715a4f342a951cc31e9d52" class="m-doc">kWindowText</a> = 0x018072CB }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">enum <a href="#af5751e59e63531a81c4b045d78547e74" class="m-doc">CommButtonIDs</a> { </span><span class="m-doc-wrap"><a href="#af5751e59e63531a81c4b045d78547e74a5f73b4551cb2ef411ccc701b89cdc017" class="m-doc">kBtnTrade</a> = 0x057DF5CA,
+              <a href="#af5751e59e63531a81c4b045d78547e74aa3d5c40dd7b07d609e5335d87ccaddad" class="m-doc">kBtnRepair</a> = 0x057DF5C8,
+              <a href="#af5751e59e63531a81c4b045d78547e74a2bae5119135f4a3785d34c29c99923e9" class="m-doc">kBtnRecharge</a> = 0x057DF5C9,
+              <a href="#af5751e59e63531a81c4b045d78547e74a69d730404b2ce5b93b0d8f5eef2f94a9" class="m-doc">kBtnMissions</a> = 0x05E51D28,
+              <a href="#af5751e59e63531a81c4b045d78547e74a8f85ac7a55b1a32ef66a2deaec823bb9" class="m-doc">kBtnDiplomacy</a> = 0x05E51D30,
+              <a href="#af5751e59e63531a81c4b045d78547e74ac4ca23bfc1e7d5d770bb40c786d2356d" class="m-doc">kBtnMenu</a> = 0x05DFF098,
+              <a href="#af5751e59e63531a81c4b045d78547e74aede1a59585b9057cdffcd4246f24e87c" class="m-doc">kBtnExit</a> = 0x05E4F778,
+              <a href="#af5751e59e63531a81c4b045d78547e74afbb47e87cf3da6c37c87446ba7064da7" class="m-doc">kBtnAccept</a> = 0x05E4F788,
+              <a href="#af5751e59e63531a81c4b045d78547e74a258a591d0e3cc468c5247ca9dbbe8864" class="m-doc">kBtnDecline</a> = 0x05E4F770,
+              <a href="#af5751e59e63531a81c4b045d78547e74ac780ba5ccceac0130506f1add84f4a46" class="m-doc">kBtnTradeBuy</a> = 0x04C1510A,
+              <a href="#af5751e59e63531a81c4b045d78547e74a2b641f3a094c9a97a3746227eb4f0654" class="m-doc">kBtnTradeSell</a> = 0x04C1510C }</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#a47f6e1218df34ba12db8ee6946791524" class="m-doc">TimeManagerPause</a> { </span><span class="m-doc-wrap"><a href="#a47f6e1218df34ba12db8ee6946791524adb8abbeda4df662c3ca505163d2d2770" class="m-doc">CinematicAll</a> = 0x600C4AE,
               <a href="#a47f6e1218df34ba12db8ee6946791524a8fce77fd86da3af309c0ad415d8d7952" class="m-doc">Cinematic</a> = 0x4BF38A5,
               <a href="#a47f6e1218df34ba12db8ee6946791524a368fe771261fcb18f7988833c9294a20" class="m-doc">Tutorial</a> = 0x64BEB65,
@@ -2147,13 +2220,13 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              using <a href="#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a> = eastl::sp_fixed_hash_map&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">Simulator::<wbr />cCollectableItemID</a>, <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>, 4&gt;
+              using <a href="#aa3458fc47f5abfec29ade4cc853d19c2" class="m-doc">UnkPageHashtable</a> = eastl::sp_fixed_hash_map&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">Simulator::<wbr />cCollectableItemID</a>, <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>, 4&gt;
             </dt>
-            <dd><span></span></dd>
+            <dd>Map {value, pageindex} to the <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a> Before all parts are unlocked, &#x27;value&#x27; = 0x3e09800e After all parts are unlocked, &#x27;value&#x27; = 0x5c225570.</dd>
             <dt>
-              using <a href="#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc">UnkHashMap</a> = eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>, 8&gt;
+              using <a href="#a6f9db8678544a7423d9dc677176ce16a" class="m-doc">UnkCategoryHashMap</a> = eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="namespace_simulator.html#aa3458fc47f5abfec29ade4cc853d19c2" class="m-doc">UnkPageHashtable</a>, 8&gt;
             </dt>
-            <dd><span></span></dd>
+            <dd>maps categoryID to UnkPageHashtable for each unlockable category</dd>
             <dt>
               using <a href="#aaf416461adc448563b86aaa54d653797" class="m-doc">CreatureEffectPool</a> = eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="_i_visual_effect_8h.html#af513d4705ba3d0bdec5c20e45aee71fd" class="m-doc">IVisualEffectPtr</a>, 4&gt;
             </dt>
@@ -2425,12 +2498,12 @@
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#aebcde3cec5e6faad6d1afb1b57fff114" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>,
+              <span class="m-doc-wrap-bumper"><a href="#afeb97187642458c42fc93791ff1a406d" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aa3458fc47f5abfec29ade4cc853d19c2" class="m-doc">UnkPageHashtable</a>,
               0xDC)</span>
             </dt>
             <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a4c422e2862b5c4ad946ad503e31ca46a" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc">UnkHashMap</a>,
+              <span class="m-doc-wrap-bumper"><a href="#a52cd6f79feca6161a89ccfc668ce8366" class="m-doc">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a6f9db8678544a7423d9dc677176ce16a" class="m-doc">UnkCategoryHashMap</a>,
               0x888)</span>
             </dt>
             <dd><span></span></dd>
@@ -3754,6 +3827,18 @@
             </dt>
             <dd>Returns true if the game is currently loading a stage.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8dc0e278d3498f9baa4faccb28ec88a8" class="m-doc">IsEditorMode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Returns true if the game is currently in the editor.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2096aded466941f2ef6b8a7bc650d8b6" class="m-doc">IsStageGameMode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Returns true if the game is currently in one of the ingame &quot;X Stage&quot; modes.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac4f052d75f1d861985465f2833ceb1ea" class="m-doc">IsSimulatorGameMode</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Returns true if the game is currently in one of the <a href="namespace_simulator.html" class="m-doc">Simulator</a> modes.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af38c6ab1ec76632d0bf1b4325e581204" class="m-doc">Addresses</a>(</span><span class="m-doc-wrap"><a href="class_simulator_1_1c_game_mode_manager.html" class="m-doc">cGameModeManager</a>) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">namespace</a></span>
             </dt>
             <dd><span></span></dd>
@@ -4609,7 +4694,15 @@
               enum Simulator::<wbr /><a href="#a8796ef7d3c55cbf57acdbd86080e8050" class="m-doc-self">RelationshipEvents</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
             </h3>
-            <p>Properties of relationships between communities (tribes, civilizations, empires)</p>
+            <p>NOTE: RelationshipEvents corresponds to configurations in 0x0568DE14 (space_npc_relationship_effects~) which abide by the below format: All values x10.</p>
+<p>Properties of relationships between communities (tribes, civilizations, empires)</p>
+          </div></section>
+          <section class="m-doc-details" id="a8c78ac98b19e36ad3514f3542f66de3b"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#a8c78ac98b19e36ad3514f3542f66de3b" class="m-doc-self">CnvActions</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_simulator_enums_8h.html">&lt;Spore ModAPI/Spore/Simulator/SimulatorEnums.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
           </div></section>
           <section class="m-doc-details" id="a7b46e49652b772806664b81d8828175f"><div>
             <h3>
@@ -5120,7 +5213,7 @@
                 <tr>
                   <td><a href="#a4b1f459203b8dbf8583312aa067c8c54a197b4a2cb2dc6bc85d3e116aaad8a82b" class="m-doc-self" id="a4b1f459203b8dbf8583312aa067c8c54a197b4a2cb2dc6bc85d3e116aaad8a82b">kMsgSwitchEditor</a></td>
                   <td>
-                  <p>Switches the editor. Use the desired editor ID as the message data .</p>
+                  <p>Switches the editor. Use the desired editor ID as the message data.</p>
                   </td>
                 </tr>
                 <tr>
@@ -5565,6 +5658,20 @@
               </tbody>
             </table>
           </div></section>
+          <section class="m-doc-details" id="abb41219e98bbab7d49c62e3f338a2490"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#abb41219e98bbab7d49c62e3f338a2490" class="m-doc-self">CommWindowIDs</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_comm_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CommManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af5751e59e63531a81c4b045d78547e74"><div>
+            <h3>
+              enum Simulator::<wbr /><a href="#af5751e59e63531a81c4b045d78547e74" class="m-doc-self">CommButtonIDs</a>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_comm_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/CommManager.h&gt;</a></div>
+            </h3>
+            <p><span></span></p>
+          </div></section>
           <section class="m-doc-details" id="a47f6e1218df34ba12db8ee6946791524"><div>
             <h3>
               enum class Simulator::<wbr /><a href="#a47f6e1218df34ba12db8ee6946791524" class="m-doc-self">TimeManagerPause</a>
@@ -5689,19 +5796,19 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="aaa8d54688a5a8046665c5849ae0fc9b6"><div>
+          <section class="m-doc-details" id="aa3458fc47f5abfec29ade4cc853d19c2"><div>
             <h3>
-              typedef eastl::sp_fixed_hash_map&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">Simulator::<wbr />cCollectableItemID</a>, <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>, 4&gt; Simulator::<wbr /><a href="#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc-self">UnkHastable</a>
+              typedef eastl::sp_fixed_hash_map&lt;<a href="struct_simulator_1_1c_collectable_item_i_d.html" class="m-doc">Simulator::<wbr />cCollectableItemID</a>, <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a>, 4&gt; Simulator::<wbr /><a href="#aa3458fc47f5abfec29ade4cc853d19c2" class="m-doc-self">UnkPageHashtable</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
-            <p><span></span></p>
+            <p>Map {value, pageindex} to the <a href="struct_simulator_1_1_unk_hashtable_item.html" class="m-doc">UnkHashtableItem</a> Before all parts are unlocked, &#x27;value&#x27; = 0x3e09800e After all parts are unlocked, &#x27;value&#x27; = 0x5c225570.</p>
           </div></section>
-          <section class="m-doc-details" id="a7289759f2d1d168acd2d3cf46e07ba62"><div>
+          <section class="m-doc-details" id="a6f9db8678544a7423d9dc677176ce16a"><div>
             <h3>
-              typedef eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a>, <a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>, 8&gt; Simulator::<wbr /><a href="#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc-self">UnkHashMap</a>
+              typedef eastl::sp_fixed_hash_map&lt;<a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a>, <a href="namespace_simulator.html#aa3458fc47f5abfec29ade4cc853d19c2" class="m-doc">UnkPageHashtable</a>, 8&gt; Simulator::<wbr /><a href="#a6f9db8678544a7423d9dc677176ce16a" class="m-doc-self">UnkCategoryHashMap</a>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
-            <p><span></span></p>
+            <p>maps categoryID to UnkPageHashtable for each unlockable category</p>
           </div></section>
           <section class="m-doc-details" id="aaf416461adc448563b86aaa54d653797"><div>
             <h3>
@@ -6235,17 +6342,17 @@
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="aebcde3cec5e6faad6d1afb1b57fff114"><div>
+          <section class="m-doc-details" id="afeb97187642458c42fc93791ff1a406d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aebcde3cec5e6faad6d1afb1b57fff114" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aaa8d54688a5a8046665c5849ae0fc9b6" class="m-doc">UnkHastable</a>,
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afeb97187642458c42fc93791ff1a406d" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#aa3458fc47f5abfec29ade4cc853d19c2" class="m-doc">UnkPageHashtable</a>,
               0xDC)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="a4c422e2862b5c4ad946ad503e31ca46a"><div>
+          <section class="m-doc-details" id="a52cd6f79feca6161a89ccfc668ce8366"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4c422e2862b5c4ad946ad503e31ca46a" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a7289759f2d1d168acd2d3cf46e07ba62" class="m-doc">UnkHashMap</a>,
+              <span class="m-doc-wrap-bumper"> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52cd6f79feca6161a89ccfc668ce8366" class="m-doc-self">ASSERT_SIZE</a>(</span><span class="m-doc-wrap"><a href="namespace_simulator.html#a6f9db8678544a7423d9dc677176ce16a" class="m-doc">UnkCategoryHashMap</a>,
               0x888)</span></span>
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_collectable_items_8h.html">&lt;Spore ModAPI/Spore/Simulator/cCollectableItems.h&gt;</a></div>
             </h3>
@@ -8632,6 +8739,27 @@
               <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_mode_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GameModeManager.h&gt;</a></div>
             </h3>
             <p>Returns true if the game is currently loading a stage.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8dc0e278d3498f9baa4faccb28ec88a8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8dc0e278d3498f9baa4faccb28ec88a8" class="m-doc-self">IsEditorMode</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_mode_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GameModeManager.h&gt;</a></div>
+            </h3>
+            <p>Returns true if the game is currently in the editor.</p>
+          </div></section>
+          <section class="m-doc-details" id="a2096aded466941f2ef6b8a7bc650d8b6"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2096aded466941f2ef6b8a7bc650d8b6" class="m-doc-self">IsStageGameMode</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_mode_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GameModeManager.h&gt;</a></div>
+            </h3>
+            <p>Returns true if the game is currently in one of the ingame &quot;X Stage&quot; modes.</p>
+          </div></section>
+          <section class="m-doc-details" id="ac4f052d75f1d861985465f2833ceb1ea"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac4f052d75f1d861985465f2833ceb1ea" class="m-doc-self">IsSimulatorGameMode</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_mode_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GameModeManager.h&gt;</a></div>
+            </h3>
+            <p>Returns true if the game is currently in one of the <a href="namespace_simulator.html" class="m-doc">Simulator</a> modes.</p>
           </div></section>
           <section class="m-doc-details" id="af38c6ab1ec76632d0bf1b4325e581204"><div>
             <h3>

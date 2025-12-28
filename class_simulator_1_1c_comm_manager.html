@@ -93,12 +93,12 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> priority = 0) -&gt; <a href="class_simulator_1_1c_comm_event.html" class="m-doc">cCommEvent</a>*</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a13e908e706d37b0445563bfbcc9697b5">
-              <span class="m-doc-wrap-bumper">auto <a href="#a13e908e706d37b0445563bfbcc9697b5" class="m-doc-self">CreateSpaceCommEvent</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> sourceEmpire,
+            <dt id="a209e82f263d147013f0bfdffa8ccf6cc">
+              <span class="m-doc-wrap-bumper">auto <a href="#a209e82f263d147013f0bfdffa8ccf6cc" class="m-doc-self">CreateSpaceCommEvent</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> sourceEmpireID,
               <a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a> planetKey,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> fileID,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> dialogID,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pMission = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
+              <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pMission = <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">nullptr</a>,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> priority = 0,
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">unsigned</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> duration = 0) -&gt; <a href="class_simulator_1_1c_comm_event.html" class="m-doc">cCommEvent</a>*</span>
             </dt>
@@ -111,18 +111,30 @@
               <span class="m-doc-wrap-bumper">auto <a href="#af97cb8345668b25729fc924d13c6dac1" class="m-doc-self">IsCommScreenActive</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a67709ae330334e85bdebc6eae9c31711">
-              <span class="m-doc-wrap-bumper">auto <a href="#a67709ae330334e85bdebc6eae9c31711" class="m-doc-self">HandleCivCommAction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_simulator_1_1_cnv_action.html" class="m-doc">CnvAction</a>&amp; action,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pSourceCiv,
+            <dt id="a5235af8e8b9e6ca18907b8f685755bc2">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5235af8e8b9e6ca18907b8f685755bc2" class="m-doc-self">HandleCivCommAction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_simulator_1_1_cnv_action.html" class="m-doc">CnvAction</a>&amp; action,
+              <a href="class_simulator_1_1c_civilization.html" class="m-doc">cCivilization</a>* pSourceCiv,
               <a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>* pSourceCity,
               <a href="class_simulator_1_1c_city.html" class="m-doc">cCity</a>* pTargetCity) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="af803ce506c534020906abd929a5d3b6e">
-              <span class="m-doc-wrap-bumper">auto <a href="#af803ce506c534020906abd929a5d3b6e" class="m-doc-self">HandleSpaceCommAction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_simulator_1_1_cnv_action.html" class="m-doc">CnvAction</a>&amp; action,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> source,
+            <dt id="ab7d0c6d2caab26217f5c7e0e9513a8dc">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab7d0c6d2caab26217f5c7e0e9513a8dc" class="m-doc-self">HandleSpaceCommAction</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="struct_simulator_1_1_cnv_action.html" class="m-doc">CnvAction</a>&amp; action,
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> sourceEmpireID,
               <a href="struct_simulator_1_1_planet_i_d.html" class="m-doc">PlanetID</a> planetKey,
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* pMission) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+              <a href="class_simulator_1_1c_mission.html" class="m-doc">cMission</a>* pMission) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a75ba14bb4bcd0df7bfbb1571e5f9359c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a75ba14bb4bcd0df7bfbb1571e5f9359c" class="m-doc-self">GetCommBackgroundWindow</a>(</span><span class="m-doc-wrap">) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adc44a52a6cdc19fcdd9d327c90accce0">
+              <span class="m-doc-wrap-bumper">auto <a href="#adc44a52a6cdc19fcdd9d327c90accce0" class="m-doc-self">GetCommWindow</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> windowid) -&gt; <a href="class_u_t_f_win_1_1_i_window.html" class="m-doc">UTFWin::<wbr />IWindow</a>*</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad5a3487c8cfd2bea45db10e64219c10a">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad5a3487c8cfd2bea45db10e64219c10a" class="m-doc-self">GetCommButton</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> buttonid) -&gt; <a href="class_u_t_f_win_1_1_i_button.html" class="m-doc">UTFWin::<wbr />IButton</a>*</span>
             </dt>
             <dd><span></span></dd>
           </dl>
