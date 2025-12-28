@@ -391,7 +391,7 @@ namespace Simulator
 		/* FA4h */	int field_FA4;
 		/* FA8h */	float field_FA8;
 		/* FACh */	float field_FAC;
-		/* FB0h */	float field_FB0;  // speed ?
+		/* FB0h */	float field_FB0;  // speed?
 		/* FB4h */	float field_FB4;  // speed?
 		/* FB8h */	char padding_FB8[8];
 	};

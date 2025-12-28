@@ -139,11 +139,20 @@ namespace App
 			void* unk1; // unknown class?
 		};
 
-		struct Pickup {
+		struct PickupItem {
 			static const uint32_t ID = 0xD335362C;
 
 			cCreatureBase* creature;
 			cInteractableObject* item;
+			int field_8; // 0
+			void* unk1; // unknown class?
+		};
+		
+		struct PickupCreature {
+			static const uint32_t ID = 0xD3353636;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
 			int field_8; // 0
 			void* unk1; // unknown class?
 		};
