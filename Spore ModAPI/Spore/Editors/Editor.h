@@ -192,7 +192,7 @@ namespace Editors
 		// Editor::ScalePart(EditorRigblock *, int, int)
 
 
-		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value);
+		bool sub_581F70(EditorRigblock* part, void* activeHandle, int value); // MorphPart?
 
 		// loc_573BB1 -> set part is hovered?
 
@@ -556,7 +556,7 @@ namespace Editors
 		/* 4ACh */	int mRenderingQuality;  // 1
 		/* 4B0h */	bool field_4B0;  // true
 		/* 4B1h */	bool field_4B1;  // true
-		/* 4B2h */	bool field_4B2;
+		/* 4B2h */	bool field_4B2;  // Something to do with skinpaint?
 		/* 4B3h */	bool field_4B3;  // not initialized
 		/* 4B4h */	bool field_4B4;  // not initialized
 		/* 4B5h */	bool field_4B5;

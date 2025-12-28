@@ -50,8 +50,8 @@ namespace Palettes
 		/* 20h */	virtual void Update(int time) override;
 		/* 24h */	virtual void Load(const ResourceKey& fileName) override;
 		/* 28h */	virtual void SetName(const ResourceKey& fileName) override;
-		/* 2Ch */	virtual void func2Ch(bool) override;
-		/* 30h */	virtual bool func30h() const override;
+		/* 2Ch */	virtual void SetShowModelOnHover(bool enabled) override;
+		/* 30h */	virtual bool GetShowModelOnHover() const override;
 		/* 34h */	virtual UTFWin::IWindow* GetWindow() const override;
 		/* 38h */	virtual void Set3dPreview(bool enabled) override;
 		/* 3Ch */	virtual Anim::AnimatedCreature* GetAnimatedCreature() const override;

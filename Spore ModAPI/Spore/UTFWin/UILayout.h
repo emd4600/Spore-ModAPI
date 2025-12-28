@@ -61,7 +61,7 @@ namespace UTFWin
 		/// (undocumented) .xml format. A new IWindow will be created and added to the main window; the main windows
 		/// of the user interface loaded will be added as children of that new container window.
 		/// This method will just process the resource name and call UILayout::Load().
-		/// @param pResourceName The name of the layour file (no extension or group needed).
+		/// @param pResourceName The name of the layout file (no extension or group needed).
 		/// @param groupID [Optional] The ID of the group where the file is stored, usually UILayout::kDefaultGroup.
 		///
 		bool LoadByName(const char16_t* pLayoutName, uint32_t groupID = kDefaultGroup, bool = true, uint32_t = kDefaultParameter);

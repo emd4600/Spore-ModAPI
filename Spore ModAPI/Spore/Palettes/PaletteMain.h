@@ -52,11 +52,11 @@ namespace Palettes
 		/// @param creationTypeID The ID that represents the type of creation of the editor, such as 'creature'.
 		/// @param arg_8 Sets the field_34 value; it's a folder ID used for icons, but only on very specific occasions.
 		/// @param layoutID The default instance ID of the layout file that the palette must use. If this is specified, the
-		/// 'palettePaletteLayoutID' property willbe ignored.
+		///		'palettePaletteLayoutID' property will be ignored.
 		/// @param categoryLayoutID An instance ID that points to the layout categories must use. If this is specified, the 
-		/// 'paletteCategoryLayoutFile' property on each category will be ignored.
+		///		'paletteCategoryLayoutFile' property on each category will be ignored.
 		/// @param pageLayoutID An instance ID that points to the layout pages must use. If this is specified, the 
-		/// 'palettePageLayoutFile' property on each page will be ignored.
+		///		'palettePageLayoutFile' property on each page will be ignored.
 		/// @param arg_18 A value that will be set in field_2C.
 		/// @returns True if the .prop file existed and was read, false otherwise.
 		///

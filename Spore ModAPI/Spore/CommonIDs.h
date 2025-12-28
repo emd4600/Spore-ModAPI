@@ -147,6 +147,8 @@ namespace TypeIDs
 		flr = 0x438F6347,
 		/// City Music Planner (Anthems)
 		cmp = 0x04F684A4,
+		/// Conversation
+		cnv = 0x055ADA24,
 		/// Binary Editor Model
 		bem = 0x1A99B06B,
 		/// Spore Materials
