@@ -22,6 +22,7 @@ namespace Simulator
 		/* 0Ch */	cCommEventType mEventType;  // -1
 		/* 10h */	int field_10;
 		/* 14h */	int field_14;
+		// These values don't seem to be empire political IDs
 		/* 18h */	uint32_t mSource;  // -1
 		/* 1Ch */	uint32_t mTarget;  // -1
 		/* 20h */	cCityPtr mpSourceCity;

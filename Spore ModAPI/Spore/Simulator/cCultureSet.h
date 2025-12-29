@@ -26,6 +26,7 @@ namespace Simulator
 {
 	/// Contains the IDs of all the creation types of a specific "culture" or civilization/empire. This maps
 	/// each member of the ModelTypes enum to a creation ID.
+	/// Note: Does not store creature data.
 	class cCultureSet
 	{
 	public:

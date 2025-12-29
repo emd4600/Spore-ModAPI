@@ -7,6 +7,7 @@
 #include <Spore\Simulator\SubSystem\cStrategy.h>
 #include <Spore\Simulator\cCreatureDisplayStrategy.h>
 #include <Spore\Simulator\cCreatureBase.h>
+#include <Spore\Simulator\cInteractableObject.h>
 
 #define cCreatureModeStrategyPtr eastl::intrusive_ptr<App::cCreatureModeStrategy>
 #define ICreatureModeActionHandlerPtr eastl::intrusive_ptr<App::ICreatureModeActionHandler>
@@ -82,21 +83,142 @@ namespace App
 #endif
 
 	namespace CreatureModeStrategies {
+		using namespace Simulator;
 
 		struct Interact {
 			static const uint32_t ID = 0xD3353638;
 
-			Simulator::cCreatureBase* creature;
-			Simulator::cGameData* interactableObject;
+			cCreatureBase* creature;
+			cInteractableObject* interactableObject;
 			int count;  // ?
+			void* unk1; // unknown class
+		};
+		
+		struct EatFruit {
+			static const uint32_t ID = 0xD335362B;
+
+			cCreatureBase* creature;
+			cInteractableObject* food;
+			int field_8; // 0
+			int field_16; // 0
+			void* unk1; // unknown class?
 		};
 
+		struct EatMeat { 
+			static const uint32_t ID = 0xD335362D;
+
+			cCreatureBase* creature;
+			cInteractableObject* food;
+			int field_8; // 0
+			void* unk1; // unknown class?
+		};
+		
 		struct UnlockPart {
 			static const uint32_t ID = 0x5371F11;
 
-			Simulator::cCreatureBase* creature;
+			cCreatureBase* creature;
 			int field_4;
 			int unlockLevel;
 		};
+		
+		struct Mate {
+			static const uint32_t ID = 0xD335362C;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
+			int field_8; // 0
+			void* unk1; // unknown class?
+		};
+
+		struct LayEgg {
+			static const uint32_t ID = 0xD335362C;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
+			int field_8; // 0
+			void* unk1; // unknown class?
+		};
+
+		struct PickupItem {
+			static const uint32_t ID = 0xD335362C;
+
+			cCreatureBase* creature;
+			cInteractableObject* item;
+			int field_8; // 0
+			void* unk1; // unknown class?
+		};
+		
+		struct PickupCreature {
+			static const uint32_t ID = 0xD3353636;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
+			int field_8; // 0
+			void* unk1; // unknown class?
+		};
+
+		/// Unknowns ///
+
+
+		struct UnkActionCombat1 { // something to do with combat?
+			static const uint32_t ID = 0xD3353637;
+
+			uint32_t field_4; // 0
+			int field_8; // usually 1
+			uint32_t field_12; // 0
+			uint32_t field_16; // large value
+			uint32_t field_20;
+		};
+
+		struct UnkActionRelation1 { // Called when socializing or killing successfully?
+			static const uint32_t ID = 0x45AB96E;
+
+			cCreatureBase* creature;
+			int field_4;
+			// struct, class, or pointer? Not cGameData
+			uint32_t field_8;
+			int field_12; // usually 1
+			uint32_t field_16;
+			uint32_t field_20;
+		};
+
+		struct UnkActionSocial1 { // Called when socializing successfully, after UnkActionRelation1
+			static const uint32_t ID = 0x60B4123;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
+			uint32_t field_8;
+			uint32_t field_12;
+			uint32_t field_16;
+			uint32_t field_20;
+			uint32_t field_24;
+			uint32_t field_28;
+		};
+
+		struct UnkActionKill1 { // Called when killing successfully, after UnkActionRelation1
+			static const uint32_t ID = 0xD335362C;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
+			uint32_t field_8;
+			uint32_t field_12;
+			uint32_t field_16;
+			uint32_t field_20;
+			uint32_t field_24;
+			uint32_t field_28;
+		};
+
+		struct UnkActionKill2 { // Called when killing successfully, after UnkActionKill1
+			static const uint32_t ID = 0xD3353637;
+
+			cCreatureBase* creature;
+			cCreatureBase* targetcreature;
+			uint32_t field_12; // large value
+			uint32_t field_16; // large value
+			uint32_t field_20;
+			uint32_t field_24;
+			uint32_t field_28;
+		};
+
 	}
 }

@@ -115,7 +115,7 @@ namespace Simulator
 
 		// sub_C1BE40 WALK TO??
 		// arg_8 is normalized vector
-		void WalkTo(int speedState, const Vector3& dstPos, const Vector3& arg_8, float goalStopDistance=1.0f, float acceptableStopDistance=2.0f);
+		void WalkTo(int speedState, const Vector3& dstPos, const Vector3& arg_8, float goalStopDistance = 1.0f, float acceptableStopDistance = 2.0f);
 
 		//TODO loc_D315AE know how much distance advances with WASD
 
@@ -391,7 +391,7 @@ namespace Simulator
 		/* FA4h */	int field_FA4;
 		/* FA8h */	float field_FA8;
 		/* FACh */	float field_FAC;
-		/* FB0h */	float field_FB0;  // speed ?
+		/* FB0h */	float field_FB0;  // speed?
 		/* FB4h */	float field_FB4;  // speed?
 		/* FB8h */	char padding_FB8[8];
 	};

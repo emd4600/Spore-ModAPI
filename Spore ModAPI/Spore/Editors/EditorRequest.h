@@ -73,7 +73,7 @@ namespace Editors
 
 		void SetDefaultValidation();
 
-		/// When this method is executed, the given request will be processed and 
+		/// When this method is executed, the given request will be processed and open the editor.
 		static bool Submit(EditorRequest* request);
 
 	protected:
@@ -115,7 +115,7 @@ namespace Editors
 
 		/* 60h */	float field_60;
 		/* 64h */	bool field_64;
-		/* 65h */	bool field_65;  // show (unused) play button?
+		/* 65h */	bool field_65;  // show (unused) play button
 		/* 66h */	bool field_66;
 		/* 68h */	int field_68;
 		/* 6Ch */	bool field_6C;

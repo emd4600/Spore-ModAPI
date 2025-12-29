@@ -45,9 +45,9 @@ namespace Simulator
 		/* 17Ch */	float field_17C;
 		/* 180h */	float field_180;
 		/* 184h */	float field_184;  // true
-		/// Effect 0x36099ACF
+		/// Effect 0x36099ACF, something related to low health? vignette effect
 		/* 188h */	IVisualEffectPtr field_188;
-		/// Effect 0xAAA2AC3C
+		/// Effect 0xAAA2AC3C, something related to low health? red drops effect
 		/* 18Ch */	IVisualEffectPtr field_18C;
 		/* 190h */	char field_190[0x320 - 0x190];
 	};

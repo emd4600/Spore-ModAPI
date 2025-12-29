@@ -57,6 +57,8 @@ namespace UTFWin
 
 		const Math::Rectangle& GetTexCoords() const;
 		const Math::Dimensions& GetDimensions() const;
+		void SetTexCoords(const Math::Rectangle& coords);
+		void SetDimensions(const Math::Dimensions& dimensions);
 
 		///
 		/// Creates an UTFWin::Image instance with the image extracted from the file specified.
@@ -126,6 +128,14 @@ namespace UTFWin
 	inline const Math::Dimensions& Image::GetDimensions() const
 	{
 		return mDimensions;
+	}
+	inline void Image::SetTexCoords(const Math::Rectangle& coords)
+	{
+		mTexCoords = coords;
+	}
+	inline void Image::SetDimensions(const Math::Dimensions& dimensions)
+	{
+		mDimensions = dimensions;
 	}
 }
 

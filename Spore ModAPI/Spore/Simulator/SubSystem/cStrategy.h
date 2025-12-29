@@ -81,6 +81,7 @@ namespace Simulator
 
 	public:
 		/* 08h */	int mnRefCount;
+		// NOTE: These 2 mode values can sometimes appear swapped when changing modes.
 		/* 0Ch */	uint32_t mLastGameMode;  // -1
 		/* 10h */	uint32_t mCurrentGameMode;  // -1
 		/* 14h */	uint32_t field_14;  // -1

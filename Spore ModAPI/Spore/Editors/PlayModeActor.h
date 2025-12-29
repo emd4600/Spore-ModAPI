@@ -16,11 +16,11 @@ namespace Editors
 			/* 14h */	int field_14;  // not initialized
 			/* 18h */	int field_18;  // not initialized
 			/* 1Ch */	int field_1C;  // not initialized
-			/* 20h */	float field_20;
-			/* 24h */	float field_24;
+			/* 20h */	float field_20; // set to 1.0 Does not affect speed?
+			/* 24h */	float field_24; // set to 0.5. Something to do with acceleration and look dir? Higher values make acceleration faster and head not turn down.
 			/* 28h */	bool field_28;
 			/* 29h */	bool field_29;
-			/* 2Ah */	bool field_2A;
+			/* 2Ah */	bool field_2A; // set to true
 			/* 2Bh */	bool field_2B;
 		};
 

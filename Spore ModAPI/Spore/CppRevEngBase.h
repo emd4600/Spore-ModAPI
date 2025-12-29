@@ -118,6 +118,11 @@ RedirectMethod_noargs_const(Window, GetParent, Window*);
 #define DeclareAddress(name) extern MODAPI const uintptr_t name
 #endif
 #define DefineAddress(name, value) const uintptr_t name = value - 0x400000
+#ifdef SDK_TO_GHIDRA
+#define DefineAddressAlias(alias, name)
+#else
+#define DefineAddressAlias(alias, name) const uintptr_t alias = name
+#endif
 
 // Returns the address stored with a DeclareAddress() in the given addresses namespace.
 #define GetAddress(namespaceName, name) (Addresses(namespaceName)::name + baseAddress)

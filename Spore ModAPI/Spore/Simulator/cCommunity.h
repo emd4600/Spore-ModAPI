@@ -76,7 +76,7 @@ namespace Simulator
 		/* 64h */	virtual Vector3& func64h();
 		/* 68h */	virtual void func68h();
 		/* 6Ch */	virtual cCityWalls* GetCityWalls();  // returns 0
-		/* 70h */	virtual eastl::vector<ObjectPtr>& GetPopulation();
+		/* 70h */	virtual eastl::vector<cCreatureCitizenPtr>& GetPopulation();
 		/* 74h */	virtual int GetPopulationCount();  // returns the count of vector returned by GetPopulation()
 		/* 78h */	virtual void func78h(); 
 		/* 7Ch */	virtual eastl::string16& GetCommunityName();

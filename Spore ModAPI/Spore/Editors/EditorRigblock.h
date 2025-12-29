@@ -34,7 +34,7 @@
 #define EditorRigblockPtr eastl::intrusive_ptr<Editors::EditorRigblock>
 
 // off_13EF450 -> part vftable?  // 013EF460?
-// 0044070F -> scale part¿
+// 0044070F -> scale part?
 //TODO EVERYTHING! PLACEHOLDER
 namespace Editors
 {

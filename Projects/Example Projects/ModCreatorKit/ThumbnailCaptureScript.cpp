@@ -90,7 +90,7 @@ void ThumbnailCaptureScript::DrawLayer(int flags, int layerIndex, App::cViewer**
 			mOldColorSet = true;
 		}
 
-		mpItemViewer->field_16A = false;
+		mpItemViewer->mbRotationEnabled = false;
 
 		auto viewer = mpItemViewer->mpLayeredObject->GetViewer();
 		viewer->SetBackgroundColor(ColorRGBA(0, 0, 0, 0));
@@ -114,7 +114,7 @@ void ThumbnailCaptureScript::DrawLayer(int flags, int layerIndex, App::cViewer**
 		if (mpItemViewer->mZoom == mpItemViewer->mFinalZoom) {
 			CaptureImage();
 			// We will only do it once, also restore the rotation
-			mpItemViewer->field_16A = true;
+			mpItemViewer->mbRotationEnabled = true;
 			mpItemViewer = nullptr;
 
 			model->mColor = ColorRGBA(mOldColor, 1.0f);

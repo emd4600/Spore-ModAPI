@@ -122,6 +122,41 @@ namespace Simulator
 		return GetGameModeID() == kLoadGameMode;
 	}
 
+	/// Returns true if the game is currently in the editor
+	inline bool IsEditorMode() {
+		return GetGameModeID() == kEditorMode;
+	}
+
+	/// Returns true if the game is currently in one of the ingame "X Stage" modes
+	inline bool IsStageGameMode() {
+		switch (GetGameModeID())
+		{
+			case kGameCell:
+			case kGameCreature:
+			case kGameTribe:
+			case kGameCiv:
+			case kGameSpace:
+				return true;
+			default:
+				return false;
+		}
+	}
+
+	/// Returns true if the game is currently in one of the Simulator modes
+	inline bool IsSimulatorGameMode() {
+		switch (GetGameModeID())
+		{
+		case kGameCreature:
+		case kGameTribe:
+		case kGameCiv:
+		case kGameSpace:
+		case kScenarioMode:
+			return true;
+		default:
+			return false;
+		}
+	}
+
 	namespace Addresses(cGameModeManager)
 	{
 		DeclareAddress(Get);

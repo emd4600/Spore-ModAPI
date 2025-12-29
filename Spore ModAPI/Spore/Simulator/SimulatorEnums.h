@@ -391,6 +391,19 @@ namespace Simulator
 		StealFood = 10
 	};
 
+	/// NOTE: RelationshipEvents corresponds to configurations in 0x0568DE14 (space_npc_relationship_effects~) which abide by the below format:
+	/// All values x10.
+	/*
+		floats RelationshipEventName
+			[initial bonus] (value x10, one-time)
+			[add value] (value x10, adds this value each time, including initially)
+			[min value] (returns max(relation, this x10) )
+			[max value] (returns min(relation, this x10) )
+			[decay amount] (returns relation + [add value] x [this])  (over time decay scale of addition value. Negative values decay down, Positive up.)
+			[decay frequency] lower values = faster decay
+		end
+	*/
+
 	/// Properties of relationships between communities (tribes, civilizations, empires)
 	enum RelationshipEvents
 	{
@@ -473,6 +486,63 @@ namespace Simulator
 		kRelationshipEventTribeCheatGood = 0x0530CF0A,
 		kRelationshipEventTribeCheatBad = 0x0530CF0B,
 		kRelationshipEventTribeSocialPower = 0x54EAB4B3
+	};
+
+	// Default Spore CNV actions
+	enum CnvActions {
+		kCnvCommExit = 0x01994745, // "exit"
+		kCnvCommcontinue = 0xCAFF0F72, // "continue"
+		kCnvCommEvent = 0x02D5DCEC, // runs a comm event from the key
+
+		kCnvInsult = 0x26B14441,
+		kCnvCompliment = 0x70C14C34,
+
+		kCnvAttackCity1 = 0x18646F3F,
+		kCnvAttackCity2 = 0x18646F3C,
+		kCnvAttackCity3 = 0x18646F3D,
+		kCnvAttackCity4 = 0x18646F3A,
+		kCnvAttackCity5 = 0x18646F3B,
+		kCnvAttackCity6 = 0x18646F38,
+		kCnvAttackCity7 = 0x18646F39,
+		kCnvAttackCity8 = 0x18646F36,
+		kCnvAttackCity9 = 0x18646F37,
+		kCnvAttackCity10 = 0xA51B201D,
+
+		kCnvAcceptSurrender = 0x3EF09234,
+
+		kCnvBuyCityFor3200 = 0x758330B8,
+		kCnvBuyCityFor2400 = 0x758330BB,
+		kCnvBuyCityFor1600 = 0x758330BA,
+		kCnvBuyCityFor8000 = 0x758330BD,
+		kCnvBuyCityFor4000 = 0x758330BC,
+		kCnvCancelBuy = 0xA3C1D501,
+
+		kCnvCaptureCitybyMilitary = 0x6BA64250,
+		kCnvCityBuyAccepted = 0x8650BD5B,
+		kCnvCityBuyAcceptedHigh = 0x6668560E,
+
+		kCnvLargeGift = 0xD648ED4D, // 4000
+		kCnvMediumGift = 0x5EA6D3ED, // 2000
+		kCnvSmallGift = 0x410C4A65, // 1000
+
+		kCnvTradeRouteAccept = 0xCADAC8A0,
+		kCnvTradeRouteDeny = 0x1125D6A9,
+		kCnvAllianceAccept = 0x24E1525D,
+		kCnvAllianceRequestMoney = 0x9F0FF4CB,
+		kCnvAllianceRefuse = 0x0764C336,
+
+		kCnvEmbargoAccept = 0xD50A1A6D,
+		kCnvEmbargoRequestMoney = 0xE7977907,
+		kCnvEmbargoRefuse = 0x789418DC,
+		kCnvPlayerBidTooLow = 0x96508A98,
+		kCnvDemandAccept = 0x23A2D684,
+		kCnvDemandDeny = 0x764EA37C,
+
+		kCnvUnk1 = 0x6BA64250, // Civ War/capture related
+		kCnvUnk2 = 0xBF3B803A, // Civ buy offer refused?
+		kCnvUnk3 = 0x015BC92B, // Civ NPC-to-player buy offer related
+		kCnvUnk4 = 0x7E41D64A, // Civ NPC-to-player buy offer related
+		kCnvUnk5 = 0x91386D6C, // Civ attack city counter?
 	};
 
 	/// Possible genres of an adventure, used by Simulator::cScenarioModeData
