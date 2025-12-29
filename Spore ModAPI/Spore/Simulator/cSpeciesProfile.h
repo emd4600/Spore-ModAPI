@@ -71,23 +71,23 @@ namespace Simulator
 		/* 580h */	int field_580;  // not initialized
 		/* 584h */	int field_584;  // not initialized
 		/* 588h */	int field_588;  // 1
-		/* 58Ch */	float mFootCount;
-		/* 590h */	float mGrasperCount;
-		/* 594h */	float mMouthCount;
-		/* 598h */	float mEarCount;
-		/* 59Ch */	float mEyeCount;
+		/* 58Ch */	float mNumFoot;
+		/* 590h */	float mNumGrasper;
+		/* 594h */	float mNumMouth;
+		/* 598h */	float mNumEar;
+		/* 59Ch */	float mNumEye;
 		/* 5A0h */	float mCuteness1;
 		/* 5A4h */	float mCuteness2;
 		/* 5A8h */	float field_5A8;
 		/* 5ACh */	float mSocialSum;
 		/* 5B0h */	float mAttackSum;
-		/* 5B4h */	float mMaxAttackLevel;
-		/* 5B8h */	float mMaxSocialLevel;
+		/* 5B4h */	float mAttackMaxLevel;
+		/* 5B8h */	float mSocialMaxLevel;
 		/* 5BCh */	float mMeanness;
 		/* 5C0h */	float field_5C0;	//itemUnlockLevel?
 		/* 5C4h */	float field_5C4;	//itemUnlockLevel?
 		/* 5C8h */	int mDuration;  // 5000
-		/* 5CCh */	float field_5CC;  // 1.0	cCreatureAbility->mDuration / cCreatureAbility->mRecharge
+		/* 5CCh */	float mRefillAbilityBars;  // 1.0	cCreatureAbility->mDuration / cCreatureAbility->mRecharge
 		/* 5D0h */	int mSprintBuff;  // 2
 		/* 5D4h */	int mBiteLevel;
 		/* 5D8h */	int mChargeLevel;
@@ -149,8 +149,8 @@ namespace Simulator
 		/* 6B8h */	eastl::vector<int> mFruits;	//unk type
 		/* 6CCh */	bool mIsGameMode;	//true if cSpeciesProfile was called in gameMode, false otherwise
 		/* 6D0h */	uint32_t mFootWeaponOrMouthType;
-		/* 6D4h */	eastl::fixed_vector<cCreatureAbility*, 20> mAbilities;  //TODO abilities
-		/* 73Ch */	eastl::fixed_vector<cCreatureAbility*, 20> field_73C;  // maybe food-related abilities?
+		/* 6D4h */	eastl::fixed_vector<cCreatureAbility*, 20> mActiveAbilities;  //TODO abilities
+		/* 73Ch */	eastl::fixed_vector<cCreatureAbility*, 20> mPassiveAbilities;
 		/* 7A4h */	eastl::fixed_vector<int, 20> field_7A4;
 		/* 80Ch */	bool field_80C;
 		/* 80Dh */	bool field_80D;
