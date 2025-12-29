@@ -354,7 +354,7 @@ namespace Simulator
 	enum SpaceToolTarget
 	{
 		/* shr 0 */	kTargetAnimal = 1,
-		/* shr 1 */	kTargetA13ABC9F = 2,
+		/* shr 1 */	kTargetCitizen = 2,
 		/* shr 2 */	kTargetUFO = 4,
 		/* shr 3 */	kTargetVehicle = 8,
 		/* shr 4 */	kTargetTurret = 0x10,
@@ -362,8 +362,8 @@ namespace Simulator
 		/* shr 6 */	kTargetBuilding = 0x40,
 		/* shr 7 */	kTargetWorld = 0x80,
 		/* shr 8 */	kTargetAir = 0x100,
-		/* shr 9 */	kTargetA6663355 = 0x200,
-		/* shr 10 */	//4BF0FA5A = 0x400
+		/* shr 9 */	kTargetEnemyOnly = 0x200,
+		/* shr 10 */ kTargetColonyObject = 0x400
 	};
 
 	/// Different types of actions that a tribe can carry, used by Simulator::cTribePlanner.

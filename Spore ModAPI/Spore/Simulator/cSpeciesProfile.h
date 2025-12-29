@@ -50,8 +50,8 @@ namespace Simulator
 		ASSERT_SIZE(UnkStructPool, 0x4E0);
 
 		/* 00h */	UnkStructPool field_0;
-		/* 4E0h */	ResourceKey field_4E0[3];
-		/* 504h */	ResourceKey mSpeciesKey;  //TODO this is the main key?
+		/* 4E0h */	ResourceKey field_4E0[3];	//what is this?
+		/* 504h */	ResourceKey mSpeciesKey;
 		/* 510h */	ResourceKey mBabyKey;
 		/* 51Ch */	eastl::string16 mName;
 		/* 52Ch */	eastl::string16 field_52C;
@@ -151,7 +151,7 @@ namespace Simulator
 		/* 6D0h */	uint32_t mFootWeaponOrMouthType;
 		/* 6D4h */	eastl::fixed_vector<cCreatureAbility*, 20> mActiveAbilities;  //TODO abilities
 		/* 73Ch */	eastl::fixed_vector<cCreatureAbility*, 20> mPassiveAbilities;
-		/* 7A4h */	eastl::fixed_vector<int, 20> field_7A4;
+		/* 7A4h */	eastl::fixed_vector<int, 20> mSocialAbilityIndexes;
 		/* 80Ch */	bool field_80C;
 		/* 80Dh */	bool field_80D;
 		/* 810h */	eastl::fixed_vector<int, 20> mFruitIndexes;
