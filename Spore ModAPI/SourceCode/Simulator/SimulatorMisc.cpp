@@ -22,6 +22,7 @@
 #include <Spore\Simulator\cPlanetaryArtifact.h>
 #include <Spore\Simulator\cNpcTribeController.h>
 #include <Spore\Simulator\cScenarioEditModeDisplayStrategy.h>
+#include <Spore\Simulator\cPlayer.h>
 
 namespace Simulator
 {
@@ -261,6 +262,12 @@ namespace Simulator
 	/// cNpcTribeController ///
 
 	auto_STATIC_METHOD_(cNpcTribeController, cNpcTribeController*, Get);
+
+	/// cPlayer ///
+
+	auto_METHOD(cPlayer, bool, EmpireIsAwareOfPlayer, Args(uint32_t empireID), Args(empireID));
+	auto_METHOD(cPlayer, bool, PlayerContactedEmpire, Args(uint32_t empireID), Args(empireID));
+
 }
 
 #endif
