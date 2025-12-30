@@ -60,6 +60,7 @@
 #include <Spore\Simulator\cTimeOfDay.h>
 #include <Spore\Simulator\cCreatureCitizen.h>
 #include <Spore\Simulator\cGamePlant.h>
+#include <Spore\Simulator\cObstacle.h>
 #include <Spore\Simulator\cBuildingScenario.h>
 #include <Spore\Simulator\cBuildingIndustry.h>
 #include <Spore\Simulator\cBuildingHouse.h>
