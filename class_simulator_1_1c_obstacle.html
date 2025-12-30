@@ -56,7 +56,9 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
@@ -69,6 +71,17 @@
               class <a href="class_simulator_1_1c_game_data.html" class="m-doc">cGameData</a>
             </dt>
             <dd>Base class for most <a href="namespace_simulator.html" class="m-doc">Simulator</a> objects.</dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ac2d59d323aeaf0dc59198d477ff360e2">
+              <span class="m-doc-wrap-bumper">enum <a href="#ac2d59d323aeaf0dc59198d477ff360e2" class="m-doc-self">PlantType</a> { </span><span class="m-doc-wrap"><a href="#ac2d59d323aeaf0dc59198d477ff360e2a5da1f918709102f73f0166f9eaf6bcea" class="m-doc">kLargeSpecies</a> = 0,
+              <a href="#ac2d59d323aeaf0dc59198d477ff360e2a237f98d90812dfdd79fb6151aa75fb9b" class="m-doc">kMediumSpecies</a> = 1,
+              <a href="#ac2d59d323aeaf0dc59198d477ff360e2a43d69cfe0d85c14a57574e1292589b39" class="m-doc">kSmallSpecies</a> = 2 }</span>
+            </dt>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section id="pub-static-attribs">
@@ -84,6 +97,23 @@
             <dd><span></span></dd>
           </dl>
         </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a3a9c8996c8e1adc7cfec11f8f09b51c8">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3a9c8996c8e1adc7cfec11f8f09b51c8" class="m-doc-self">AddRef</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa036657cba582dd62f05811e455fb7d5">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa036657cba582dd62f05811e455fb7d5" class="m-doc-self">Release</a>(</span><span class="m-doc-wrap">) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7099c6b401939e6f27617b00069e5204">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7099c6b401939e6f27617b00069e5204" class="m-doc-self">Cast</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> typeID) const -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">void</a>* <span class="m-label m-flat m-warning">pure virtual</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
@@ -91,12 +121,12 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#afab329ef0995c0cb0cb48b2b0252c9f1" class="m-doc-self">field_34</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="ace534532eb60658891261b37e053c1dd">
-              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#ace534532eb60658891261b37e053c1dd" class="m-doc-self">field_38</a>
+            <dt id="ad231b2f40890d3f2b73ea9f892a350b7">
+              <a href="struct_math_1_1_vector3.html" class="m-doc">Math::<wbr />Vector3</a> <a href="#ad231b2f40890d3f2b73ea9f892a350b7" class="m-doc-self">mPosition</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a5de0d1a228748f3cde78d90bbebe719e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a5de0d1a228748f3cde78d90bbebe719e" class="m-doc-self">field_44</a>
+            <dt id="a9c1c9b774866151bf3aa884ebd7be15a">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a9c1c9b774866151bf3aa884ebd7be15a" class="m-doc-self">mObstacleBaseCollisionRadius</a>
             </dt>
             <dd><span></span></dd>
             <dt id="ab83670495e544a59f87afa37abe602cd">
@@ -151,12 +181,12 @@
               <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a0bbdcd973b8592ce5b5e6710a65563e6" class="m-doc-self">field_78</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1b6a40a2000764064239ab59e6c31987">
-              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a1b6a40a2000764064239ab59e6c31987" class="m-doc-self">field_7C</a>
+            <dt id="a565e9ca44628cdb67a7ff7ad96a525e9">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a565e9ca44628cdb67a7ff7ad96a525e9" class="m-doc-self">mSpeciesKey</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a505fb971cc0c93b0b7f622ea8b5115cf">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">int</a> <a href="#a505fb971cc0c93b0b7f622ea8b5115cf" class="m-doc-self">field_88</a>
+            <dt id="a149470f0ede382a17c03412bbc7b8193">
+              <a href="class_simulator_1_1c_obstacle.html#ac2d59d323aeaf0dc59198d477ff360e2" class="m-doc">PlantType</a> <a href="#a149470f0ede382a17c03412bbc7b8193" class="m-doc-self">mPlantType</a>
             </dt>
             <dd><span></span></dd>
           </dl>

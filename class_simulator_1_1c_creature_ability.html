@@ -56,6 +56,7 @@
               Reference
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
+                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-static-methods">Public static functions</a></li>
                 <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
@@ -69,6 +70,83 @@
           <dl class="m-doc">
             <dt>
               class <a href="class_ref_count_template.html" class="m-doc">RefCountTemplate</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ad3ea41386dcd1e1e80283e38605bb417">
+              <span class="m-doc-wrap-bumper">enum <a href="#ad3ea41386dcd1e1e80283e38605bb417" class="m-doc-self">AbilityTypes</a> { </span><span class="m-doc-wrap"><a href="#ad3ea41386dcd1e1e80283e38605bb417aae64a27102f7116944a933cb642b8ff0" class="m-doc">kTribeHorn</a> = 5,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a83bfd3989a21bd1e08148022ca785613" class="m-doc">kTribeMaraca</a> = 6,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a3687679093bc8bcfbea60a229f5cb86e" class="m-doc">kTribeDidgeridoo</a> = 7,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a5c85b361d0ca3b03903c3a345917919e" class="m-doc">kAutoAttack</a> = 8,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a64c1fa66a38185dd49beaf8c0ac255b0" class="m-doc">kStealth</a> = 13,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417aa6eca9b0c996a37f12a54810e2e31c52" class="m-doc">kSpeed</a> = 14,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a84c608199071a07bc8cec421a104506e" class="m-doc">kBlock</a> = 15,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a68e188c7bb41a2dd5db48eeeb6e78599" class="m-doc">kMatingCall</a> = 16,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a72f352d836f51dfb01b656bf3ab15f11" class="m-doc">kJump</a> = 17,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a673038a4029c57e3a5e79df4158fa585" class="m-doc">kGlide</a> = 18,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a862570a3e442c53e7cbbc4d7cc12917f" class="m-doc">kGrasper</a> = 19,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a41ddc8151754c81b7a9960399f24b781" class="m-doc">kRation</a> = 27,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ab3cd3254c17f6989740d94c1d0e05c94" class="m-doc">kScan</a> = 29,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a1c6a674029122084bfe68a9c1a277416" class="m-doc">kBite</a> = 30,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a9485de41fa8fb5ccfac4d7658f1ad2bb" class="m-doc">kCharge</a> = 31,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a4c93b0196a66cf802e16ba3914a978af" class="m-doc">kSpit</a> = 32,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a03608cd437d43c063527a6d8c9f46135" class="m-doc">kStrike</a> = 33,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ae375e7a60a75941cbe2c6625c1d31150" class="m-doc">kDance</a> = 34,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a1c3f3e632efb27a830ca4a3fb96c65c4" class="m-doc">kPose</a> = 35,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ab0d8d7f20e31c7b222cdf225065a9a6b" class="m-doc">kCharm</a> = 36,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a968d8b8de7fdebc15f8258942155f6fa" class="m-doc">kSing</a> = 37,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a571ef27b821db6cd25a954822bfa6376" class="m-doc">kSprint</a> = 39,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a5b67e222c12a03dcd82c59ce6ff5a379" class="m-doc">kSight</a> = 40,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a2e8a1ca08915f73fd22083a204dcfefe" class="m-doc">kStomp</a> = 41,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ad398912cd98d66d40b422a8f3afea7b5" class="m-doc">kTribeAttackUnk</a> = 42,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a99a9b7ce71b9399e73558568993fe913" class="m-doc">kTribeSpear</a> = 43,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ae253c8c913957acbbc706e2057588f67" class="m-doc">kTribeAttack</a> = 44,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a89f8f338434e13e9c75367e4145a7bf5" class="m-doc">kTribeSocial</a> = 45,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a433dce86bf30e19d7e9e0723c24789c5" class="m-doc">kTribeArmor</a> = 46,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ad313f33eccda53561c235ca93f63470c" class="m-doc">kTribeGathering</a> = 47,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a4f1267f6ab17c975617b7aa63379b228" class="m-doc">kTribeFishing</a> = 48,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a07fb19062f9bc2fc279f4c164a066fa0" class="m-doc">kCRG_SuperPower_Carnivore</a> = 49,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a3c0a8bb5e8e28a8e3a73e358f3c657f6" class="m-doc">kCRG_SuperPower_Herbivore</a> = 50,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417aab4eac638b8821735b810d53debabc64" class="m-doc">kCRG_SuperPower_Omnivore</a> = 51,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a7659656c34c54ad1c16e61714d920f13" class="m-doc">kTRG_SuperPower_Carnivore</a> = 52,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a8e89e3242144442d1a5d59877d467a76" class="m-doc">kTRG_SuperPower_Herbivore</a> = 53,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a064cef6c064f370e6754dc4f7f13a4f6" class="m-doc">kTRG_SuperPower_Omnivore</a> = 54,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a5e9d3ca45cf5e1ba167f26fe04c23764" class="m-doc">kTRG_SuperPower_Aggressive</a> = 55,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a65f56e0d75c36602d4aa03e5b8855818" class="m-doc">kTRG_SuperPower_Social</a> = 56,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a82bff9ad211aeba4a7100de8738dc348" class="m-doc">kTRG_SuperPower_Versatile</a> = 57,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ae23fa5f80b6b2f5ec561421d259ca86b" class="m-doc">kTribeTorch</a> = 58,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a7032c25a9d5104b4486f0c4108ea83ac" class="m-doc">kTribeAxe</a> = 59,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ac18fa23f3cfe365438cbfbd7a780decc" class="m-doc">kEnergyRegen</a> = 60,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a0c54e0c67a9f672852457dda0c708add" class="m-doc">kMissile</a> = 61,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ad599c42f6fe0e551b67c2c7abf29bcaa" class="m-doc">kEnergyBlade</a> = 62,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a16f848ec99f5f0cf5052141324a1c7ae" class="m-doc">kShieldGenerator</a> = 63,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a5d85e60910f8efbe4fd372d86fc3ded5" class="m-doc">kHoloCharm</a> = 64,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a47d3dd55ced00faa1a40322d47036d9c" class="m-doc">kLightningSword</a> = 65,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a007dfc43fffc1ee66f0fbfa4f9991abd" class="m-doc">kPulseGun</a> = 66,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a08b67a1e2b709ffea0d82c4db935fe8c" class="m-doc">kBattleArmor</a> = 67,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ad9811db316b58f6ce924319b71f0aee6" class="m-doc">kPoweredArmor</a> = 68,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ab0b5c9aee82476adb676114f9942a0f5" class="m-doc">kEnergyAbsorption</a> = 69,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417addd3260caaca17e103ea58e47a1ac45d" class="m-doc">kHealthRegen</a> = 70,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a9f36c2914f66349d3a8f4fe58f5190ea" class="m-doc">kSummonSwarm</a> = 72,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a3342ca9049499ab8e6786a8fdcef56ba" class="m-doc">kMindMeld</a> = 73,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a0be8300523f674a1c3871a5500123193" class="m-doc">kPoisonBlade</a> = 74,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a69f97d6c013ce0cf9bf0cd43ca14b82c" class="m-doc">kFreeze</a> = 75,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a35f04d4d8b61d3974525028059c3c826" class="m-doc">kGracefulWaltz</a> = 76,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a2b453e5ec15e9ed1dcdf4c0d2b200207" class="m-doc">kHarmoniousSong</a> = 77,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a681f9b9f169e4c7799f45ed148034ded" class="m-doc">kRoyalCharm</a> = 78,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a75d031bc5822853bc21fb8d5b6f42057" class="m-doc">kRadiantPose</a> = 79,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a6200eca5fa4cde13b31200fdc0da6fe3" class="m-doc">kSprintBurst</a> = 80,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a0116c349ae33103c7d302706c64e20ce" class="m-doc">kHover</a> = 81,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a82ce39ad6396b850f3d80bc884a166c2" class="m-doc">kStealthField</a> = 82,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a7596a6ce8f1043ae3859e963f8b5c8c4" class="m-doc">kJumpJet</a> = 83,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a46ca3b7d7484b44622b97a54dec36f61" class="m-doc">kInspiringSong</a> = 84,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a326d7c3ee515c210796c2d12ce505370" class="m-doc">kStunningDance</a> = 85,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417a8c9f16edba509c485a4aba4f1b8b32d6" class="m-doc">kConfettiPose</a> = 86,
+              <a href="#ad3ea41386dcd1e1e80283e38605bb417ac7b26857107229ac9f81707e27353eb1" class="m-doc">kEnergyStorage</a> = 87 }</span>
             </dt>
             <dd><span></span></dd>
           </dl>

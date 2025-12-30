@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Simulator::cPlantCargoInfo class | Spore ModAPI SDK for creating C++ mods for Spore</title>
+  <title>Simulator::cGamePlantManager::PlantSlot struct | Spore ModAPI SDK for creating C++ mods for Spore</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark.css" />
   <link rel="stylesheet" href="m-documentation.css" />
@@ -45,8 +45,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span>cPlantCargoInfo <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="c_plant_cargo_info_8h.html">&lt;Spore ModAPI/Spore/Simulator/cPlantCargoInfo.h&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespace_simulator.html">Simulator</a>::<wbr/></span><span class="m-breadcrumb"><a href="class_simulator_1_1c_game_plant_manager.html">cGamePlantManager</a>::<wbr/></span>PlantSlot <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="_game_plant_manager_8h.html">&lt;Spore ModAPI/Spore/Simulator/SubSystem/GamePlantManager.h&gt;</a></div>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -55,72 +55,32 @@
             <li>
               Reference
               <ul>
-                <li><a href="#base-classes">Base classes</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="base-classes">
-          <h2><a href="#base-classes">Base classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="class_simulator_1_1c_space_inventory_item.html" class="m-doc">cSpaceInventoryItem</a>
-            </dt>
-            <dd>Represents an item of the space player inventory. This include space tools and cargo.</dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a521d3e3afc95622ab9b40ba8f269a103">
-              static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a521d3e3afc95622ab9b40ba8f269a103" class="m-doc-self">TYPE</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
         <section id="pub-attribs">
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
-            <dt id="a300f6648a0b607583173bf29217f7226">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a300f6648a0b607583173bf29217f7226" class="m-doc-self">mModelIDLOD0</a>
+            <dt id="a8b0a2dde81dc08058ae7ee9364e04a20">
+              <a href="struct_resource_key.html" class="m-doc">ResourceKey</a> <a href="#a8b0a2dde81dc08058ae7ee9364e04a20" class="m-doc-self">plantKey</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a772367bb4e51efa026f6982872ef1490">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a772367bb4e51efa026f6982872ef1490" class="m-doc-self">mModelIDLOD1</a>
+            <dt id="ab8ba5ceb0c08cbedb51d99816eb49f9d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ab8ba5ceb0c08cbedb51d99816eb49f9d" class="m-doc-self">mModelIDLOD0</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1d20aa57ebf1761661f86bc6d98e39d1">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a1d20aa57ebf1761661f86bc6d98e39d1" class="m-doc-self">mModelIDLOD2</a>
+            <dt id="af9d046da7f6bb0740b657c6c337b651a">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#af9d046da7f6bb0740b657c6c337b651a" class="m-doc-self">mModelIDLOD1</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a1e39bb16b7f0bad6ab0b2930f5f239ff">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a1e39bb16b7f0bad6ab0b2930f5f239ff" class="m-doc-self">mModelIDLOD3</a>
+            <dt id="ab27fc7fd58e12df52aa06a0d31e9f71d">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#ab27fc7fd58e12df52aa06a0d31e9f71d" class="m-doc-self">mModelIDLOD2</a>
             </dt>
             <dd><span></span></dd>
-            <dt id="a2c38d5f3a74b91102f0b04891a6b9e50">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a2c38d5f3a74b91102f0b04891a6b9e50" class="m-doc-self">mAlphaModel</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aea611dc7c696d4b467468ea02630ba4f">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#aea611dc7c696d4b467468ea02630ba4f" class="m-doc-self">mFloraImposterScale</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aea447a056af2c1e50a0348faf87cb33e">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#aea447a056af2c1e50a0348faf87cb33e" class="m-doc-self">mBaseRadius</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6b5287b78bb430fa9b68167fbe29d357">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a6b5287b78bb430fa9b68167fbe29d357" class="m-doc-self">mCanopyRadius</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a8dc98afc3505345eb4efcd923ba0fc85">
-              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">float</a> <a href="#a8dc98afc3505345eb4efcd923ba0fc85" class="m-doc-self">mHeight</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae21ccde503e5c480c6bd7d3af8e20608">
-              <a href="class_simulator_1_1c_species_profile.html" class="m-doc">cSpeciesProfile</a>* <a href="#ae21ccde503e5c480c6bd7d3af8e20608" class="m-doc-self">mSpeciesProfile</a>
+            <dt id="a0affc459a51eeba970bab303b82a294b">
+              <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#a0affc459a51eeba970bab303b82a294b" class="m-doc-self">mModelIDLOD3</a>
             </dt>
             <dd><span></span></dd>
           </dl>
