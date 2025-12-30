@@ -57,6 +57,7 @@
               <ul>
                 <li><a href="#base-classes">Base classes</a></li>
                 <li><a href="#pub-static-attribs">Public static variables</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
                 <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
@@ -82,6 +83,19 @@
               static <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">const</a> <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> <a href="#afced376c02262b721d47f0e2d7b62af8" class="m-doc-self">TYPE</a>
             </dt>
             <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a04c121fdf0f04a7a811437c4ddb4e623" class="m-doc">EmpireIsAwareOfPlayer</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> empireID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Checks whether the specified empire is aware of the player.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aefd1294701a5b1a470f5c25f17320119" class="m-doc">PlayerContactedEmpire</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> empireID) -&gt; <a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a></span>
+            </dt>
+            <dd>Checks whether the player has ever contacted the specified empire.</dd>
           </dl>
         </section>
         <section id="pub-attribs">
@@ -268,6 +282,56 @@
             </dt>
             <dd><span></span></dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a04c121fdf0f04a7a811437c4ddb4e623"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cPlayer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a04c121fdf0f04a7a811437c4ddb4e623" class="m-doc-self">EmpireIsAwareOfPlayer</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> empireID)</span></span>
+            </h3>
+            <p>Checks whether the specified empire is aware of the player.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">empireID</td>
+                  <td>The ID of the empire to check.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the empire is aware of the player, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>An empire is considered &quot;aware&quot; if the player has contacted it at least once, or if the empire has ever sent a transmission to the player.</p>
+          </div></section>
+          <section class="m-doc-details" id="aefd1294701a5b1a470f5c25f17320119"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">bool</a> Simulator::<wbr />cPlayer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aefd1294701a5b1a470f5c25f17320119" class="m-doc-self">PlayerContactedEmpire</a>(</span><span class="m-doc-wrap"><a href="_object_8h.html#a2e82adf9870bdb442cdcf2b3e01315b2" class="m-doc">uint32_<wbr />t</a> empireID)</span></span>
+            </h3>
+            <p>Checks whether the player has ever contacted the specified empire.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">empireID</td>
+                  <td>The ID of the empire to check.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if the player has contacted the empire at least once, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
