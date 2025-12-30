@@ -32,6 +32,7 @@
 #include <Spore\Editors\EditorRigblock.h>
 #include <Spore\Editors\EditorCamera.h>
 #include <Spore\Editors\EditorModel.h>
+#include <Spore\Editors\EditorUI.h>
 #include <Spore\Editors\EditorPlayMode.h>
 #include <Spore\Editors\EditorRequest.h>
 #include <Spore\Editors\EditorLimits.h>
@@ -39,6 +40,7 @@
 #include <Spore\Editors\cEditorSkin.h>
 #include <Spore\Editors\cEditorAnimEvent.h>
 #include <Spore\Editors\cEditorAnimWorld.h>
+#include <Spore\Editors\BakeManager.h>
 
 #include <Spore\Graphics\Model.h>
 #include <Spore\Graphics\ILayer.h>

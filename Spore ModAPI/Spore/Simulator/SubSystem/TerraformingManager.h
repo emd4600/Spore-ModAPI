@@ -43,17 +43,13 @@ namespace Simulator
 	public:
 		/* 1Ch */	eastl::hash_map<int, int> field_1C;
 		/* 3Ch */	bool field_3C;  // true
-		/* 40h */	int field_40;  // -1
+		/* 40h */	uint32_t mGameModeID;  // -1
 		/* 44h */	bool field_44;
 		/* 48h */	eastl::map<int, int> field_48;
 		/* 64h */	int field_64;
 		/* 68h */	eastl::vector<cCommodityNodePtr> mCommodityNodes;
-		/* 7Ch */	int field_7C;
-		/* 80h */	int field_80;
-		/* 84h */	int field_84;
-		/* 88h */	int field_88;
-		/* 8Ch */	int field_8C;
-		/* 90h */	int field_90;
+		/* 7Ch */	ResourceKey SelectedTerraformingSlot;
+		/* 88h */	ResourceKey field_88;
 
 	public:
 		static cTerraformingManager* Get();

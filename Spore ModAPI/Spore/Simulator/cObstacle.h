@@ -14,10 +14,21 @@ namespace Simulator
 		static const uint32_t TYPE = 0x3ED590D;
 		static const uint32_t NOUN_ID = 0x3ED8573;
 
+		using Object::AddRef;
+		using Object::Release;
+		using Object::Cast;
+
+		enum PlantType
+		{
+			kLargeSpecies = 0,
+			kMediumSpecies = 1,
+			kSmallSpecies = 2,
+		};
+
 	public:
 		/* 34h */	int field_34;
-		/* 38h */	Math::Vector3 field_38;
-		/* 44h */	float field_44;
+		/* 38h */	Math::Vector3 mPosition;
+		/* 44h */	float mObstacleBaseCollisionRadius;
 		/* 48h */	float mObstacleCanopyCollisionRadius;
 		/* 4Ch */	float mObstacleCollisionHeight;
 		/* 50h */	int field_50;  // -1
@@ -31,8 +42,8 @@ namespace Simulator
 		/* 70h */	ModelPtr mModel;
 		/* 74h */	int field_74;
 		/* 78h */	int field_78;
-		/* 7Ch */	ResourceKey field_7C;
-		/* 88h */	int field_88;
+		/* 7Ch */	ResourceKey mSpeciesKey;
+		/* 88h */	PlantType mPlantType;
 	};
 	ASSERT_SIZE(cObstacle, 0x8C);
 }
