@@ -22,6 +22,12 @@ void LoadMaterials() {
 	filter.groupID = GroupIDs::Shaders;
 	filter.typeID = TypeIDs::smt;
 
+	/* some users experience a crash here caused by
+	 * the resource manager not being set yet */
+	if (Resource::IResourceManager::Get() == nullptr) {
+		return;
+	}
+
 	eastl::vector<ResourceKey> keys;
 	if (ResourceManager.GetRecordKeyList(keys, &filter)) {
 		for (const ResourceKey& key : keys) {
