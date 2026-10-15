@@ -7,6 +7,7 @@
 #include "Application.h"
 #include "TextureOverride.h"
 #include "SpaceToolIconOverride.h"
+#include "DebugReportWriterOverride.h"
 
 uintptr_t baseAddress;
 ArgScript::PrintF_ptr ArgScript::PrintF;
@@ -27,6 +28,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 			ModAPI::AttachDetour();
 			TextureOverride::AttachDetour();
 			SpaceToolIconOverride::AttachDetour();
+			DebugReportWriterOverride::AttachDetour();
 			CommitDetours();
 			break;
 

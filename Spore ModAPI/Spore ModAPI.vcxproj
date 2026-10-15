@@ -294,6 +294,7 @@
     <ClInclude Include="EASTL\version.h" />
     <ClInclude Include="EASTL\weak_ptr.h" />
     <ClInclude Include="SourceCode\DLL\Application.h" />
+    <ClInclude Include="SourceCode\DLL\DebugReportWriterOverride.h" />
     <ClInclude Include="SourceCode\DLL\resource.h" />
     <ClInclude Include="SourceCode\DLL\SpaceToolIconOverride.h" />
     <ClInclude Include="SourceCode\DLL\stdafx.h" />
@@ -327,6 +328,7 @@
     <ClInclude Include="Spore\App\IDGenerator.h" />
     <ClInclude Include="Spore\App\JobManager.h" />
     <ClInclude Include="Spore\App\Thumbnail_cImportExport.h" />
+    <ClInclude Include="Spore\Debug\ReportWriter.h" />
     <ClInclude Include="Spore\Editors\cSPEditorVerbTrayCollection.h" />
     <ClInclude Include="Spore\Editors\cSPEditorVerbIcon.h" />
     <ClInclude Include="Spore\Editors\cSPEditorVerbIconTray.h" />
@@ -958,6 +960,8 @@
     <ClInclude Include="Spore\UTFWin\WinTreeView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SourceCode\Debug\ReportWriter.cpp" />
+    <ClCompile Include="SourceCode\DLL\AddressesDebug.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesMovie.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesOpenSSL.cpp" />
     <ClCompile Include="SourceCode\Allocator.cpp" />
@@ -996,6 +1000,7 @@
     <ClCompile Include="SourceCode\DLL\AddressesUI.cpp" />
     <ClCompile Include="SourceCode\DLL\AddressesUTFWin.cpp" />
     <ClCompile Include="SourceCode\DLL\Application.cpp" />
+    <ClCompile Include="SourceCode\DLL\DebugReportWriterOverride.cpp" />
     <ClCompile Include="SourceCode\DLL\dllmain.cpp" />
     <ClCompile Include="SourceCode\DLL\DllModAPI.cpp" />
     <ClCompile Include="SourceCode\DLL\SpaceToolIconOverride.cpp" />
