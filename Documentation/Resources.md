@@ -4,7 +4,7 @@
 The main functionalities to access resources of the game is in the %Resource package. Therefore, in this tutorial, we will assume 
 `using namespace Resource;` is being used to avoid typing `Resource::` all the time.
 
-If you want to see a mod that uses the Resources module, check [the GmdlExport mod](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport).
+If you want to see a mod that uses the Resources module, check [the GmdlExport mod](https://github.com/Spore-Community/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport).
 
 @section Resources-Opening Opening a resource
 

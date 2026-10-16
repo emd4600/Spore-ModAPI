@@ -221,7 +221,7 @@ vehicle->WalkTo(0, dst, {0, 0, 1});
 ~~~~
 
 Creatures also have a function to play an animation. For more information about how to find animation IDs, check this 
-[Spore animations tutorial](https://github.com/emd4600/SporeModder-FX/wiki/How-to:-use-Spore-animations):
+[Spore animations tutorial](https://github.com/Spore-Community/SporeModder-FX/wiki/How-to:-use-Spore-animations):
 
 ~~~~{.cpp}
 // 0x04FFA018 is the animation where the creature tells a joke

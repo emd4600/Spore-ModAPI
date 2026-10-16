@@ -4,7 +4,7 @@
 For effects such as particles, decals, etc Spore uses a custom engine called %Swarm. Everything related to effects is in the Swarm namespace.
 
 Effects are a collection of components with different attributes, e.g. spawn 10 red particles here, move a model in this direction,...
-You can create your own effects (or discover how existing ones are made) with SporeModderFX, more information here: https://github.com/emd4600/SporeModder-FX/wiki
+You can create your own effects (or discover how existing ones are made) with SporeModderFX, more information here: https://github.com/Spore-Community/SporeModder-FX/wiki
 
 Effects are uniquely identified with an ID. But keep in mind that this ID is only used to identify the structure of the effect itself: you can have multiple instances
 of the same effect at the same time.

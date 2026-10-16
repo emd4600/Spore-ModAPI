@@ -1,8 +1,8 @@
 @page Cheats The cheat console
 @brief How to print text to the console and add new cheats
 
-If you want to see an example of real mods that add new cheats, check the [`GmdlExport`](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport)
-and the [`ModCreatorKit`](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit)
+If you want to see an example of real mods that add new cheats, check the [`GmdlExport`](https://github.com/Spore-Community/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport)
+and the [`ModCreatorKit`](https://github.com/Spore-Community/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit)
 
 @section Cheats-Console Printing to the console
 
@@ -23,7 +23,7 @@ That prints `Integer: 10     Float: 4.5`
 @section Cheats-Creating Adding a new cheat
 
 Cheats use the ArgScript scripting language, which is the same used in many Spore files (such as `.prop.prop_t`). You have more info in the 
-[SporeModderFX wiki](https://github.com/emd4600/SporeModder-FX/wiki/ArgScript).
+[SporeModderFX wiki](https://github.com/Spore-Community/SporeModder-FX/wiki/ArgScript).
 
 To create a new cheat we have to create a class that parses an ArgScript command. You can use the *ModAPI Cheat* item template to create one. It
 basically creates a class like this:

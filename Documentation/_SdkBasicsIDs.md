@@ -22,7 +22,7 @@ An ID is an 8-digit hexadecimal number that Spore uses instead of names to ident
 It's possible to get the hash corresponding to a name, but not the other way around. Hashes are case-insensitive (i.e. `asd` and `ASD` have the same hash).
 
 Even though they are just integers, IDs are represented in the %ModAPI SDK with the type `uint32_t`. You can get the hash of a name by using the `id()` function. 
-For example, `id("ModAPI")` gives you `0x30B264D5`. [SporeModder FX](https://emd4600.github.io/SporeModder-FX/) also has a feature to calculate hashes. 
+For example, `id("ModAPI")` gives you `0x30B264D5`. [SporeModder FX](https://smfx.sporecommunity.com/) also has a feature to calculate hashes. 
 
 ![](PB1deAP.png)
 

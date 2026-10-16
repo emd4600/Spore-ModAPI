@@ -21,12 +21,12 @@ Once you have all that selected, click on `Modify` and wait until it's installed
 @subsection Installation-Installing-Launcher ModAPI Launcher Kit
 
 In order to use the %ModAPI SDK and the mods you generate with it, you will need the [ModAPI Launcher Kit](https://launcherkit.sporecommunity.com/) or [SporeModLoader](https://github.com/Rosalie241/SporeModLoader).
-From now on, you should launch Spore through the launcher when using the ModAPI Launcher Kit or launch Spore normally when using SporeModLoader.
+From now on, you should launch Spore through the launcher when using the Launcher Kit or launch Spore normally when using SporeModLoader.
 
 @subsection Installation-Installing-SDK ModAPI SDK
 
 Open Visual Studio. You will see four big buttons, click on the first one: **Clone or check out code**. In the new panel you have to fill two things:
- - *Repository location*: Paste this link there: `https://github.com/emd4600/Spore-ModAPI.git`
+ - *Repository location*: Paste this link there: `https://github.com/Spore-Community/Spore-ModAPI.git`
  - *Local path*: This is the folder in your computer where the %ModAPI SDK will be saved.
  
 Once you fill those two fields, click on `Clone` and wait until the project finishes downloading.

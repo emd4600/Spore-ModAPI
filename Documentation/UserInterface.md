@@ -18,9 +18,9 @@ each of the parts is a children of the page, etc. Windows are identified with a 
 Windows can also have multiple window procedures. Procudres do not form a hierarchy: they do not have children nor parents, and the same procedure can be added
 to multiple windows. For example, the `EditorUI` class is a procedure (it implements `IWinProc`) and it's added to all the buttons in the editor.
 
-In Spore, layouts come in `.spui` (**Sp** ore **U** ser **I** nterface) files. You can view and edit them using [SporeModder FX](https://emd4600.github.io/SporeModder-FX/).
+In Spore, layouts come in `.spui` (**Sp** ore **U** ser **I** nterface) files. You can view and edit them using [SporeModder FX](https://smfx.sporecommunity.com/).
 
-The `EnhancedColorPicker` is an example of a mod that uses the %UTFWin module, you can see the [source code in GitHub](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/EnhancedColorPicker).
+The `EnhancedColorPicker` is an example of a mod that uses the %UTFWin module, you can see the [source code in GitHub](https://github.com/Spore-Community/Spore-ModAPI/tree/master/Projects/Example%20Projects/EnhancedColorPicker).
 
 @section UserInterface-Loading Loading SPUI layouts
 

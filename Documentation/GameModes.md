@@ -30,7 +30,7 @@ You can add the new game mode to the `GameModeManager` using the `AddGameMode` m
 GameModeManager.AddGameMode(new MyGameMode(), id("MyGameMode"), "MyGameMode");
 ~~~~
 
-If you want an example of a mod that adds a new game mode, check the *Effect Editor* in the [`ModCreatorKit`](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit)
+If you want an example of a mod that adds a new game mode, check the *Effect Editor* in the [`ModCreatorKit`](https://github.com/Spore-Community/Spore-ModAPI/tree/master/Projects/Example%20Projects/ModCreatorKit)
 
 @section GameModes-Active Changing the active mode
 

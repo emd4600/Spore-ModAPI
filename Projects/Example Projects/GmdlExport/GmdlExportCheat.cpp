@@ -35,7 +35,7 @@ const char* GmdlExportCheat::GetDescription(ArgScript::DescriptionMode mode) con
 		return "Exports the model and textures of a creation so you can use it in Blender.\n"
 			"The creation files will be saved in the creation type folder inside 'My Documents\\My Spore Creations'.\n"
 			"The textures are exported in TGA format. You can import the creation by using the SporeModder Blender Addons:\n"
-			"https://github.com/emd4600/SporeModder-Blender-Addons#features \n"
+			"https://github.com/Spore-Community/SporeModder-Blender-Addons#features \n"
 			"\n"
 			"You can execute this command from anywhere; when executed, the Sporepedia will be shown to select the creation.\n"
 			"The creation needs to be baked, so you have to preview it in the Sporepedia before exporting it.\n"
@@ -52,7 +52,7 @@ const char* GmdlExportCheat::GetDescription(ArgScript::DescriptionMode mode) con
 }
 
 // We process the GMDL file to find the IDs of the textures
-// There's more information about the GMDL format in https://github.com/emd4600/SporeModder-Blender-Addons/blob/master/gmdl_importer.py
+// There's more information about the GMDL format in https://github.com/Spore-Community/SporeModder-Blender-Addons/blob/master/gmdl_importer.py
 void GetTextureNames(IO::IStream* stream, map<int, ResourceKey>& textures)
 {
 	int version, count, meshCount;

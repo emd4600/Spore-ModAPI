@@ -10,7 +10,7 @@ namespace Swarm
 {
 	/// Effect maps are one of the way effects can react to environment information from the game. 
 	/// Effect maps are used to retrieve color, height, normal, or velocity information that changes on each point in space.
-	/// More information: https://github.com/emd4600/SporeModder-FX/wiki/Effect-Maps
+	/// More information: https://github.com/Spore-Community/SporeModder-FX/wiki/Effect-Maps
 	class IEffectMap
 	{
 	public:

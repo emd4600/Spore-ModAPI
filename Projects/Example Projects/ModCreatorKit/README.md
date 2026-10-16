@@ -3,7 +3,7 @@
 The `ModCreatorKit` adds a bunch of cheats and utilities that are useful to modders, such as the Effects Editor, the Animation Editor, the thumbnail capture cheat,...
 You can download a compiled version here: https://github.com/emd4600/Spore-ModCreatorKit/releases/download/v1.2.0/ModCreatorKit.sporemod
 
-It requires the latest version of the ModAPI DLLs ensure you have the [Launcher Kit](http://davoonline.com/sporemodder/rob55rod/ModAPI/Public/) up-to-date.
+It requires the latest version of the ModAPI DLLs ensure you have the [Launcher Kit](https://launcherkit.sporecommunity.com/) or [SporeModLoader](https://github.com/Rosalie241/SporeModLoader) up-to-date.
 
 ## Developer Cheats
 The ModCreatorKit has many useful cheats, many of them hidden cheats used by Spore developers:
@@ -55,7 +55,7 @@ find the file in the disk.
 ## Effects Editor
 
 This mod also adds a new game mode and a cheat to access it, `effectsEditor`. This can be used with SMFX to test and edit effects 
-in real time, [check the tutorial](https://github.com/emd4600/SporeModder-FX/wiki/Effects-Editor).
+in real time, [check the tutorial](https://github.com/Spore-Community/SporeModder-FX/wiki/Effects-Editor).
 
 #### Implementation details
 This editor relies on the "file debugging" feature exposed before. We also detour the `SwarmManager` that checks what `EffectDirectory` must
@@ -66,13 +66,13 @@ The effects editor mode itself is very simple. It just loads its own camera (whi
 effect. In the `Update` method, every second, checks if `main.effdir` was modified and reloads the effect if necessary.
 
 ## Anim Editor
-Similar to the effects editor, this one is to edit creature animations in real time. You can access it with the cheat `animEditor`. Just edit the `Animation Editor` file on SporeModderFX and you will see the changes in real time. Check [the animation tutorial](https://github.com/emd4600/SporeModder-FX/wiki/Exporting-creature-animations-from-Blender) for more information.
+Similar to the effects editor, this one is to edit creature animations in real time. You can access it with the cheat `animEditor`. Just edit the `Animation Editor` file on SporeModderFX and you will see the changes in real time. Check [the animation tutorial](https://github.com/Spore-Community/SporeModder-FX/wiki/Exporting-creature-animations-from-Blender) for more information.
 
 ![](https://i.imgur.com/TUdTBXq.gif)
 
 ## Part Thumbnail Capture
 
-This mod also includes a cheat tht lets you create thumbnails for your custom parts that fit perfectly into the part preview. For more info, [check the tutorial](https://github.com/emd4600/SporeModder-FX/wiki/How-to:-Generate-perfect-part-thumbnails).
+This mod also includes a cheat tht lets you create thumbnails for your custom parts that fit perfectly into the part preview. For more info, [check the tutorial](https://github.com/Spore-Community/SporeModder-FX/wiki/How-to:-Generate-perfect-part-thumbnails).
 
 #### Implementation details
 To do that it uses

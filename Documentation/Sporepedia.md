@@ -52,5 +52,5 @@ public:
 };
 ~~~~
 
-As an example of a mod that uses this, check the [source code of `GmdlExport`](https://github.com/emd4600/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport).
+As an example of a mod that uses this, check the [source code of `GmdlExport`](https://github.com/Spore-Community/Spore-ModAPI/tree/master/Projects/Example%20Projects/GmdlExport).
 This mod adds a cheat that shows the Sporepedia.

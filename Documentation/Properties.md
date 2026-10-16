@@ -11,7 +11,7 @@ bool modelAdventureCameraAlphas true
 key modelLOD0 DI_WrapTotem.rw4
 ~~~~
 
-You have more information about this format in the [Spore modding wiki](https://github.com/emd4600/SporeModder-FX/wiki/Property-Lists-(.prop)).
+You have more information about this format in the [Spore modding wiki](https://github.com/Spore-Community/SporeModder-FX/wiki/Property-Lists-(.prop)).
 
 @tableofcontents
 
@@ -60,7 +60,7 @@ App::Property::GetArrayKey(propList.get(), 0x02A907B5, count, names);  // modelE
 // Now you can access them like names[0], names[1], ...
 ~~~~
 
-@note Usually it is not possible to use `id()` to get the ID of a property. [SporeModder FX](https://emd4600.github.io/SporeModder-FX/) can be used to get it.
+@note Usually it is not possible to use `id()` to get the ID of a property. [SporeModder FX](https://smfx.sporecommunity.com/) can be used to get it.
 
 @section Properties_AppProperties Using AppProperties
 
