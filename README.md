@@ -1,10 +1,10 @@
 # Spore ModAPI SDK
 
 This GitHub page hosts the Spore ModAPI development kit, used to create Spore mods with C++. 
-To use those mods, you need the [ModAPI Launcher and Installers](http://davoonline.com/sporemodder/rob55rod/ModAPI/Public/).
+To use those mods, you need the [ModAPI Launcher and Installers](https://launcherkit.sporecommunity.com/) or [SporeModLoader](https://github.com/Rosalie241/SporeModLoader).
 
 The **Spore ModAPI SDK** allows you to create C++ mods for Spore. These mods are compiled into `.dll` files,
-that can then be used by the **[ModAPI Launcher Kit](http://davoonline.com/sporemodder/rob55rod/ModAPI/Public/index.html)** to inject them into Spore.
+that can then be used by the **[ModAPI Launcher Kit](https://launcherkit.sporecommunity.com/)** or **[SporeModLoader](https://github.com/Rosalie241/SporeModLoader)** to inject them into Spore.
 
 The documentation of the SDK is available here: https://modapi-docs.sporecommunity.com/
 
