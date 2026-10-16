@@ -7,11 +7,11 @@
 
 @subsection Installation-Installing-VS Visual Studio
 
-You need to download **Visual Studio 2019 Community**, which is the free version. [You can download it here](https://visualstudio.microsoft.com/vs/)
+You need to download **Visual Studio 2026 Community**, which is the free version. [You can download it here](https://visualstudio.microsoft.com/vs/)
 After the installation, the **Visual Studio Installer** will open, allowing you to choose what features you want. For the %ModAPI SDK, you need to check
 the following:
- - **Desktop development with C++**. When you select this option, on the panel on the right there are some other options you can check. Ensure the **MSVC v142**
- and **Windows 10 SDK** options are checked.
+ - **Desktop development with C++**. When you select this option, on the panel on the right there are some other options you can check. Ensure the **MSVC**
+ and **Windows 10 or 11 SDK** options are checked.
  - Optionally, you can also install **Game development with C++**. If you want to do mods related with graphics, you will need this to interact with DirectX.
  
 ![](installer.png)
@@ -20,8 +20,8 @@ Once you have all that selected, click on `Modify` and wait until it's installed
 
 @subsection Installation-Installing-Launcher ModAPI Launcher Kit
 
-In order to use the %ModAPI SDK and the mods you generate with it, you will need the **%ModAPI Launcher Kit**, which [you can download here](http://davoonline.com/sporemodder/rob55rod/%ModAPI/Public/index.html).
-From now on, you should launch Spore through the launcher.
+In order to use the %ModAPI SDK and the mods you generate with it, you will need the [ModAPI Launcher Kit](https://launcherkit.sporecommunity.com/) or [SporeModLoader](https://github.com/Rosalie241/SporeModLoader).
+From now on, you should launch Spore through the launcher when using the ModAPI Launcher Kit or launch Spore normally when using SporeModLoader.
 
 @subsection Installation-Installing-SDK ModAPI SDK
 
